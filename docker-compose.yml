@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - FAST_PATH_CONFIDENCE=0.85
+      - LLM_TIMEOUT=10.0
+      - SUPABASE_TIMEOUT=5.0
+    restart: unless-stopped
