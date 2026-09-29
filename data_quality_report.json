@@ -1,0 +1,260 @@
+{
+  "report_name": "data_quality_report",
+  "summary": {
+    "total_records": 128,
+    "total_sources": 56,
+    "confidence_breakdown": {
+      "high": 99,
+      "medium": 20,
+      "low": 9
+    },
+    "source_type_breakdown": {
+      "official_support": 123,
+      "third_party_guide": 1,
+      "community_forum": 4
+    },
+    "domain_breakdown": {
+      "battery": 13,
+      "charging": 12,
+      "display": 13,
+      "camera": 10,
+      "navigation": 7,
+      "performance": 13,
+      "storage": 9,
+      "apps": 10,
+      "connectivity": 11,
+      "audio": 11,
+      "thermal": 9,
+      "touchscreen": 10
+    },
+    "distinct_canonical_issues": 34
+  },
+  "duplicate_issue_merges": [
+    {
+      "canonical_issue": "battery_fast_drain",
+      "domain": "battery",
+      "merged_from_phrasings": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "rationale": "All describe the same underlying complaint (excessive battery consumption during normal use) and share the same official Samsung remediation sequence (software update -> power saving -> background limits -> display tuning -> safe mode -> reset). Kept as ONE canonical_issue with 13 distinct atomic actions rather than one record per phrasing."
+    },
+    {
+      "canonical_issue": "slow_after_update",
+      "domain": "performance",
+      "merged_from_phrasings": [
+        "phone got slow after the update",
+        "phone became laggy after software update",
+        "everything feels slower since updating",
+        "apps started lagging after the update"
+      ],
+      "rationale": "These are near-identical restatements of the same trigger (a recent software/One UI update) and share the same remediation path (settle/reboot -> wipe cache -> factory reset). NOT merged with the broader 'slow_device_general' issue, because the update-triggered path includes an update-specific step (wipe cache partition in recovery) that does not apply to general slowness with no update trigger."
+    },
+    {
+      "canonical_issue": "no_sound_or_low_volume",
+      "domain": "audio",
+      "merged_from_phrasings": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "rationale": "Both 'no sound' and 'low volume' complaints are handled by the same official Samsung diagnostic sequence (Mute all sounds check -> Do not disturb -> balance -> accessory/Bluetooth check -> restart -> Safe Mode -> reset -> service). Kept together rather than split into two canonical issues since Samsung's own source articles do not separate them."
+    },
+    {
+      "canonical_issue": "touchscreen_unresponsive",
+      "domain": "touchscreen",
+      "merged_from_phrasings": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "rationale": "Partial dead-zone complaints and fully unresponsive-screen complaints share the same first-line Samsung troubleshooting steps (accessory check, restart, sensitivity setting, Safe Mode, diagnostics). Kept as one canonical_issue; the update-triggered variant was intentionally NOT merged in (see touch-009) because it has a distinct, less-verified remediation path and a different confidence rating."
+    },
+    {
+      "canonical_issue": "wifi_disconnects",
+      "domain": "connectivity",
+      "merged_from_phrasings": [
+        "wifi keeps disconnecting",
+        "wifi drops randomly",
+        "wifi connection unstable"
+      ],
+      "rationale": "Random drops and general instability are treated identically in Samsung's official Wi-Fi troubleshooting guide (TSG10002018). The 'Intelligent Wi-Fi auto-switching' variant (wifi-007) was NOT merged in because it has a distinct root cause (a specific software feature switching networks/data) and a lower-confidence, community-sourced fix."
+    }
+  ],
+  "explicit_not_merged_decisions": [
+    {
+      "kept_separate": [
+        "blurry_photos",
+        "blurry_photos_high_zoom",
+        "blurry_high_resolution_mode",
+        "camera_haze",
+        "camera_optical_stabilization_damage"
+      ],
+      "domain": "camera",
+      "rationale": "All are 'blurry/poor camera output' complaints on the surface, but the actual verified remediation differs by cause: lens cleaning/protector removal (general), minimum shooting distance (telephoto/high zoom, Ultra-model specific), expected optical softness (200MP mode, Ultra-model specific), condensation clearing (environmental/temporary), and OIS hardware damage (repair-only). Merging these would have hidden model-specific and severity-specific guidance the task explicitly asked to preserve."
+    },
+    {
+      "kept_separate": [
+        "storage_full",
+        "app_crashing"
+      ],
+      "domain": "storage / apps",
+      "rationale": "Low storage is a documented CAUSE of app crashing (see app-004, S029), but the two are kept as separate canonical issues with cross-referenced actions rather than merged, since a user reporting 'storage almost full' is not necessarily also reporting app crashes, and vice versa."
+    },
+    {
+      "kept_separate": [
+        "screen_flickering",
+        "screen_flickering_camera_specific",
+        "screen_flickering_model_specific"
+      ],
+      "domain": "display",
+      "rationale": "Flicker while using the Camera app specifically has a distinct, documented root cause (lighting-frequency interaction with shutter speed, see disp-006/S008) unrelated to the general display-flicker troubleshooting path, so it was kept as its own canonical_issue rather than folded into general 'screen_flickering'. The Galaxy S26/S26+ specific guidance (disp-008/S010) was also kept separate because it is an official Samsung article scoped explicitly to those two models."
+    }
+  ],
+  "model_or_version_specific_records": [
+    {
+      "id": "chg-010",
+      "domain": "charging",
+      "device_scope": "Galaxy devices with Samsung DeX support",
+      "one_ui_version": null
+    },
+    {
+      "id": "disp-008",
+      "domain": "display",
+      "device_scope": "Galaxy S26 and S26+ only",
+      "one_ui_version": null
+    },
+    {
+      "id": "cam-004",
+      "domain": "camera",
+      "device_scope": "Galaxy S25 Ultra and Galaxy S26 Ultra (telephoto minimum distances)",
+      "one_ui_version": null
+    },
+    {
+      "id": "cam-005",
+      "domain": "camera",
+      "device_scope": "Ultra-series Galaxy models with 200MP sensor",
+      "one_ui_version": null
+    },
+    {
+      "id": "cam-009",
+      "domain": "camera",
+      "device_scope": "Galaxy devices in regions/models supporting Good Lock's Camera Assistant",
+      "one_ui_version": null
+    },
+    {
+      "id": "nav-003",
+      "domain": "navigation",
+      "device_scope": "Galaxy devices with S Pen support",
+      "one_ui_version": null
+    },
+    {
+      "id": "nav-004",
+      "domain": "navigation",
+      "device_scope": "Galaxy devices supporting the Good Lock app",
+      "one_ui_version": null
+    },
+    {
+      "id": "stor-008",
+      "domain": "storage",
+      "device_scope": "Galaxy devices with a microSD card slot",
+      "one_ui_version": null
+    },
+    {
+      "id": "heat-006",
+      "domain": "thermal",
+      "device_scope": "Galaxy devices with a variable/high refresh-rate display (e.g., Galaxy S24, Galaxy Z Fold)",
+      "one_ui_version": null
+    },
+    {
+      "id": "touch-009",
+      "domain": "touchscreen",
+      "device_scope": "Devices with a physical S Pen (workaround verified using S Pen input to navigate)",
+      "one_ui_version": null
+    }
+  ],
+  "community_or_third_party_sourced_records": {
+    "note": "These records are NOT from official Samsung support pages. They are included because they represent commonly reported/plausible troubleshooting patterns, but should be weighted lower and ideally corroborated with an official source before being surfaced as a top-confidence fix.",
+    "record_ids": [
+      "cam-008",
+      "disp-013",
+      "perf-011",
+      "touch-009",
+      "wifi-007"
+    ]
+  },
+  "unverified_or_partially_fetched_sources": {
+    "note": "These source URLs were identified (via search result snippets or as related-article links) but NOT independently fetched and fully verified in this research pass. Records citing them are marked confidence='low' or 'medium' and flagged in requires_human_review where appropriate.",
+    "source_ids": [
+      "S045",
+      "S046",
+      "S047"
+    ]
+  },
+  "sources_collected_but_not_cited_in_any_record": {
+    "note": "Fetched/identified during research but not directly used to source a specific troubleshooting record -- kept in sources.json for traceability and potential future use.",
+    "source_ids": [
+      "S045",
+      "S047",
+      "S054",
+      "S055"
+    ]
+  },
+  "known_gaps": [
+    {
+      "domain": "charging",
+      "gap": "No official Samsung source was found (within this research pass) giving an exact Settings path or deeplink-equivalent screen name for viewing charging speed/wattage in real time beyond 'Settings > Battery > remaining charging time'. Exact One UI menu wording for 'Fast charging' toggle by model/carrier was not independently verified."
+    },
+    {
+      "domain": "display",
+      "gap": "'display_poor_resolution' records (disp-010/011/012) are based on a source (S046) that could not be fully fetched -- only referenced as a related-article link. Step content is inferred from general Samsung Settings conventions, not verified verbatim. Recommend a follow-up fetch of https://www.samsung.com/us/support/troubleshoot/TSG10004073/ before using these three records in production."
+    },
+    {
+      "domain": "navigation",
+      "gap": "No official Samsung article was found that directly ties Safe Mode isolation to a gesture-direction complaint specifically (nav-007); this is an inferred application of a generally-verified technique (Safe Mode isolates third-party app conflicts) to the navigation-gesture domain, not a directly sourced fact."
+    },
+    {
+      "domain": "thermal",
+      "gap": "No official Samsung source was found linking recurring overheating during light use directly to battery health/end-of-life (heat-009); this is sourced from a third-party repair guide (iFixit, S051), not Samsung support content."
+    },
+    {
+      "domain": "performance",
+      "gap": "perf-011 (clean reinstall after major OS update) is sourced entirely from a Samsung Community user discussion, not an official Samsung guide; no first-party Samsung article recommending a full reinstall-over-restore was located."
+    },
+    {
+      "domain": "connectivity",
+      "gap": "wifi-007 (disable Intelligent Wi-Fi) and wifi-008 (static IP) rely on community-reported menu paths; the referenced official article for wifi-008 (TSG01001559) was linked in a community post but not independently fetched and verified in this pass."
+    },
+    {
+      "domain": "all",
+      "gap": "No deeplinks.json-equivalent catalog of masked bixby:// URIs was available in this research pass, so every record's deep_link field is intentionally null, consistent with the task's requirement to never fabricate deeplinks."
+    }
+  ],
+  "requires_human_review": {
+    "note": "Records with confidence='low', or whose only source was incompletely fetched. These should be reviewed against a fresh, full fetch of the cited source(s) before being trusted as verified Samsung guidance.",
+    "record_ids": [
+      "disp-010",
+      "disp-011",
+      "disp-012",
+      "disp-013",
+      "heat-009",
+      "nav-007",
+      "perf-011",
+      "touch-009",
+      "wifi-007"
+    ]
+  },
+  "fabrication_safeguards_applied": [
+    "No deep_link / bixby:// URI values were invented; every record's deep_link field is null.",
+    "No exact One UI version numbers were asserted unless a source explicitly stated device/version scope (see model_or_version_specific_records).",
+    "Where a source could not be fully fetched (S045, S046, S047), dependent records were marked confidence='low' and explicitly noted rather than presented as verified.",
+    "Community-forum and third-party-guide content was tagged with source_type != 'official_support' throughout, rather than being blended indistinguishably with Samsung's own documentation.",
+    "Synthetic query paraphrases were generated only as colloquial restatements of already-sourced canonical issues, kept in a separate top-level array (synthetic_query_variations) from the factual troubleshooting_records, and carry no invented troubleshooting steps of their own."
+  ]
+}

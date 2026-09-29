@@ -1,0 +1,3866 @@
+{
+  "dataset_name": "raw_troubleshooting",
+  "description": "Canonical Galaxy device troubleshooting knowledge base. Each record in 'troubleshooting_records' is one atomic, screen-level remediation action for a canonical issue, grounded in a specific cited source (see sources.json). Records marked source_type 'competition_spec' or 'provided_dataset' originate from materials supplied with this task. 'synthetic_query_variations' contains generated colloquial paraphrases used only to map informal user language to a canonical_issue -- these are NOT factual troubleshooting knowledge and carry no steps of their own; they are kept in a separate array from 'troubleshooting_records' per the task's zero-fabrication and separation requirements.",
+  "record_count": 128,
+  "synthetic_variation_group_count": 17,
+  "troubleshooting_records": [
+    {
+      "id": "bat-001",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Check for Software and App Updates",
+      "description": "It will patch known battery-drain bugs",
+      "settings_path": "Settings > Software update",
+      "steps": [
+        "Open Settings and tap Software update or System updates.",
+        "Tap Download and install (or Check for system updates).",
+        "Separately, open Galaxy Store or Play Store and update all apps."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "bat-002",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Turn On Power Saving Mode",
+      "description": "It will reduce performance to save power",
+      "settings_path": "Settings > Battery > Power saving",
+      "steps": [
+        "Open Settings and tap Battery.",
+        "Tap Power saving.",
+        "Turn on the switch and select additional restrictions as needed."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001",
+        "S002"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "bat-003",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Configure Background Usage Limits",
+      "description": "It will put unused apps to sleep automatically",
+      "settings_path": "Settings > Battery > Background usage limits",
+      "steps": [
+        "Open Settings, tap Battery, then Background usage limits.",
+        "Turn on Put unused apps to sleep.",
+        "Optionally choose Sleeping apps or Deep sleeping apps for specific apps."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "bat-004",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Switch to Light Performance Profile",
+      "description": "It will prioritize battery life over speed",
+      "settings_path": "Settings > Device care > Performance profile",
+      "steps": [
+        "Open Settings and tap Device care.",
+        "Tap Performance profile.",
+        "Select Light."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "bat-005",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Optimize the Display for Power Saving",
+      "description": "It will lower screen-related power consumption",
+      "settings_path": "Settings > Display",
+      "steps": [
+        "Open Settings and tap Display.",
+        "Turn on Dark mode to reduce power use from a darker color scheme.",
+        "Lower the Brightness slider or turn off Adaptive brightness.",
+        "Tap Motion smoothness and select Standard to reduce refresh rate to 60Hz.",
+        "Tap Screen timeout and pick a shorter duration."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "bat-006",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Disable or Schedule Always On Display",
+      "description": "It will stop the screen waking unnecessarily",
+      "settings_path": "Settings > Lock screen and AOD",
+      "steps": [
+        "Open Settings and tap Lock screen and AOD.",
+        "Turn off the switch at the top to disable Always On Display entirely, or",
+        "Tap When to show and choose Tap to show, As scheduled, or For new notifications."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "bat-007",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Identify and Uninstall Battery-Draining Apps",
+      "description": "It will remove apps consuming excess battery",
+      "settings_path": "Settings > Battery",
+      "steps": [
+        "Open Settings and tap Battery.",
+        "Tap the battery usage graph to see per-app consumption.",
+        "Select the high-usage app and tap Uninstall, then confirm."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S002"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "bat-008",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Run Battery Diagnostics in Samsung Members",
+      "description": "It will check the physical battery condition",
+      "settings_path": null,
+      "steps": [
+        "Install the Samsung Members app if not already installed.",
+        "Open the Support tab and select Phone diagnostics.",
+        "Run the battery test and review results."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S002",
+        "S049"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": "Samsung Members Phone diagnostics is referenced across multiple official Samsung pages; exact menu wording may vary by region and app version."
+    },
+    {
+      "id": "bat-009",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Force Restart the Device",
+      "description": "It will clear temporary software glitches",
+      "settings_path": null,
+      "steps": [
+        "On devices with a Power button: hold Volume down and Power for ~10 seconds.",
+        "On devices with a Side button: hold Volume down and Side button for ~10 seconds.",
+        "When the Power menu or Samsung logo appears, continue holding until it reboots.",
+        "If Maintenance mode appears, use Volume buttons to select Normal Boot."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "bat-010",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Boot Into Safe Mode to Isolate a Rogue App",
+      "description": "It will reveal whether a downloaded app is draining battery",
+      "settings_path": null,
+      "steps": [
+        "Press and hold the Power button (or open Quick settings and tap the Power icon).",
+        "Touch and hold Power off until the Safe mode icon appears; tap Safe mode.",
+        "Use the device normally; if drain stops, a recently installed app is the likely cause.",
+        "Uninstall suspect apps one by one, then exit Safe mode by restarting normally."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "bat-011",
+      "domain": "battery",
+      "canonical_issue": "battery_fast_drain",
+      "merged_variants": [
+        "battery drains fast",
+        "battery life is poor",
+        "battery dies quickly",
+        "battery percentage falling fast",
+        "phone barely lasts half a day",
+        "battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "loses charge even when not in use"
+      ],
+      "action_name": "Perform a Factory Data Reset (Last Resort)",
+      "description": "It will restore the device to original battery behavior",
+      "settings_path": "Settings > General management > Reset > Factory data reset",
+      "steps": [
+        "Back up all data using Smart Switch or a cloud account.",
+        "Open Settings, search for and select Factory data reset.",
+        "Tap Factory data reset again, then Reset, and follow the prompts."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": "Erases all data; Samsung notes this is not a permanent fix if the root cause is an app awaiting a future update."
+    },
+    {
+      "id": "bat-012",
+      "domain": "battery",
+      "canonical_issue": "new_device_battery_drain",
+      "merged_variants": [
+        "new phone battery drains fast in first days",
+        "new phone battery is bad during setup"
+      ],
+      "action_name": "Understand Temporary Drain During Initial Setup",
+      "description": "It will explain expected first-days battery drop",
+      "settings_path": null,
+      "steps": [
+        "No user action required for a few days: initial setup, account sync, and restoring backups temporarily increase battery use.",
+        "If elevated drain continues beyond the first few days, follow the standard battery optimization steps."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S003"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "bat-013",
+      "domain": "battery",
+      "canonical_issue": "5g_battery_drain",
+      "merged_variants": [
+        "battery drops quickly on 5G",
+        "5G drains battery faster"
+      ],
+      "action_name": "Understand and Mitigate 5G-Related Battery Use",
+      "description": "It will reduce power used maintaining dual network links",
+      "settings_path": "Settings > Connections > Mobile networks",
+      "steps": [
+        "Note: 5G phones maintain a concurrent 3G/LTE link for call and message continuity, which increases drain.",
+        "Open Settings, then Connections, then Mobile networks to review network mode options if you want to limit 5G use.",
+        "Apply the standard battery optimization steps (Power saving, Background usage limits, display settings) alongside this."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S003"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": "Samsung's own text says Galaxy phones use AI-based software to help manage 5G power draw; no specific toggle to fully disable the dual-link behavior was documented in the source."
+    },
+    {
+      "id": "chg-001",
+      "domain": "charging",
+      "canonical_issue": "slow_or_no_charging",
+      "merged_variants": [
+        "phone charging much slower than before",
+        "plugged in but not charging",
+        "battery not charging",
+        "slow charging"
+      ],
+      "action_name": "Inspect Charger, Cable, and Port for Damage or Debris",
+      "description": "It will rule out a physical connection fault",
+      "settings_path": null,
+      "steps": [
+        "Verify the phone, charger, and USB cable show no physical or liquid damage.",
+        "Check the USB connections for corrosion or bent pins.",
+        "Inspect the charging port for dust, lint, or debris that could block contact."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S005",
+        "S007"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "chg-002",
+      "domain": "charging",
+      "canonical_issue": "slow_or_no_charging",
+      "merged_variants": [
+        "phone charging much slower than before",
+        "plugged in but not charging",
+        "battery not charging",
+        "slow charging"
+      ],
+      "action_name": "Check for Moisture in the Charging Port",
+      "description": "It will clear moisture that blocks charging",
+      "settings_path": null,
+      "steps": [
+        "Check for a moisture-detected notification.",
+        "Gently shake the device to remove moisture from the port.",
+        "Wipe with a soft, clean cloth and air-dry in a well-ventilated area before retrying."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S007"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": "Applies to water-resistant Galaxy devices; the charging port must be fully dry even on water-resistant models."
+    },
+    {
+      "id": "chg-003",
+      "domain": "charging",
+      "canonical_issue": "slow_or_no_charging",
+      "merged_variants": [
+        "phone charging much slower than before",
+        "plugged in but not charging",
+        "battery not charging",
+        "slow charging"
+      ],
+      "action_name": "Use a Genuine, Compatible Samsung Charger",
+      "description": "It will avoid slow charging from mismatched hardware",
+      "settings_path": null,
+      "steps": [
+        "Confirm the charger and cable are genuine Samsung accessories rated for your device.",
+        "For fast charging, ensure the charger supports Adaptive Fast Charging or the appropriate wattage.",
+        "Avoid third-party or damaged cables, which may cause unstable or slow charging."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S006",
+        "S007"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "chg-004",
+      "domain": "charging",
+      "canonical_issue": "slow_or_no_charging",
+      "merged_variants": [
+        "phone charging much slower than before",
+        "plugged in but not charging",
+        "battery not charging",
+        "slow charging"
+      ],
+      "action_name": "Avoid Heavy Use While Charging",
+      "description": "It will prevent temperature-related charging slowdowns",
+      "settings_path": null,
+      "steps": [
+        "Close high-performance apps such as games, video streaming, or heavy browsing while charging.",
+        "Let the device charge at room temperature; avoid direct sun or very cold environments."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S006",
+        "S007"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "chg-005",
+      "domain": "charging",
+      "canonical_issue": "slow_or_no_charging",
+      "merged_variants": [
+        "phone charging much slower than before",
+        "plugged in but not charging",
+        "battery not charging",
+        "slow charging"
+      ],
+      "action_name": "Soft-Reboot the Device",
+      "description": "It will clear temporary software charging faults",
+      "settings_path": null,
+      "steps": [
+        "Press and hold the Power and Volume down keys together until the device restarts.",
+        "Reconnect the original charger once the device has restarted and check charging status."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S007"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "chg-006",
+      "domain": "charging",
+      "canonical_issue": "slow_or_no_charging",
+      "merged_variants": [
+        "phone charging much slower than before",
+        "plugged in but not charging",
+        "battery not charging",
+        "slow charging"
+      ],
+      "action_name": "Run Samsung Members Charging Diagnostics",
+      "description": "It will test cable, wireless, and battery status",
+      "settings_path": null,
+      "steps": [
+        "Open the Samsung Members app and tap Support.",
+        "Tap Get started to run Phone diagnostics.",
+        "Tap Battery status, Cable charging, or Wireless charging, then review the results."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S006"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": "Availability requires the Samsung Members app to be installed; feature set may vary by region."
+    },
+    {
+      "id": "chg-007",
+      "domain": "charging",
+      "canonical_issue": "phone_not_charging_at_all",
+      "merged_variants": [
+        "phone not charging at all",
+        "will not charge"
+      ],
+      "action_name": "Charge From a Wall Outlet for at Least an Hour",
+      "description": "It will rule out an extension cord or weak source",
+      "settings_path": null,
+      "steps": [
+        "Plug the charging cable directly into a wall outlet, not an extension cord or power strip.",
+        "Charge for at least 1 hour using the charger that came with the device.",
+        "Allow up to 10 minutes for the charging indicator to appear if the battery was fully drained."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S005"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "chg-008",
+      "domain": "charging",
+      "canonical_issue": "phone_not_charging_at_all",
+      "merged_variants": [
+        "phone not charging at all",
+        "will not charge"
+      ],
+      "action_name": "Force-Start the Device After Deep Discharge",
+      "description": "It will attempt startup after a long-drained battery",
+      "settings_path": null,
+      "steps": [
+        "Disconnect the device from the charger.",
+        "Press and hold the Power button for 15-20 seconds to attempt a start.",
+        "If it turns on, reconnect the original charger and let it charge fully."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S005"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "chg-009",
+      "domain": "charging",
+      "canonical_issue": "phone_not_charging_at_all",
+      "merged_variants": [
+        "phone not charging at all",
+        "will not charge"
+      ],
+      "action_name": "Escalate to Samsung Service if Charging Still Fails",
+      "description": "It will get a hardware inspection for persistent failure",
+      "settings_path": null,
+      "steps": [
+        "After completing software and cable checks, if the device still will not charge,",
+        "visit a Samsung walk-in service center, or",
+        "schedule a repair service online."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S005"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "chg-010",
+      "domain": "charging",
+      "canonical_issue": "dex_charging_incompatibility",
+      "merged_variants": [
+        "DeX charging slowly",
+        "DeX won't launch on charger"
+      ],
+      "action_name": "Use a High-Speed Charger for DeX Mode",
+      "description": "It will meet the power requirement DeX needs",
+      "settings_path": null,
+      "steps": [
+        "Confirm the charger outputs more than 9V/1.67A; DeX accessories require a high-speed charger.",
+        "Do not use battery packs, which are not compatible with DeX.",
+        "If DeX still won't launch, exit Maximum power saving mode first."
+      ],
+      "category": "manual",
+      "device_scope": "Galaxy devices with Samsung DeX support",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S005"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "disp-001",
+      "domain": "display",
+      "canonical_issue": "screen_flickering",
+      "merged_variants": [
+        "screen flickers",
+        "display keeps flashing randomly",
+        "screen brightness keeps pulsing",
+        "intermittent flashes on screen",
+        "screen glitches during use"
+      ],
+      "action_name": "Inspect the Screen for Physical Damage",
+      "description": "It will rule out cracked-glass flicker causes",
+      "settings_path": null,
+      "steps": [
+        "Check the screen for cracks or shattered glass.",
+        "If damage is found, visit a Samsung walk-in service center or schedule a repair."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S009",
+        "S011",
+        "S012"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "disp-002",
+      "domain": "display",
+      "canonical_issue": "screen_flickering",
+      "merged_variants": [
+        "screen flickers",
+        "display keeps flashing randomly",
+        "screen brightness keeps pulsing",
+        "intermittent flashes on screen",
+        "screen glitches during use"
+      ],
+      "action_name": "Disable Adaptive Brightness",
+      "description": "It will stop brightness auto-adjustment from flickering",
+      "settings_path": "Settings > Display > Adaptive brightness",
+      "steps": [
+        "Open Settings and tap Display.",
+        "Turn off the switch next to Adaptive brightness.",
+        "If flickering occurs at low brightness, manually raise the brightness slider."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S009",
+        "S012"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "disp-003",
+      "domain": "display",
+      "canonical_issue": "screen_flickering",
+      "merged_variants": [
+        "screen flickers",
+        "display keeps flashing randomly",
+        "screen brightness keeps pulsing",
+        "intermittent flashes on screen",
+        "screen glitches during use"
+      ],
+      "action_name": "Change the Motion Smoothness (Refresh Rate) Setting",
+      "description": "It will test if a high refresh rate causes flicker",
+      "settings_path": "Settings > Display > Motion smoothness",
+      "steps": [
+        "Open Settings and tap Display.",
+        "Tap Motion smoothness.",
+        "Select Standard (60Hz) instead of Adaptive/High to see if flickering stops."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S011"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": "Sourced from a Samsung Community moderator-style walkthrough plus general Samsung display-setting patterns; treat exact menu labels as approximate across One UI versions."
+    },
+    {
+      "id": "disp-004",
+      "domain": "display",
+      "canonical_issue": "screen_flickering",
+      "merged_variants": [
+        "screen flickers",
+        "display keeps flashing randomly",
+        "screen brightness keeps pulsing",
+        "intermittent flashes on screen",
+        "screen glitches during use"
+      ],
+      "action_name": "Boot Into Safe Mode to Rule Out a Third-Party App",
+      "description": "It will reveal whether an app is causing the flicker",
+      "settings_path": null,
+      "steps": [
+        "Hold the Power button until the power-off menu appears.",
+        "Touch and hold Power off until Safe mode appears, then tap it.",
+        "Use the device normally; if flickering stops, uninstall the most recently installed app first, repeating as needed."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S009",
+        "S011",
+        "S012"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "disp-005",
+      "domain": "display",
+      "canonical_issue": "screen_flickering",
+      "merged_variants": [
+        "screen flickers",
+        "display keeps flashing randomly",
+        "screen brightness keeps pulsing",
+        "intermittent flashes on screen",
+        "screen glitches during use"
+      ],
+      "action_name": "Check for Software Updates",
+      "description": "It will apply display-bug fixes from Samsung",
+      "settings_path": "Settings > Software update",
+      "steps": [
+        "Open Settings, tap Software update.",
+        "Tap Download and install to get the latest available update."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S009",
+        "S012"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "disp-006",
+      "domain": "display",
+      "canonical_issue": "screen_flickering_camera_specific",
+      "merged_variants": [
+        "screen flickers when using camera",
+        "black bar moves across camera preview"
+      ],
+      "action_name": "Understand Camera-Preview Flicker From Artificial Lighting",
+      "description": "It will explain flicker caused by LED/fluorescent lights",
+      "settings_path": null,
+      "steps": [
+        "Recognize that fluorescent or LED lighting can flicker faster than the eye perceives, which the camera shutter can pick up as banding.",
+        "Add more light to the scene to reduce the effect.",
+        "If flicker persists outside the Camera app too, treat it as a general display issue instead."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S008"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "disp-007",
+      "domain": "display",
+      "canonical_issue": "screen_flickering",
+      "merged_variants": [
+        "screen flickers",
+        "display keeps flashing randomly",
+        "screen brightness keeps pulsing",
+        "intermittent flashes on screen",
+        "screen glitches during use"
+      ],
+      "action_name": "Reset an Individual App Showing Flicker",
+      "description": "It will clear a corrupted app's display state",
+      "settings_path": "Settings > Apps > [app name]",
+      "steps": [
+        "Open Settings, tap Apps.",
+        "Select the app where flickering occurs.",
+        "Tap Reset (or Storage > Clear cache) for that app."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S011"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "disp-008",
+      "domain": "display",
+      "canonical_issue": "screen_flickering_model_specific",
+      "merged_variants": [
+        "S26 flickering during HD video",
+        "S26+ flickering editing photos"
+      ],
+      "action_name": "Apply the Galaxy S26/S26+ Specific Flicker Guidance",
+      "description": "It will address a model-specific flicker condition",
+      "settings_path": "Settings > Software update",
+      "steps": [
+        "This applies specifically to the Galaxy S26 or S26+ under certain conditions such as playing HD video, using Google Photos, or editing QHD+ photos on the S26+.",
+        "Check for software updates first, as Samsung ships model-specific fixes through updates.",
+        "Follow the same update, app-update, and reboot sequence used for general software issues."
+      ],
+      "category": "auto",
+      "device_scope": "Galaxy S26 and S26+ only",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S010"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": "This is a model-specific official Samsung troubleshooting guide; do not apply this record's device scope claim to other models."
+    },
+    {
+      "id": "disp-009",
+      "domain": "display",
+      "canonical_issue": "screen_flickering",
+      "merged_variants": [
+        "screen flickers",
+        "display keeps flashing randomly",
+        "screen brightness keeps pulsing",
+        "intermittent flashes on screen",
+        "screen glitches during use"
+      ],
+      "action_name": "Escalate to Service if Flicker Persists in Safe Mode",
+      "description": "It will get hardware evaluated when software isn't the cause",
+      "settings_path": null,
+      "steps": [
+        "If flickering continues even in Safe Mode after all software steps, treat it as a likely hardware issue.",
+        "Contact the nearest Samsung Support Center to book an inspection or repair."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S012"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "disp-010",
+      "domain": "display",
+      "canonical_issue": "display_poor_resolution",
+      "merged_variants": [
+        "display looks blurry",
+        "screen has poor resolution",
+        "images look pixelated"
+      ],
+      "action_name": "Check for Liquid Damage and Clean the Screen",
+      "description": "It will rule out surface or moisture causes of blur",
+      "settings_path": null,
+      "steps": [
+        "Check the device for signs of liquid exposure.",
+        "Clean the screen with a soft, dry, microfiber cloth to remove smudges or residue."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S046"
+      ],
+      "source_type": "official_support",
+      "confidence": "low",
+      "notes": "Source S046 was only referenced as a related-article link and was not independently fetched in full; treat step detail as indicative, not verified verbatim."
+    },
+    {
+      "id": "disp-011",
+      "domain": "display",
+      "canonical_issue": "display_poor_resolution",
+      "merged_variants": [
+        "display looks blurry",
+        "screen has poor resolution",
+        "images look pixelated"
+      ],
+      "action_name": "Adjust the Screen Resolution Setting",
+      "description": "It will raise or correct the rendered resolution",
+      "settings_path": "Settings > Display > Screen resolution",
+      "steps": [
+        "Open Settings and tap Display.",
+        "Tap Screen resolution.",
+        "Select a higher resolution option (e.g., FHD+ or WQHD+ if supported) and apply."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S046"
+      ],
+      "source_type": "official_support",
+      "confidence": "low",
+      "notes": "Step content inferred from general Samsung display-settings conventions since the underlying article (S046) was not fully fetched; requires human verification before publishing."
+    },
+    {
+      "id": "disp-012",
+      "domain": "display",
+      "canonical_issue": "display_poor_resolution",
+      "merged_variants": [
+        "display looks blurry",
+        "screen has poor resolution",
+        "images look pixelated"
+      ],
+      "action_name": "Restart in Safe Mode to Rule Out an App Overlay",
+      "description": "It will confirm whether an app is affecting rendering",
+      "settings_path": null,
+      "steps": [
+        "Boot the device into Safe Mode.",
+        "Check whether the display looks normal with only pre-installed apps active.",
+        "If normal, uninstall the most recently added app suspected of causing the issue."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S046"
+      ],
+      "source_type": "official_support",
+      "confidence": "low",
+      "notes": "Same caveat as disp-010/disp-011 - source not fully verified."
+    },
+    {
+      "id": "cam-001",
+      "domain": "camera",
+      "canonical_issue": "blurry_photos",
+      "merged_variants": [
+        "camera photos are blurry",
+        "pictures look fuzzy even in good light",
+        "photos not focusing properly",
+        "rear camera looks soft"
+      ],
+      "action_name": "Clean All Camera Lenses",
+      "description": "It will remove smudges causing soft focus",
+      "settings_path": null,
+      "steps": [
+        "Use a soft, dry, microfiber cloth to wipe all lenses on the device.",
+        "Clean the main, ultra-wide, telephoto, and any auxiliary preview/rangefinding lenses."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S013"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "cam-002",
+      "domain": "camera",
+      "canonical_issue": "blurry_photos",
+      "merged_variants": [
+        "camera photos are blurry",
+        "pictures look fuzzy even in good light",
+        "photos not focusing properly",
+        "rear camera looks soft"
+      ],
+      "action_name": "Turn On Focus Enhancer for Close-Range Shots",
+      "description": "It will reduce blur around close subjects",
+      "settings_path": "Camera app > Focus enhancer (flower icon)",
+      "steps": [
+        "Open the Camera app.",
+        "Tap the flower icon on the preview screen to turn on Focus enhancer.",
+        "This automatically switches to the ultra-wide camera at close range to reduce blur."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S013",
+        "S014"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "cam-003",
+      "domain": "camera",
+      "canonical_issue": "blurry_photos",
+      "merged_variants": [
+        "camera photos are blurry",
+        "pictures look fuzzy even in good light",
+        "photos not focusing properly",
+        "rear camera looks soft"
+      ],
+      "action_name": "Remove a Camera Lens Protector or Cover",
+      "description": "It will eliminate protector-induced focus distortion",
+      "settings_path": null,
+      "steps": [
+        "Remove any third-party camera lens protector or cover.",
+        "Take a test photo without it to see if focus and clarity improve."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S013",
+        "S014"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "cam-004",
+      "domain": "camera",
+      "canonical_issue": "blurry_photos_high_zoom",
+      "merged_variants": [
+        "camera blurry at close range with high zoom",
+        "telephoto zoom out of focus up close"
+      ],
+      "action_name": "Respect Minimum Shooting Distance on High Zoom (Ultra models)",
+      "description": "It will avoid the telephoto camera's close-range blur",
+      "settings_path": null,
+      "steps": [
+        "At high zoom, the device automatically switches to the telephoto camera, which is designed for distant subjects.",
+        "Keep at least the minimum shooting distance for the model: 30 cm on the Galaxy S25 Ultra, 80 cm on the Galaxy S26 Ultra.",
+        "Move back to the correct distance before shooting for a clearer result."
+      ],
+      "category": "auto",
+      "device_scope": "Galaxy S25 Ultra and Galaxy S26 Ultra (telephoto minimum distances)",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S013"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "cam-005",
+      "domain": "camera",
+      "canonical_issue": "blurry_high_resolution_mode",
+      "merged_variants": [
+        "200MP photos blurry",
+        "high-resolution mode blurry in spots"
+      ],
+      "action_name": "Understand Normal Optical Blur in 200MP Mode (Ultra models)",
+      "description": "It will explain expected partial-frame softness",
+      "settings_path": null,
+      "steps": [
+        "Recognize that the camera's focus range varies with aperture, shooting distance, and subject position in the 200MP high-resolution setting.",
+        "Some parts of the frame appearing soft in this mode is a normal optical characteristic, not necessarily a defect."
+      ],
+      "category": "auto",
+      "device_scope": "Ultra-series Galaxy models with 200MP sensor",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S014"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "cam-006",
+      "domain": "camera",
+      "canonical_issue": "camera_haze",
+      "merged_variants": [
+        "camera looks foggy or hazy"
+      ],
+      "action_name": "Allow Internal Condensation to Clear Naturally",
+      "description": "It will let temporary fogging dissipate on its own",
+      "settings_path": null,
+      "steps": [
+        "Recognize haze can be caused by internal condensation from a temperature difference inside/outside the device.",
+        "Wait for the condensation to clear naturally; the device can be used normally in the meantime.",
+        "Do not attempt to dry the lens by force (e.g., heat) as this is unnecessary and can cause damage."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S013",
+        "S014"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "cam-007",
+      "domain": "camera",
+      "canonical_issue": "dark_lines_in_photos",
+      "merged_variants": [
+        "dark lines appear while recording video",
+        "screen flickers while taking photos"
+      ],
+      "action_name": "Treat Dark Lines During Capture as a Flicker-Related Issue",
+      "description": "It will connect capture banding to lighting/refresh causes",
+      "settings_path": null,
+      "steps": [
+        "If dark lines or flicker appear specifically while taking photos or videos, treat this as related to lighting flicker or refresh-rate interaction rather than a separate defect.",
+        "Follow the screen_flickering_camera_specific record (disp-006) guidance to add more light to the scene."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S014"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": "The source article references this scenario but the full explanatory steps were truncated in retrieval."
+    },
+    {
+      "id": "cam-008",
+      "domain": "camera",
+      "canonical_issue": "camera_optical_stabilization_damage",
+      "merged_variants": [
+        "camera image constantly shaking",
+        "camera makes noise when moving phone"
+      ],
+      "action_name": "Recognize Signs of OIS Hardware Damage",
+      "description": "It will identify a hardware fault versus a software one",
+      "settings_path": null,
+      "steps": [
+        "Optical image stabilization uses gyroscope readings to counter camera shake; repeated strong vibration or drops can damage this mechanism.",
+        "Signs include images appearing constantly shaken, or audible/visible movement of the camera module.",
+        "This is a hardware issue; software troubleshooting will not resolve it -- schedule a repair."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S050"
+      ],
+      "source_type": "third_party_guide",
+      "confidence": "medium",
+      "notes": "Sourced from iFixit (third-party repair reference), not an official Samsung support article; treat as directional guidance pending official confirmation."
+    },
+    {
+      "id": "cam-009",
+      "domain": "camera",
+      "canonical_issue": "blurry_photos",
+      "merged_variants": [
+        "camera photos are blurry",
+        "pictures look fuzzy even in good light",
+        "photos not focusing properly",
+        "rear camera looks soft"
+      ],
+      "action_name": "Check Camera Assistant Shutter/ISO Settings (Good Lock)",
+      "description": "It will remove slow-shutter blur from Camera Assistant limits",
+      "settings_path": "Camera app > Quick controls > Settings > Camera Assistant",
+      "steps": [
+        "Note: Camera Assistant is only available in countries supporting the Good Lock app.",
+        "Open the Camera app, tap Quick controls, then Settings, then Camera Assistant.",
+        "Tap Advanced Photo mode controls, then set Minimum shutter speed and Maximum ISO to None."
+      ],
+      "category": "auto",
+      "device_scope": "Galaxy devices in regions/models supporting Good Lock's Camera Assistant",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S014"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "cam-010",
+      "domain": "camera",
+      "canonical_issue": "blurry_photos",
+      "merged_variants": [
+        "camera photos are blurry",
+        "pictures look fuzzy even in good light",
+        "photos not focusing properly",
+        "rear camera looks soft"
+      ],
+      "action_name": "Follow General Blur/Dark Photo Guidance and Confirm Software Is Current",
+      "description": "It will rule out a stale camera-app software build",
+      "settings_path": "Settings > Software update",
+      "steps": [
+        "Confirm the device software and Camera app are on the latest available version.",
+        "Retest photo/video quality after updating.",
+        "If issues persist, Samsung support will check device condition and confirm no app is interfering with the camera."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S015"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": "S015 page content was mostly navigation chrome in the fetch; core steps summarized from the page's stated intent, not a full step-by-step capture."
+    },
+    {
+      "id": "nav-001",
+      "domain": "navigation",
+      "canonical_issue": "gesture_direction_issue",
+      "merged_variants": [
+        "swipe gestures go wrong direction",
+        "swipe navigation feels wrong after installing app",
+        "back swipe not behaving normally",
+        "gesture navigation moves up/down instead of left/right"
+      ],
+      "action_name": "Switch Navigation Type Between Buttons and Swipe Gestures",
+      "description": "It will let you choose navigation type",
+      "settings_path": "Settings > Display > Navigation bar",
+      "steps": [
+        "Open Settings and tap Display.",
+        "Tap Navigation bar.",
+        "Select Buttons or Swipe gestures as your preferred navigation type."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S016",
+        "S017"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "nav-002",
+      "domain": "navigation",
+      "canonical_issue": "gesture_direction_issue",
+      "merged_variants": [
+        "swipe gestures go wrong direction",
+        "swipe navigation feels wrong after installing app",
+        "back swipe not behaving normally",
+        "gesture navigation moves up/down instead of left/right"
+      ],
+      "action_name": "Adjust Swipe Gesture Order and Sensitivity",
+      "description": "It will fine-tune how swipe gestures respond",
+      "settings_path": "Settings > Display > Navigation bar > Swipe gestures > More options",
+      "steps": [
+        "Open Settings > Display > Navigation bar.",
+        "Select Swipe gestures, then tap More options.",
+        "Select the desired swipe gesture and button order, and adjust Gesture sensitivity."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S016",
+        "S017"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "nav-003",
+      "domain": "navigation",
+      "canonical_issue": "gesture_direction_issue",
+      "merged_variants": [
+        "swipe gestures go wrong direction",
+        "swipe navigation feels wrong after installing app",
+        "back swipe not behaving normally",
+        "gesture navigation moves up/down instead of left/right"
+      ],
+      "action_name": "Enable Block Gestures With S Pen (S Pen devices)",
+      "description": "It will stop accidental edge swipes while drawing",
+      "settings_path": "Settings > Display > Navigation bar > Swipe gestures",
+      "steps": [
+        "Open Settings > Display > Navigation bar > Swipe gestures.",
+        "Turn on Block Gestures with S Pen to prevent accidental navigation while drawing near screen edges."
+      ],
+      "category": "auto",
+      "device_scope": "Galaxy devices with S Pen support",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S017"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "nav-004",
+      "domain": "navigation",
+      "canonical_issue": "gesture_feature_removed_in_update",
+      "merged_variants": [
+        "swipe from bottom gesture missing after update",
+        "gesture hints option gone"
+      ],
+      "action_name": "Restore Removed Legacy Gestures via Good Lock NavStar",
+      "description": "It will bring back Swipe from bottom and Gesture hints",
+      "settings_path": "Good Lock app > Make up > NavStar",
+      "steps": [
+        "Note: Recent navigation bar updates removed the 'Swipe from bottom' option and 'Gesture hints' from the standard menu.",
+        "Download Good Lock from the Galaxy Store and open it.",
+        "Select the Make up tab, find NavStar, and tap the download icon.",
+        "Open NavStar, tap Start, then Allow, then turn on the Swipe gestures switch."
+      ],
+      "category": "auto",
+      "device_scope": "Galaxy devices supporting the Good Lock app",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S016"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": "This addresses a One UI navigation-bar redesign that removed legacy options from the base Settings menu; confirm current Good Lock/NavStar availability for the user's region before advising."
+    },
+    {
+      "id": "nav-005",
+      "domain": "navigation",
+      "canonical_issue": "gesture_direction_issue",
+      "merged_variants": [
+        "swipe gestures go wrong direction",
+        "swipe navigation feels wrong after installing app",
+        "back swipe not behaving normally",
+        "gesture navigation moves up/down instead of left/right"
+      ],
+      "action_name": "Use the Corner-Swipe Shortcut for the Digital Assistant Regardless of Navigation Type",
+      "description": "It will clarify an always-available gesture",
+      "settings_path": null,
+      "steps": [
+        "Regardless of whether Buttons or Swipe gestures is selected, swiping inward from a bottom corner of the screen opens the digital assistant.",
+        "This is expected behavior, not a misconfiguration, if the user reports an unexpected assistant launch during swipes."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S016",
+        "S017",
+        "S039"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "nav-006",
+      "domain": "navigation",
+      "canonical_issue": "gesture_direction_issue",
+      "merged_variants": [
+        "swipe gestures go wrong direction",
+        "swipe navigation feels wrong after installing app",
+        "back swipe not behaving normally",
+        "gesture navigation moves up/down instead of left/right"
+      ],
+      "action_name": "Activate Circle to Search via Home Button/Handle",
+      "description": "It will clarify a touch-and-hold gesture distinct from navigation",
+      "settings_path": null,
+      "steps": [
+        "Touch and hold the Home button or the navigation handle at the bottom of the screen to activate Circle to Search.",
+        "This is separate from the left/right or up/down swipe navigation gestures."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S017"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "nav-007",
+      "domain": "navigation",
+      "canonical_issue": "gesture_direction_issue",
+      "merged_variants": [
+        "swipe gestures go wrong direction",
+        "swipe navigation feels wrong after installing app",
+        "back swipe not behaving normally",
+        "gesture navigation moves up/down instead of left/right"
+      ],
+      "action_name": "Check for a Conflicting Third-Party Launcher or Gesture App",
+      "description": "It will confirm whether a downloaded app changed gesture behavior",
+      "settings_path": null,
+      "steps": [
+        "Boot the device into Safe Mode, which disables third-party apps.",
+        "Test the swipe navigation direction in Safe Mode.",
+        "If gestures behave normally in Safe Mode, uninstall the most recently installed launcher, gesture, or accessibility app."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S001"
+      ],
+      "source_type": "official_support",
+      "confidence": "low",
+      "notes": "Safe Mode isolation is a general Samsung troubleshooting pattern (seen across battery/display/app articles); no official article specifically ties Safe Mode to gesture-direction complaints, so this record is an inferred application of a verified general technique -- flagged for review."
+    },
+    {
+      "id": "perf-001",
+      "domain": "performance",
+      "canonical_issue": "slow_after_update",
+      "merged_variants": [
+        "phone got slow after the update",
+        "phone became laggy after software update",
+        "everything feels slower since updating",
+        "apps started lagging after the update",
+        "phone is very slow lately",
+        "apps take forever to open"
+      ],
+      "action_name": "Allow the Device to Settle After an Update",
+      "description": "It will let background optimization finish",
+      "settings_path": null,
+      "steps": [
+        "Turn the phone off completely.",
+        "Turn it back on to perform a soft reboot.",
+        "Wait a few minutes for the system to settle and optimize apps after the update."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S019"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "perf-002",
+      "domain": "performance",
+      "canonical_issue": "slow_after_update",
+      "merged_variants": [
+        "phone got slow after the update",
+        "phone became laggy after software update",
+        "everything feels slower since updating",
+        "apps started lagging after the update",
+        "phone is very slow lately",
+        "apps take forever to open"
+      ],
+      "action_name": "Wipe the Cache Partition via Recovery Mode",
+      "description": "It will clear stale system cache after an update",
+      "settings_path": null,
+      "steps": [
+        "Turn off the device.",
+        "Press and hold Volume Up + Power key until the Android Recovery screen appears, then release.",
+        "Use Volume Down to highlight Wipe cache partition, press Power to select it, then confirm Yes.",
+        "Select Reboot system now."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S019"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": "Wiping cache does not delete personal data, per the source."
+    },
+    {
+      "id": "perf-003",
+      "domain": "performance",
+      "canonical_issue": "slow_after_update",
+      "merged_variants": [
+        "phone got slow after the update",
+        "phone became laggy after software update",
+        "everything feels slower since updating",
+        "apps started lagging after the update",
+        "phone is very slow lately",
+        "apps take forever to open"
+      ],
+      "action_name": "Perform a Factory Reset if Lag Persists After Update",
+      "description": "It will remove leftover or conflicting system files",
+      "settings_path": "Settings > General management > Reset > Factory data reset",
+      "steps": [
+        "Back up all important data first.",
+        "Go to Settings and perform a factory reset.",
+        "Confirm the reset to remove leftover or conflicting system files from the update."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S019"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": "Source notes post-update lag or glitches are often temporary and resolve after system optimization -- reset should be a later step, not a first response."
+    },
+    {
+      "id": "perf-004",
+      "domain": "performance",
+      "canonical_issue": "slow_device_general",
+      "merged_variants": [
+        "phone is slow",
+        "phone is unresponsive",
+        "apps take forever to open"
+      ],
+      "action_name": "Check for Software Updates",
+      "description": "It will apply bug fixes and compatibility improvements",
+      "settings_path": "Settings > Software update",
+      "steps": [
+        "Open Settings and tap Software update.",
+        "Tap Download and install, then Install now if an update is available."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S020",
+        "S021"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "perf-005",
+      "domain": "performance",
+      "canonical_issue": "slow_device_general",
+      "merged_variants": [
+        "phone is slow",
+        "phone is unresponsive",
+        "apps take forever to open"
+      ],
+      "action_name": "Close All Recently Used Apps",
+      "description": "It will free active memory tied up by open apps",
+      "settings_path": null,
+      "steps": [
+        "Tap the Recents button (left of the Home button, or accessed via the navigation gesture).",
+        "Tap Close all."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S021"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "perf-006",
+      "domain": "performance",
+      "canonical_issue": "slow_device_general",
+      "merged_variants": [
+        "phone is slow",
+        "phone is unresponsive",
+        "apps take forever to open"
+      ],
+      "action_name": "Clean Memory via Device Care",
+      "description": "It will free RAM by stopping background apps",
+      "settings_path": "Settings > Device care > Memory",
+      "steps": [
+        "Open Settings and tap Device care.",
+        "Tap Memory, then tap Clean now.",
+        "Optionally tap Excluded apps to keep specific apps running in the background."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S021",
+        "S026",
+        "S044"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "perf-007",
+      "domain": "performance",
+      "canonical_issue": "slow_device_general",
+      "merged_variants": [
+        "phone is slow",
+        "phone is unresponsive",
+        "apps take forever to open"
+      ],
+      "action_name": "Restart the Device",
+      "description": "It will refresh the system and close stuck processes",
+      "settings_path": null,
+      "steps": [
+        "Swipe down from the top right of the screen to open the Quick panel.",
+        "Tap the Power off icon, then tap Restart.",
+        "Alternatively, hold the Side key and Volume down key together for more than 7 seconds."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S021"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "perf-008",
+      "domain": "performance",
+      "canonical_issue": "slow_device_general",
+      "merged_variants": [
+        "phone is slow",
+        "phone is unresponsive",
+        "apps take forever to open"
+      ],
+      "action_name": "Run Self-Diagnostics in Samsung Members",
+      "description": "It will identify what is causing the slowdown",
+      "settings_path": null,
+      "steps": [
+        "Open the Samsung Members app.",
+        "Tap Phone diagnostics in the Support tab.",
+        "Tap the icon for the feature to test, or tap Test all."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S020"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "perf-009",
+      "domain": "performance",
+      "canonical_issue": "slow_device_general",
+      "merged_variants": [
+        "phone is slow",
+        "phone is unresponsive",
+        "apps take forever to open"
+      ],
+      "action_name": "Check and Free Up Storage Space",
+      "description": "It will remove the low-storage cause of slowdown",
+      "settings_path": "Settings > Device care > Storage",
+      "steps": [
+        "Open Settings and tap Device care (or Battery and device care).",
+        "Tap Storage to review usage.",
+        "Delete large or unneeded files, or clear the Trash, if storage is nearly full."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S021"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "perf-010",
+      "domain": "performance",
+      "canonical_issue": "slow_device_general",
+      "merged_variants": [
+        "phone is slow",
+        "phone is unresponsive",
+        "apps take forever to open"
+      ],
+      "action_name": "Enable Auto Restart on a Schedule",
+      "description": "It will keep performance consistent over time",
+      "settings_path": "Settings > Device care > Auto restart",
+      "steps": [
+        "Open Settings and tap Device care.",
+        "Find Auto restart and turn it on.",
+        "Optionally set a schedule for when the device should restart automatically."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S020"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "perf-011",
+      "domain": "performance",
+      "canonical_issue": "one_ui_update_regression",
+      "merged_variants": [
+        "one ui update made phone slower",
+        "performance dropped after android update"
+      ],
+      "action_name": "Do a Clean App Reinstall Instead of a Restore After a Major One UI Update",
+      "description": "It will avoid carrying over incompatible app data",
+      "settings_path": null,
+      "steps": [
+        "After a major One UI or Android version update, consider setting up the device fresh rather than restoring via Smart Switch.",
+        "Reinstall only the apps you actively use from the Play Store or Galaxy Store.",
+        "This avoids carrying over app data from versions not yet optimized for the new OS, which is a common cause of post-update slowdowns and battery drain."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S053"
+      ],
+      "source_type": "community_forum",
+      "confidence": "low",
+      "notes": "Sourced from a Samsung Community user discussion, not an official Samsung support article. Presented as a commonly reported community workaround, not verified Samsung guidance -- recommend human review before treating as authoritative."
+    },
+    {
+      "id": "stor-001",
+      "domain": "storage",
+      "canonical_issue": "storage_full",
+      "merged_variants": [
+        "storage almost full",
+        "storage is full",
+        "phone says storage almost full"
+      ],
+      "action_name": "Check Current Storage Usage",
+      "description": "It will show a breakdown of what is using space",
+      "settings_path": "Settings > Battery and device care > Storage",
+      "steps": [
+        "Open Settings and tap Battery and device care.",
+        "Tap Storage to see total space used and a breakdown by file type."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S027"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "stor-002",
+      "domain": "storage",
+      "canonical_issue": "storage_full",
+      "merged_variants": [
+        "storage almost full",
+        "storage is full",
+        "phone says storage almost full"
+      ],
+      "action_name": "Run Optimize Now / Clean Now From Device Care",
+      "description": "It will clear temporary and junk files quickly",
+      "settings_path": "Settings > Device care",
+      "steps": [
+        "Open Settings and tap Device care.",
+        "Tap Optimize now for an all-in-one cleanup pass.",
+        "Or tap Storage, then Clean now for a storage-focused pass."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S026",
+        "S027",
+        "S043"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "stor-003",
+      "domain": "storage",
+      "canonical_issue": "storage_full",
+      "merged_variants": [
+        "storage almost full",
+        "storage is full",
+        "phone says storage almost full"
+      ],
+      "action_name": "Empty the Recycle Bin / Trash",
+      "description": "It will permanently remove already-deleted files",
+      "settings_path": "Settings > Device care > Storage > Recycle bin",
+      "steps": [
+        "Open Settings > Device care > Storage.",
+        "Under Recycle bin, tap the app icon holding trashed files (e.g., Gallery).",
+        "Tap Empty, then confirm to permanently delete."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S027"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": "Marked critical because emptying Trash is an irreversible deletion, unlike moving files to Trash."
+    },
+    {
+      "id": "stor-004",
+      "domain": "storage",
+      "canonical_issue": "storage_full",
+      "merged_variants": [
+        "storage almost full",
+        "storage is full",
+        "phone says storage almost full"
+      ],
+      "action_name": "Uninstall Unused Apps",
+      "description": "It will remove apps that have not been used recently",
+      "settings_path": "Settings > Device care > Storage > Unused apps",
+      "steps": [
+        "Open Settings > Device care > Storage.",
+        "Tap Unused apps.",
+        "Select the apps to remove and tap Uninstall."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S027"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "stor-005",
+      "domain": "storage",
+      "canonical_issue": "storage_full",
+      "merged_variants": [
+        "storage almost full",
+        "storage is full",
+        "phone says storage almost full"
+      ],
+      "action_name": "Remove Duplicate Files",
+      "description": "It will find and delete exact-copy files",
+      "settings_path": "Settings > Device care > Storage > Duplicate files",
+      "steps": [
+        "Open Settings > Device care > Storage.",
+        "Tap Duplicate files.",
+        "Review the list and delete confirmed duplicates."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S027"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "stor-006",
+      "domain": "storage",
+      "canonical_issue": "storage_full",
+      "merged_variants": [
+        "storage almost full",
+        "storage is full",
+        "phone says storage almost full"
+      ],
+      "action_name": "Delete Files by Category Using My Files or Device Care",
+      "description": "It will let you selectively clear large file types",
+      "settings_path": "Settings > Device care > Storage",
+      "steps": [
+        "Open Settings > Device care > Storage, or open the My Files app.",
+        "Tap a file category such as Images, Videos, Audio files, or Documents.",
+        "Select unneeded files and tap Delete or Delete all, then confirm Move to Trash."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S023",
+        "S024"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "stor-007",
+      "domain": "storage",
+      "canonical_issue": "storage_full",
+      "merged_variants": [
+        "storage almost full",
+        "storage is full",
+        "phone says storage almost full"
+      ],
+      "action_name": "Clear App Cache for Specific Apps",
+      "description": "It will reclaim space used by temporary app data",
+      "settings_path": "Settings > Apps > [app] > Storage > Clear cache",
+      "steps": [
+        "Open Settings and tap Apps.",
+        "Select or search for the app.",
+        "Tap Storage, then tap Clear cache."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S025"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": "Distinct from Clear data, which removes logins and saved app data as well."
+    },
+    {
+      "id": "stor-008",
+      "domain": "storage",
+      "canonical_issue": "storage_full",
+      "merged_variants": [
+        "storage almost full",
+        "storage is full",
+        "phone says storage almost full"
+      ],
+      "action_name": "Move Files to an SD Card (Supported Models)",
+      "description": "It will offload storage without deleting files",
+      "settings_path": null,
+      "steps": [
+        "Open the My Files app.",
+        "Select the files or folders to move.",
+        "Tap Move, then choose the SD card as the destination."
+      ],
+      "category": "auto",
+      "device_scope": "Galaxy devices with a microSD card slot",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S024"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "stor-009",
+      "domain": "storage",
+      "canonical_issue": "storage_full",
+      "merged_variants": [
+        "storage almost full",
+        "storage is full",
+        "phone says storage almost full"
+      ],
+      "action_name": "Clean Memory (RAM) to Complement Storage Cleanup",
+      "description": "It will stop background apps from slowing the device",
+      "settings_path": "Settings > Device care > Memory",
+      "steps": [
+        "Open Settings and tap Device care.",
+        "Tap Memory, then tap Clean now.",
+        "Add frequently needed apps to Excluded apps if you don't want them stopped."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S024",
+        "S026"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "app-001",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Check for App and Software Updates",
+      "description": "It will apply bug fixes for the crashing app",
+      "settings_path": "Settings > Software update",
+      "steps": [
+        "Open Settings and tap Software update; install any available update.",
+        "Open the Play Store or Galaxy Store, go to Manage apps & device, and update the specific app."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S028",
+        "S029",
+        "S030"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "app-002",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Stabilize the Network Connection",
+      "description": "It will rule out connectivity as the crash cause",
+      "settings_path": null,
+      "steps": [
+        "Turn off mobile data or the Wi-Fi router for a few minutes.",
+        "Turn the device off and restart it.",
+        "Turn mobile data or Wi-Fi back on and reconnect, then retest the app."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S028",
+        "S029"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "app-003",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Clear the App's Cache and Data",
+      "description": "It will remove corrupted app data causing crashes",
+      "settings_path": "Settings > Apps > [app] > Storage",
+      "steps": [
+        "Open Settings and tap Apps.",
+        "Select the crashing app.",
+        "Tap Storage, then Clear cache; if crashing continues, tap Clear data (this signs you out and erases local app data)."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S028",
+        "S029"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "app-004",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Free Up Device Storage",
+      "description": "It will remove the low-storage cause of app failures",
+      "settings_path": "Settings > Device care > Storage",
+      "steps": [
+        "Open Settings > Device care > Storage.",
+        "Delete unneeded large files or unused apps to free space."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S029"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "app-005",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Boot Into Safe Mode to Isolate a Third-Party App Conflict",
+      "description": "It will confirm if another app is interfering",
+      "settings_path": null,
+      "steps": [
+        "Boot the device into Safe Mode.",
+        "Test whether the crashing app behaves normally.",
+        "If it does, a different downloaded app is likely conflicting; uninstall recently added apps one at a time."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S028"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "app-006",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Disable Battery Optimization for the Affected App",
+      "description": "It will stop background restrictions from killing the app",
+      "settings_path": "Settings > Apps > [app] > Battery",
+      "steps": [
+        "Open the app's settings within Settings > Apps > [app].",
+        "Find battery-related options and disable optimization/restriction for that app."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S028"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "app-007",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Uninstall and Reinstall the App",
+      "description": "It will replace a corrupted install with a clean one",
+      "settings_path": null,
+      "steps": [
+        "Uninstall the app from the device.",
+        "Restart the device.",
+        "Reinstall the app from the Google Play Store or Galaxy Store."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S028",
+        "S030"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "app-008",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Check if the App-Specific Crash Is a Known Developer-Side Issue",
+      "description": "It will confirm whether the fix depends on the app developer",
+      "settings_path": null,
+      "steps": [
+        "Check the app's reviews in the Play Store/Galaxy Store for similar recent complaints.",
+        "If it's a known widespread bug (e.g., a specific version of a third-party app), keep the app updated and wait for the developer's fix, since Samsung cannot alter third-party app code."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S029"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "app-009",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Reset App Preferences as a Broader Fix",
+      "description": "It will restore default settings for all apps at once",
+      "settings_path": "Settings > General management > Reset > Reset app preferences",
+      "steps": [
+        "Open Settings and tap General management (or Apps, depending on One UI version).",
+        "Tap Reset, then Reset app preferences.",
+        "Confirm; this re-enables disabled apps and resets default app choices without deleting data."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S030"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": "This step is a standard Android/One UI reset option referenced generally across app-troubleshooting guidance; exact menu location varies by One UI version."
+    },
+    {
+      "id": "app-010",
+      "domain": "apps",
+      "canonical_issue": "app_crashing",
+      "merged_variants": [
+        "app keeps crashing",
+        "app freezes",
+        "app stops abruptly",
+        "app not working"
+      ],
+      "action_name": "Perform a Factory Reset if the Device Crashes Regardless of App",
+      "description": "It will resolve a device-wide instability issue",
+      "settings_path": "Settings > General management > Reset > Factory data reset",
+      "steps": [
+        "If crashing/freezing happens across many different apps (not just one), back up your data.",
+        "Open Settings, search for and select Factory data reset, and complete the reset."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S029"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "wifi-001",
+      "domain": "connectivity",
+      "canonical_issue": "wifi_disconnects",
+      "merged_variants": [
+        "wifi keeps disconnecting",
+        "wifi drops randomly",
+        "wifi connection unstable"
+      ],
+      "action_name": "Toggle Wi-Fi Off and On",
+      "description": "It will refresh a stuck wireless connection",
+      "settings_path": null,
+      "steps": [
+        "Open the Quick panel and turn Wi-Fi off.",
+        "Wait a few seconds, then turn Wi-Fi back on and reconnect."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S031"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "wifi-002",
+      "domain": "connectivity",
+      "canonical_issue": "wifi_disconnects",
+      "merged_variants": [
+        "wifi keeps disconnecting",
+        "wifi drops randomly",
+        "wifi connection unstable"
+      ],
+      "action_name": "Forget and Re-Add the Wi-Fi Network",
+      "description": "It will rebuild a corrupted saved network profile",
+      "settings_path": "Settings > Connections > Wi-Fi",
+      "steps": [
+        "Open Settings > Connections > Wi-Fi.",
+        "Tap the gear icon next to the network, then tap Forget.",
+        "Reconnect to the network and re-enter the password."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S031"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "wifi-003",
+      "domain": "connectivity",
+      "canonical_issue": "wifi_disconnects",
+      "merged_variants": [
+        "wifi keeps disconnecting",
+        "wifi drops randomly",
+        "wifi connection unstable"
+      ],
+      "action_name": "Reset Network Settings",
+      "description": "It will clear all saved Wi-Fi/Bluetooth/mobile configs",
+      "settings_path": "Settings > General management > Reset > Reset Wi-Fi and Bluetooth settings",
+      "steps": [
+        "Open Settings and tap General management.",
+        "Tap Reset, then Reset Wi-Fi and Bluetooth settings.",
+        "Tap Reset settings to confirm."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S031"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "wifi-004",
+      "domain": "connectivity",
+      "canonical_issue": "wifi_disconnects",
+      "merged_variants": [
+        "wifi keeps disconnecting",
+        "wifi drops randomly",
+        "wifi connection unstable"
+      ],
+      "action_name": "Check and Update the Router Firmware",
+      "description": "It will rule out router-side instability",
+      "settings_path": null,
+      "steps": [
+        "Confirm the router firmware is updated to the latest version.",
+        "Check whether the Wi-Fi network appears normally on other devices.",
+        "If the network is undetected on other devices too, contact the router manufacturer for support."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S031"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "wifi-005",
+      "domain": "connectivity",
+      "canonical_issue": "wifi_disconnects",
+      "merged_variants": [
+        "wifi keeps disconnecting",
+        "wifi drops randomly",
+        "wifi connection unstable"
+      ],
+      "action_name": "Power-Cycle the Router",
+      "description": "It will resolve a router-side stall or glitch",
+      "settings_path": null,
+      "steps": [
+        "Disconnect and reconnect the router's power cable.",
+        "Wait for it to fully restart, then retry connecting."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S031"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "wifi-006",
+      "domain": "connectivity",
+      "canonical_issue": "wifi_disconnects",
+      "merged_variants": [
+        "wifi keeps disconnecting",
+        "wifi drops randomly",
+        "wifi connection unstable"
+      ],
+      "action_name": "Run Samsung Members Wi-Fi Diagnostics",
+      "description": "It will check for a device-side wireless fault",
+      "settings_path": null,
+      "steps": [
+        "Open the Samsung Members app and tap Support.",
+        "Tap Get started to run the diagnostics scan.",
+        "Select Wi-Fi and follow the on-screen instructions, then review the results."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S031"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "wifi-007",
+      "domain": "connectivity",
+      "canonical_issue": "wifi_disconnects_intelligent_wifi",
+      "merged_variants": [
+        "wifi switches to mobile data automatically",
+        "phone keeps switching networks"
+      ],
+      "action_name": "Disable Intelligent Wi-Fi / Auto Network Switching",
+      "description": "It will stop the phone from auto-leaving a 'weak' network",
+      "settings_path": "Settings > Connections > Wi-Fi > Intelligent Wi-Fi",
+      "steps": [
+        "Open Settings > Connections > Wi-Fi.",
+        "Tap the three-dot menu, then Intelligent Wi-Fi.",
+        "Turn off options like Switch to mobile data or Auto network switching."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S052"
+      ],
+      "source_type": "community_forum",
+      "confidence": "low",
+      "notes": "Sourced from Samsung Community user reports (not an official Samsung support article) describing the Intelligent Wi-Fi menu; exact toggle names may differ by One UI version and carrier."
+    },
+    {
+      "id": "wifi-008",
+      "domain": "connectivity",
+      "canonical_issue": "wifi_disconnects",
+      "merged_variants": [
+        "wifi keeps disconnecting",
+        "wifi drops randomly",
+        "wifi connection unstable"
+      ],
+      "action_name": "Assign a Static IP or Re-Add With a Fixed Address",
+      "description": "It will rule out DHCP lease conflicts",
+      "settings_path": null,
+      "steps": [
+        "Open Settings > Connections > Wi-Fi, tap the saved network's gear icon.",
+        "Tap View more (or IP settings), and switch from DHCP to Static.",
+        "Enter an appropriate static IP address outside the router's DHCP range."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S031"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": "Referenced via a linked support article (TSG01001559) in a community thread; not independently fetched, so treat menu wording as approximate."
+    },
+    {
+      "id": "audio-001",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Check if Mute All Sounds (Accessibility) Is Enabled",
+      "description": "It will restore all audio output if muted system-wide",
+      "settings_path": "Settings > Accessibility > Hearing enhancements",
+      "steps": [
+        "Open Settings and tap Accessibility.",
+        "Tap Hearing enhancements.",
+        "Check whether Mute all sounds is enabled, and turn it off if so."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S032"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": "When Mute all sounds is enabled, volume cannot be adjusted at all, including during calls."
+    },
+    {
+      "id": "audio-002",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Turn Off Do Not Disturb",
+      "description": "It will remove a notification-silencing mode",
+      "settings_path": "Settings > Notifications > Do not disturb",
+      "steps": [
+        "Open Settings > Notifications > Do not disturb.",
+        "Make sure it is turned off."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S033"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "audio-003",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Check Left/Right Sound Balance",
+      "description": "It will fix audio that seems to favor one side",
+      "settings_path": "Settings > Accessibility > Hearing enhancements > Left/right sound balance",
+      "steps": [
+        "Open Settings > Accessibility > Hearing enhancements.",
+        "Tap Left/right sound balance and ensure the slider is centered."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S033"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "audio-004",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Disable Separate App Sound if Not Needed",
+      "description": "It will stop audio being routed to an unintended output",
+      "settings_path": "Settings > Sounds and vibration > Separate app sound",
+      "steps": [
+        "Open Settings > Sounds and vibration > Separate app sound.",
+        "Turn it off unless you intentionally route a specific app's audio elsewhere."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S033"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "audio-005",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Remove Connected Audio Accessories and Disable Bluetooth",
+      "description": "It will confirm audio isn't being routed externally",
+      "settings_path": null,
+      "steps": [
+        "Remove any connected accessories such as earphones or external devices.",
+        "Turn off Bluetooth from the Quick panel.",
+        "Check that speaker openings are not blocked by a case or dirt."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S033",
+        "S035"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "audio-006",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Restart the Device",
+      "description": "It will clear a temporary audio-routing glitch",
+      "settings_path": null,
+      "steps": [
+        "Press and hold the Power + Volume down buttons.",
+        "Or use the Quick panel Power icon and tap Restart."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S033",
+        "S036"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "audio-007",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Test Audio in Safe Mode",
+      "description": "It will confirm whether a downloaded app is muting audio",
+      "settings_path": null,
+      "steps": [
+        "Press and hold Power + Volume down, then long-press Power off and tap Safe mode.",
+        "Play audio on the device; if sound works, a downloaded app is likely the cause.",
+        "Delete recently installed apps one by one, restarting and testing after each removal.",
+        "Turn the device off and back on to exit Safe mode."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S033"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "audio-008",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Dry the Device if It Has Gotten Wet",
+      "description": "It will clear water blocking the speaker or earpiece",
+      "settings_path": null,
+      "steps": [
+        "If the device has gotten wet, dry it immediately with a clean, soft cloth.",
+        "Pay careful attention to the earpiece, microphones, speaker, and USB port.",
+        "Avoid exposing the device to salt water or ionized water."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S034"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "audio-009",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Check for a Blocked Air Vent Under a Case",
+      "description": "It will fix muffled sound caused by a covered vent",
+      "settings_path": null,
+      "steps": [
+        "Check whether a phone case or protective film is covering the air vent hole near the camera lens (used for water resistance).",
+        "Remove or adjust the case if it is blocking this vent."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S036"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "audio-010",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Reset All Settings if the Issue Persists",
+      "description": "It will clear a stubborn system-level audio fault",
+      "settings_path": "Settings > General management > Reset > Reset all settings",
+      "steps": [
+        "Open Settings > General management > Reset > Reset all settings.",
+        "Enter your password if required and complete the reset.",
+        "Play audio to confirm whether the issue is fixed."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S033"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "audio-011",
+      "domain": "audio",
+      "canonical_issue": "no_sound_or_low_volume",
+      "merged_variants": [
+        "speaker sounds very quiet",
+        "no sound from phone",
+        "speaker not working"
+      ],
+      "action_name": "Escalate to Samsung Service if Sound Issues Persist",
+      "description": "It will get the speaker hardware inspected",
+      "settings_path": null,
+      "steps": [
+        "If the speaker or sound issue still persists after completing all software steps,",
+        "visit a Samsung Service Centre or book a repair for further assistance."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S033"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "heat-001",
+      "domain": "thermal",
+      "canonical_issue": "device_overheating",
+      "merged_variants": [
+        "phone gets too hot",
+        "device overheating",
+        "phone heats up during use"
+      ],
+      "action_name": "Recognize Normal Heat-Generating Scenarios",
+      "description": "It will explain expected warmth versus a problem",
+      "settings_path": null,
+      "steps": [
+        "Understand it is normal for the device to warm up during high-power tasks like fast charging, gaming, or streaming.",
+        "Also expect warmth during initial setup or large data restores.",
+        "Only treat the device as having an issue if it feels excessively or uncomfortably hot."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S037",
+        "S039"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "heat-002",
+      "domain": "thermal",
+      "canonical_issue": "device_overheating",
+      "merged_variants": [
+        "phone gets too hot",
+        "device overheating",
+        "phone heats up during use"
+      ],
+      "action_name": "Stop Use and Let the Device Cool Immediately",
+      "description": "It will prevent thermal shutdown and protect hardware",
+      "settings_path": null,
+      "steps": [
+        "If the device feels uncomfortably warm, close all running apps.",
+        "Disconnect any charger.",
+        "Stop using the device until it cools down completely."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S037",
+        "S038"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "heat-003",
+      "domain": "thermal",
+      "canonical_issue": "device_overheating_charging",
+      "merged_variants": [
+        "phone gets hot while charging",
+        "overheats on wireless charger"
+      ],
+      "action_name": "Inspect Charging Hardware for Overheating Causes",
+      "description": "It will rule out a damaged cable or blocked wireless pad",
+      "settings_path": null,
+      "steps": [
+        "Unplug the charger and allow the device to cool before resuming.",
+        "Check the cable and port for fraying or damage; replace with a genuine Samsung accessory if needed.",
+        "Ensure no foreign objects (metal, magnets, cards) sit between the device and a wireless charging pad."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S037"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "heat-004",
+      "domain": "thermal",
+      "canonical_issue": "device_overheating",
+      "merged_variants": [
+        "phone gets too hot",
+        "device overheating",
+        "phone heats up during use"
+      ],
+      "action_name": "Update Software for Thermal Management Improvements",
+      "description": "It will apply the latest thermal-management firmware",
+      "settings_path": "Settings > Software update",
+      "steps": [
+        "Open Settings and tap Software update.",
+        "Install any available update, since Samsung ships thermal-management improvements through software updates."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S037"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "heat-005",
+      "domain": "thermal",
+      "canonical_issue": "device_overheating",
+      "merged_variants": [
+        "phone gets too hot",
+        "device overheating",
+        "phone heats up during use"
+      ],
+      "action_name": "Turn Off Unused Connectivity Features",
+      "description": "It will reduce background heat from radios",
+      "settings_path": null,
+      "steps": [
+        "Open the Quick Settings panel.",
+        "Toggle off Wi-Fi, Location (GPS), and Bluetooth when not actively in use."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S037"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "heat-006",
+      "domain": "thermal",
+      "canonical_issue": "device_overheating",
+      "merged_variants": [
+        "phone gets too hot",
+        "device overheating",
+        "phone heats up during use"
+      ],
+      "action_name": "Lower the Screen Refresh Rate",
+      "description": "It will reduce power draw contributing to heat",
+      "settings_path": "Settings > Display > Motion smoothness",
+      "steps": [
+        "Open Settings and tap Display.",
+        "Tap Motion smoothness.",
+        "Select Standard to lower the refresh rate and conserve power."
+      ],
+      "category": "auto",
+      "device_scope": "Galaxy devices with a variable/high refresh-rate display (e.g., Galaxy S24, Galaxy Z Fold)",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S039"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "heat-007",
+      "domain": "thermal",
+      "canonical_issue": "device_overheating",
+      "merged_variants": [
+        "phone gets too hot",
+        "device overheating",
+        "phone heats up during use"
+      ],
+      "action_name": "Restart the Device to Clear Conflicting Background Apps",
+      "description": "It will resolve software conflicts generating heat",
+      "settings_path": null,
+      "steps": [
+        "Restart the device to clear temporary software conflicts between running apps."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S037"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "heat-008",
+      "domain": "thermal",
+      "canonical_issue": "device_overheating",
+      "merged_variants": [
+        "phone gets too hot",
+        "device overheating",
+        "phone heats up during use"
+      ],
+      "action_name": "Understand Automatic Thermal Protection Behavior",
+      "description": "It will explain automatic slow-downs and shutdowns",
+      "settings_path": null,
+      "steps": [
+        "Know that if the device overheats, Samsung's safeguard may limit screen brightness and performance speed and stop battery charging.",
+        "Running apps may be closed and calling features limited except for emergency calls, until it cools.",
+        "If a second, more severe warning appears, the device may power off automatically to prevent damage."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S038"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "heat-009",
+      "domain": "thermal",
+      "canonical_issue": "device_overheating_battery_related",
+      "merged_variants": [
+        "phone hot and battery draining fast"
+      ],
+      "action_name": "Check Battery Health When Overheating Recurs Without Heavy Use",
+      "description": "It will identify a failing battery as the heat source",
+      "settings_path": null,
+      "steps": [
+        "If the device overheats even during light use, note that a battery nearing end-of-life can generate more heat than normal.",
+        "Run the Samsung Members battery diagnostic to check condition.",
+        "If diagnostics indicate poor battery health, schedule a battery replacement."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S051"
+      ],
+      "source_type": "official_support",
+      "confidence": "low",
+      "notes": "Sourced from iFixit (third-party repair reference), not an official Samsung support article."
+    },
+    {
+      "id": "touch-001",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_unresponsive",
+      "merged_variants": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "action_name": "Review Common Touch-Sensitivity Interference Factors",
+      "description": "It will rule out accessory or condition interference",
+      "settings_path": null,
+      "steps": [
+        "Check whether a third-party screen protector or case is affecting touch response, especially if dust/air is trapped under it or it is peeling at the edges.",
+        "Note that wearing gloves, having wet or unclean hands, or using sharp objects can also prevent proper touch detection."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S040",
+        "S041",
+        "S042"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "touch-002",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_unresponsive",
+      "merged_variants": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "action_name": "Restart the Device",
+      "description": "It will clear a temporary system error affecting touch",
+      "settings_path": null,
+      "steps": [
+        "Press and hold the Side key and Volume down key together for more than 7 seconds until the device restarts automatically.",
+        "If the touchscreen is completely unresponsive, this button-combination restart does not require touch input."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S040",
+        "S041"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "touch-003",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_unresponsive",
+      "merged_variants": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "action_name": "Increase Touch Sensitivity for Screen Protector Use",
+      "description": "It will compensate for a protector dulling touch response",
+      "settings_path": "Settings > Display > Touch sensitivity",
+      "steps": [
+        "Open Settings and tap Display.",
+        "Turn on Touch sensitivity to improve response through a screen protector or tempered glass."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S040"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "touch-004",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_unresponsive",
+      "merged_variants": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "action_name": "Remove a Non-Genuine Screen Protector or Case",
+      "description": "It will eliminate an accessory causing dead zones",
+      "settings_path": null,
+      "steps": [
+        "Remove any non-genuine screen protector or case, particularly near the screen edges.",
+        "Retest touch response without the accessory attached."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S040",
+        "S042"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "touch-005",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_unresponsive",
+      "merged_variants": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "action_name": "Check if TalkBack Is Accidentally Enabled",
+      "description": "It will restore normal single-tap behavior",
+      "settings_path": "Settings > Accessibility > TalkBack",
+      "steps": [
+        "If voice guidance plays when touching the screen and gestures behave differently (single tap to select, double-tap to open), TalkBack may be enabled.",
+        "Open Settings > Accessibility > TalkBack and turn it off if it was not intentionally enabled."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S040"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "touch-006",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_unresponsive",
+      "merged_variants": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "action_name": "Run Samsung Members Touchscreen Diagnostics",
+      "description": "It will confirm whether the touch digitizer is faulty",
+      "settings_path": null,
+      "steps": [
+        "Open the Samsung Members app and tap Support.",
+        "Tap Get started to begin the diagnostics scan.",
+        "Select Touch screen and follow the on-screen instructions, then review results."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S040"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "touch-007",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_unresponsive",
+      "merged_variants": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "action_name": "Check for Moisture on the Screen",
+      "description": "It will rule out water interference with touch detection",
+      "settings_path": null,
+      "steps": [
+        "Wipe the touchscreen to ensure it is free from moisture, since humid conditions or water exposure can cause malfunction.",
+        "Retest touch response once fully dry."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S042"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "touch-008",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_unresponsive",
+      "merged_variants": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "action_name": "Check Charger for Damage if Touch Fails While Charging",
+      "description": "It will rule out charger interference with the touch panel",
+      "settings_path": null,
+      "steps": [
+        "If the touchscreen malfunctions specifically while charging, a damaged charger may not supply clean power to the device.",
+        "Test with a different genuine Samsung charger to see if touch response improves."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S041"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "touch-009",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_after_update",
+      "merged_variants": [
+        "touchscreen stopped working after software update",
+        "touch doesn't respond after update but S Pen still works"
+      ],
+      "action_name": "Wipe Cache Partition if Touch Failure Started Right After an Update",
+      "description": "It will clear a corrupted post-update cache",
+      "settings_path": null,
+      "steps": [
+        "Turn off the device.",
+        "Press and hold Volume Up and the Side/Power button until the Samsung logo appears and a vibration is felt, then release.",
+        "In recovery mode, highlight Wipe cache partition, select it, and confirm.",
+        "Reboot the system and retest touch response."
+      ],
+      "category": "manual",
+      "device_scope": "Devices with a physical S Pen (workaround verified using S Pen input to navigate)",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S056"
+      ],
+      "source_type": "community_forum",
+      "confidence": "low",
+      "notes": "This specific update-triggered scenario and wipe-cache workaround were reported in a Samsung Community thread rather than confirmed in an official Samsung troubleshooting article; recommend human review, and note the community poster indicated the wipe did not fully resolve their case (hardware replacement was ultimately needed)."
+    },
+    {
+      "id": "touch-010",
+      "domain": "touchscreen",
+      "canonical_issue": "touchscreen_unresponsive",
+      "merged_variants": [
+        "touchscreen not responding",
+        "screen unresponsive",
+        "touch not working in some areas"
+      ],
+      "action_name": "Escalate to Service if Touch Issues Persist",
+      "description": "It will get the digitizer hardware inspected",
+      "settings_path": null,
+      "steps": [
+        "If touch issues continue after all software troubleshooting, this may indicate a hardware fault.",
+        "Visit a Samsung walk-in service center or schedule a repair service online."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S040",
+        "S041"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "chg-011",
+      "domain": "charging",
+      "canonical_issue": "slow_or_no_charging",
+      "merged_variants": [
+        "phone charging much slower than before",
+        "plugged in but not charging",
+        "battery not charging",
+        "slow charging"
+      ],
+      "action_name": "Charge at Room Temperature",
+      "description": "It will avoid the safeguard that slows charging in heat/cold",
+      "settings_path": null,
+      "steps": [
+        "Avoid charging in direct sunlight, a hot car, or very cold environments.",
+        "If the device or environment is too hot or too cold, a safeguard automatically slows charging speed to protect the battery."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S004"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "chg-012",
+      "domain": "charging",
+      "canonical_issue": "phone_wont_turn_on_after_charging",
+      "merged_variants": [
+        "phone won't turn on after connecting charger",
+        "phone stuck at 0 percent"
+      ],
+      "action_name": "Wait for a Minimum Charge Before Powering On a Fully Depleted Device",
+      "description": "It will explain why the phone doesn't turn on immediately",
+      "settings_path": null,
+      "steps": [
+        "If the battery was completely depleted, the device will not power on immediately even with the charger connected.",
+        "Let it charge for a few minutes until it reaches at least 1%, then try powering it on."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S004"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "conn-001",
+      "domain": "connectivity",
+      "canonical_issue": "slow_mobile_data",
+      "merged_variants": [
+        "slow mobile data speed",
+        "cellular data is slow",
+        "downloads slow on mobile network"
+      ],
+      "action_name": "Restart the Device to Refresh the Mobile Data Connection",
+      "description": "It will clear a stuck network session",
+      "settings_path": null,
+      "steps": [
+        "Open the Power menu (hold Power, or use the Quick settings Power icon).",
+        "Tap Restart, then tap Restart again to confirm.",
+        "The device will shut down and automatically reboot."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S018"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "conn-002",
+      "domain": "connectivity",
+      "canonical_issue": "slow_mobile_data",
+      "merged_variants": [
+        "slow mobile data speed",
+        "cellular data is slow",
+        "downloads slow on mobile network"
+      ],
+      "action_name": "Free Up Storage if It Is Affecting Data Performance",
+      "description": "It will rule out low storage as a contributing cause",
+      "settings_path": "Settings > Device care > Storage",
+      "steps": [
+        "Open Device care and check available storage.",
+        "Clean up storage if space is low, since insufficient storage can affect overall device and network responsiveness.",
+        "Back up extra files using Smart Switch or a Samsung/Google account before deleting."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S018"
+      ],
+      "source_type": "official_support",
+      "confidence": "medium",
+      "notes": null
+    },
+    {
+      "id": "conn-003",
+      "domain": "connectivity",
+      "canonical_issue": "slow_mobile_data",
+      "merged_variants": [
+        "slow mobile data speed",
+        "cellular data is slow",
+        "downloads slow on mobile network"
+      ],
+      "action_name": "Boot Into Safe Mode to Rule Out an App Interfering With Data",
+      "description": "It will confirm whether a downloaded app is the cause",
+      "settings_path": null,
+      "steps": [
+        "Certain downloaded apps can affect network connectivity in addition to causing freezes or crashes.",
+        "Boot into Safe Mode, which disables downloaded apps, and test mobile data speed.",
+        "If speed improves in Safe Mode, uninstall the suspect app."
+      ],
+      "category": "manual",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S018"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "perf-012",
+      "domain": "performance",
+      "canonical_issue": "slow_after_update_general_causes",
+      "merged_variants": [
+        "phone sluggish after firmware update",
+        "device slow after failed update"
+      ],
+      "action_name": "Distinguish Expected Post-Update Sluggishness From an Update Failure",
+      "description": "It will clarify whether the slowdown is temporary or a failed update",
+      "settings_path": null,
+      "steps": [
+        "Recognize the device may feel slightly sluggish after a firmware update due to enhancements or new background features settling in.",
+        "Separately, consider whether the update was interrupted (e.g., lost internet connection mid-update), which can cause lasting performance problems rather than temporary ones.",
+        "Also consider that a large number of installed apps with background processes (messengers, games, anti-virus apps) independently slows the device and can be mistaken for an update-caused issue."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S022"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "perf-013",
+      "domain": "performance",
+      "canonical_issue": "slow_after_update",
+      "merged_variants": [
+        "phone got slow after the update",
+        "phone became laggy after software update",
+        "everything feels slower since updating",
+        "apps started lagging after the update",
+        "phone is very slow lately",
+        "apps take forever to open"
+      ],
+      "action_name": "Factory Reset if Firmware Corruption Is Suspected",
+      "description": "It will resolve performance issues tied to firmware corruption",
+      "settings_path": "Settings > General management > Reset > Factory data reset",
+      "steps": [
+        "Follow the prompts until the device reboots to begin a Factory Data Reset.",
+        "After the device fully loads, check whether performance has improved.",
+        "If the issue persists, this may indicate firmware corruption or a device-level fault requiring service."
+      ],
+      "category": "critical",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S022"
+      ],
+      "source_type": "official_support",
+      "confidence": "high",
+      "notes": null
+    },
+    {
+      "id": "disp-013",
+      "domain": "display",
+      "canonical_issue": "screen_flickering",
+      "merged_variants": [
+        "screen flickers",
+        "display keeps flashing randomly",
+        "screen brightness keeps pulsing",
+        "intermittent flashes on screen",
+        "screen glitches during use"
+      ],
+      "action_name": "Clear the Cache for Always On Display if Flicker Follows Wireless Charging or AOD Use",
+      "description": "It will address a community-reported AOD-cache flicker pattern",
+      "settings_path": "Settings > Apps > [AOD/clock component] > Storage",
+      "steps": [
+        "If flickering appears mainly after using Always On Display or placing the device on a wireless charger, try clearing the cache for the Always On Display / clock app.",
+        "Open Settings > Apps, find the relevant clock/AOD component, tap Storage, then Clear cache.",
+        "Retest by using the wireless charger and observing AOD behavior afterward."
+      ],
+      "category": "auto",
+      "device_scope": "All Galaxy phones and tablets",
+      "one_ui_version": null,
+      "deep_link": null,
+      "source_ids": [
+        "S048"
+      ],
+      "source_type": "community_forum",
+      "confidence": "low",
+      "notes": "Sourced from a Samsung Community user thread describing a personal workaround (clearing AOD cache), not confirmed as official Samsung guidance. The same user reported the flicker recurred intermittently afterward, so this should be treated as partial/unverified relief rather than a confirmed fix."
+    }
+  ],
+  "synthetic_query_variations": [
+    {
+      "canonical_issue": "battery_fast_drain",
+      "domain": "battery",
+      "source_type": "synthetic",
+      "variations": [
+        "battery percentage is falling way too quickly",
+        "phone barely lasts half a day now",
+        "why is my battery backup suddenly terrible",
+        "battery goes from full to empty too fast",
+        "my phone loses charge even when I am not using it",
+        "battery drains fast and the phone gets warm",
+        "charge doesn't last as long as it used to"
+      ]
+    },
+    {
+      "canonical_issue": "new_device_battery_drain",
+      "domain": "battery",
+      "source_type": "synthetic",
+      "variations": [
+        "brand new phone battery already seems weak",
+        "just got this phone and the battery drains so fast",
+        "battery on my new galaxy dies quicker than expected"
+      ]
+    },
+    {
+      "canonical_issue": "5g_battery_drain",
+      "domain": "battery",
+      "source_type": "synthetic",
+      "variations": [
+        "battery dies faster when I use 5G",
+        "5G is killing my battery life",
+        "switching to 5G drains the phone quickly"
+      ]
+    },
+    {
+      "canonical_issue": "slow_or_no_charging",
+      "domain": "charging",
+      "source_type": "synthetic",
+      "variations": [
+        "phone is charging much slower than before",
+        "charging takes forever now",
+        "cable is plugged in but barely charges",
+        "wireless charging seems really slow lately",
+        "charging speed dropped for no reason"
+      ]
+    },
+    {
+      "canonical_issue": "phone_not_charging_at_all",
+      "domain": "charging",
+      "source_type": "synthetic",
+      "variations": [
+        "phone is plugged in but the battery is not charging",
+        "nothing happens when I connect the charger",
+        "no charging icon shows up when I plug it in"
+      ]
+    },
+    {
+      "canonical_issue": "screen_flickering",
+      "domain": "display",
+      "source_type": "synthetic",
+      "variations": [
+        "display keeps flashing randomly",
+        "screen brightness keeps pulsing",
+        "there are intermittent flashes on my screen",
+        "my screen flickers and the battery dies fast",
+        "screen glitches out every few minutes"
+      ]
+    },
+    {
+      "canonical_issue": "display_poor_resolution",
+      "domain": "display",
+      "source_type": "synthetic",
+      "variations": [
+        "my screen looks blurry all of a sudden",
+        "everything on the display looks pixelated",
+        "the phone's screen quality looks worse than before"
+      ]
+    },
+    {
+      "canonical_issue": "blurry_photos",
+      "domain": "camera",
+      "source_type": "synthetic",
+      "variations": [
+        "pictures look fuzzy even in good light",
+        "photos are not focusing properly",
+        "everything from my rear camera looks soft",
+        "camera used to be sharp but now it's blurry"
+      ]
+    },
+    {
+      "canonical_issue": "gesture_direction_issue",
+      "domain": "navigation",
+      "source_type": "synthetic",
+      "variations": [
+        "swipe navigation feels wrong after installing an app",
+        "my back swipe is not behaving normally",
+        "phone swipe gestures wrong direction after app install",
+        "swiping left or right scrolls up and down instead"
+      ]
+    },
+    {
+      "canonical_issue": "slow_after_update",
+      "domain": "performance",
+      "source_type": "synthetic",
+      "variations": [
+        "phone became laggy after the latest software update",
+        "everything feels slower since I updated my phone",
+        "apps started lagging after the update",
+        "my phone got slow after the update"
+      ]
+    },
+    {
+      "canonical_issue": "slow_device_general",
+      "domain": "performance",
+      "source_type": "synthetic",
+      "variations": [
+        "my phone is very slow lately",
+        "apps take forever to open",
+        "phone feels sluggish all the time now"
+      ]
+    },
+    {
+      "canonical_issue": "storage_full",
+      "domain": "storage",
+      "source_type": "synthetic",
+      "variations": [
+        "my phone says storage is almost full",
+        "can't take photos because storage is full",
+        "keep getting a low storage warning"
+      ]
+    },
+    {
+      "canonical_issue": "app_crashing",
+      "domain": "apps",
+      "source_type": "synthetic",
+      "variations": [
+        "one of my apps keeps crashing",
+        "app closes by itself randomly",
+        "an app force closes every time I open it"
+      ]
+    },
+    {
+      "canonical_issue": "wifi_disconnects",
+      "domain": "connectivity",
+      "source_type": "synthetic",
+      "variations": [
+        "wifi keeps disconnecting from my phone",
+        "wifi drops out every few minutes",
+        "phone keeps losing its wifi connection"
+      ]
+    },
+    {
+      "canonical_issue": "no_sound_or_low_volume",
+      "domain": "audio",
+      "source_type": "synthetic",
+      "variations": [
+        "my phone speaker suddenly sounds very quiet",
+        "can barely hear anything from the speaker",
+        "no sound is coming out of my phone"
+      ]
+    },
+    {
+      "canonical_issue": "device_overheating",
+      "domain": "thermal",
+      "source_type": "synthetic",
+      "variations": [
+        "phone gets really hot for no reason",
+        "device overheats even during light use",
+        "phone is too hot to hold sometimes"
+      ]
+    },
+    {
+      "canonical_issue": "touchscreen_unresponsive",
+      "domain": "touchscreen",
+      "source_type": "synthetic",
+      "variations": [
+        "screen doesn't respond to touch sometimes",
+        "touchscreen freezes randomly",
+        "parts of the screen won't register my taps"
+      ]
+    }
+  ]
+}

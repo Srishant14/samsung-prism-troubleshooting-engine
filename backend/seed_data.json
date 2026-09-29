@@ -1,0 +1,692 @@
+[
+  {
+    "id": 1,
+    "domain": "battery",
+    "issue": "fast_drain",
+    "title": "Battery Draining Quickly",
+    "keywords": ["fast drain", "dying fast", "battery life", "drains quickly", "losing charge", "battery dying", "charge quickly", "short battery", "low battery life", "battery backup"],
+    "query_variations": [
+      "My battery is dying very fast",
+      "Battery backup is terrible",
+      "Phone doesn't last half a day",
+      "Battery percentage dropping really quickly",
+      "Phone battery drains in few hours",
+      "Battery life has become very bad",
+      "My phone dies too quickly",
+      "My phone barely lasts half a day",
+      "Battery doesn't last through the day",
+      "Phone dies within a few hours",
+      "Losing battery very quickly",
+      "Battery percentage drops rapidly",
+      "Why does my phone lose charge so quickly",
+      "My battery backup has become terrible",
+      "Phone doesn't last all day anymore",
+      "bro my battery is literally dying",
+      "Battery drains so fast after update",
+      "My phone's battery is terrible",
+      "Phone barely survives half a day",
+      "Battery goes from 100 to 0 in no time"
+    ],
+    "symptoms": ["rapid battery percentage drop", "phone dies within hours", "poor battery life", "frequent recharging needed"],
+    "contexts": ["general", "after_update", "after_app_install"],
+    "steps": [
+      "Turn on Battery Saver mode.",
+      "Check battery usage to see which apps are consuming the most power.",
+      "Reduce screen brightness or enable Auto-brightness.",
+      "Turn off background activity for apps you don't frequently use."
+    ],
+    "action_label": "Open Battery Settings",
+    "deep_link": "android.settings.BATTERY_SAVER_SETTINGS",
+    "action_verified": true,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 2,
+    "domain": "battery",
+    "issue": "slow_charging",
+    "title": "Phone Charges Slowly",
+    "keywords": ["slow charging", "takes forever to charge", "charging slow", "charges slowly", "slow charge"],
+    "query_variations": [
+      "My phone takes hours to charge",
+      "Charging is very slow",
+      "Why is my phone charging so slowly?",
+      "Takes forever to charge my phone",
+      "Charging speed is terrible"
+    ],
+    "symptoms": ["slow charging speed", "phone takes hours to reach full charge"],
+    "contexts": ["general"],
+    "steps": [
+      "Ensure you are using the original charger and cable.",
+      "Clean the charging port gently with a wooden toothpick.",
+      "Make sure Fast Charging is enabled in Battery settings."
+    ],
+    "action_label": "Open Battery Settings",
+    "deep_link": "android.settings.BATTERY_SAVER_SETTINGS",
+    "action_verified": true,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 3,
+    "domain": "battery",
+    "issue": "overheating_while_charging",
+    "title": "Phone Overheats While Charging",
+    "keywords": ["hot charging", "overheating charger", "warm while charging", "heats up charging"],
+    "query_variations": [
+      "My phone gets really hot when plugged in",
+      "Phone is overheating on charger",
+      "Device is too hot while charging"
+    ],
+    "symptoms": ["excessive heat during charging", "charging stops due to temperature"],
+    "contexts": ["general"],
+    "steps": [
+      "Remove any thick phone cases while charging.",
+      "Avoid using the phone for heavy tasks (gaming, video calls) while it's plugged in.",
+      "Try a different wall outlet or charger."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 4,
+    "domain": "battery",
+    "issue": "battery_percentage_stuck",
+    "title": "Battery Percentage Stuck",
+    "keywords": ["battery percent not changing", "stuck battery", "percentage stuck", "battery level stuck"],
+    "query_variations": [
+      "Battery percentage isn't updating",
+      "My battery is stuck at 50%",
+      "Phone died but it said 20%"
+    ],
+    "symptoms": ["battery percentage does not change", "inaccurate battery reading", "phone shuts off with battery remaining"],
+    "contexts": ["general"],
+    "steps": [
+      "Restart your phone.",
+      "Recalibrate the battery by letting it drain to 0%, then charge it uninterrupted to 100%.",
+      "Update your phone's software to the latest version."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Android Documentation",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 5,
+    "domain": "battery",
+    "issue": "drain_overnight",
+    "title": "Battery Drains Overnight",
+    "keywords": ["idle drain", "overnight battery", "standby drain", "drain while sleeping"],
+    "query_variations": [
+      "Battery drains while I sleep",
+      "Phone loses 20% battery overnight",
+      "Standby battery drain is huge"
+    ],
+    "symptoms": ["significant battery loss during idle/sleep", "battery drops overnight"],
+    "contexts": ["overnight", "idle", "standby"],
+    "steps": [
+      "Turn off Wi-Fi, Bluetooth, and Mobile Data before going to sleep, or use Airplane mode.",
+      "Check for apps running in the background and restrict them.",
+      "Disable Always-On Display during the night."
+    ],
+    "action_label": "Open Battery Settings",
+    "deep_link": "android.settings.BATTERY_SAVER_SETTINGS",
+    "action_verified": true,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 6,
+    "domain": "battery",
+    "issue": "battery_swelling",
+    "title": "Battery Swelling",
+    "keywords": ["swollen battery", "phone expanding", "battery bulge", "battery swelling"],
+    "query_variations": [
+      "My phone is bulging",
+      "The back cover is popping off",
+      "Battery looks swollen"
+    ],
+    "symptoms": ["physical bulge on phone", "back cover lifting", "visible battery expansion"],
+    "contexts": ["general"],
+    "steps": [
+      "STOP USING and STOP CHARGING the phone immediately.",
+      "Do not press or puncture the swollen area.",
+      "Take the device to an authorized Samsung service center as soon as possible."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": "Safety critical"
+  },
+  {
+    "id": 7,
+    "domain": "display",
+    "issue": "screen_flicker",
+    "title": "Screen Flickering",
+    "keywords": ["flickering screen", "blinking display", "screen flashes", "display flashes", "screen blinks", "flashing screen"],
+    "query_variations": [
+      "My screen keeps blinking",
+      "The display is flickering on and off",
+      "Screen glitches and flickers",
+      "Display flashes randomly",
+      "My screen keeps flickering",
+      "Screen flickers when I change brightness",
+      "Phone screen blinks on and off"
+    ],
+    "symptoms": ["screen blinks or flashes", "display flickers intermittently", "visual glitches on screen"],
+    "contexts": ["general", "brightness_change", "after_update"],
+    "steps": [
+      "Restart the phone.",
+      "Check if the issue happens in Safe Mode. If not, a downloaded app is causing it.",
+      "Turn off 'Adaptive brightness' to see if it stabilizes.",
+      "Ensure your device software is up to date."
+    ],
+    "action_label": "Open Display Settings",
+    "deep_link": "android.settings.DISPLAY_SETTINGS",
+    "action_verified": true,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 8,
+    "domain": "display",
+    "issue": "auto_brightness_issue",
+    "title": "Auto Brightness Not Working",
+    "keywords": ["auto brightness fail", "adaptive brightness", "brightness not adjusting"],
+    "query_variations": [
+      "Auto brightness is broken",
+      "Screen doesn't get brighter in the sun",
+      "Adaptive brightness isn't adjusting"
+    ],
+    "symptoms": ["brightness does not adjust automatically", "screen stays dim in sunlight"],
+    "contexts": ["general"],
+    "steps": [
+      "Clean the top part of your screen where the ambient light sensor is located.",
+      "Toggle Adaptive Brightness off and back on.",
+      "Reset app preferences in Settings."
+    ],
+    "action_label": "Open Display Settings",
+    "deep_link": "android.settings.DISPLAY_SETTINGS",
+    "action_verified": true,
+    "source": "Android Documentation",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 9,
+    "domain": "display",
+    "issue": "touch_unresponsive",
+    "title": "Touchscreen Unresponsive",
+    "keywords": ["touch not working", "screen frozen", "unresponsive screen", "can't tap"],
+    "query_variations": [
+      "Screen isn't responding to touch",
+      "I can't tap anything on the screen",
+      "Touchscreen is completely dead"
+    ],
+    "symptoms": ["screen does not respond to taps", "touch input not registered"],
+    "contexts": ["general"],
+    "steps": [
+      "Force restart the phone by holding the Power and Volume Down buttons for 10 seconds.",
+      "Remove any screen protectors and test again.",
+      "Clean the screen with a dry, soft cloth."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 10,
+    "domain": "display",
+    "issue": "screen_burn_in",
+    "title": "Screen Burn-in / Ghost Image",
+    "keywords": ["burn in", "ghost image", "faint image", "image retention"],
+    "query_variations": [
+      "I can see ghost icons on my screen",
+      "Screen has burn in from TikTok",
+      "Faint image stuck on display"
+    ],
+    "symptoms": ["persistent ghost image visible", "faint outline of previous content on screen"],
+    "contexts": ["general"],
+    "steps": [
+      "Reduce screen timeout so the display turns off sooner.",
+      "Lower the screen brightness to prevent further degradation.",
+      "If the burn-in is severe, hardware replacement at a service center may be required."
+    ],
+    "action_label": "Open Display Settings",
+    "deep_link": "android.settings.DISPLAY_SETTINGS",
+    "action_verified": true,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 11,
+    "domain": "display",
+    "issue": "always_on_display_fail",
+    "title": "Always-On Display Not Working",
+    "keywords": ["AOD not working", "always on display", "always on display fail"],
+    "query_variations": [
+      "AOD isn't showing up",
+      "Always on display is gone",
+      "Clock doesn't show when screen is off"
+    ],
+    "symptoms": ["AOD does not appear", "clock not shown on locked screen"],
+    "contexts": ["general"],
+    "steps": [
+      "Check if AOD is enabled in Settings > Lock screen.",
+      "Make sure Power Saving mode is turned off, as it disables AOD.",
+      "Check if AOD is scheduled to only show at certain times."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 12,
+    "domain": "display",
+    "issue": "screen_too_dim",
+    "title": "Screen Too Dim",
+    "keywords": ["dark screen", "dim display", "screen dim", "display too dark"],
+    "query_variations": [
+      "Screen is too dark even on max",
+      "Display is very dim",
+      "I can't see the screen outdoors"
+    ],
+    "symptoms": ["screen appears too dim even at max brightness"],
+    "contexts": ["general"],
+    "steps": [
+      "Turn off 'Extra dim' in Settings or Quick Panel.",
+      "Disable Power Saving mode.",
+      "Ensure you don't have a privacy screen protector reducing visibility."
+    ],
+    "action_label": "Open Display Settings",
+    "deep_link": "android.settings.DISPLAY_SETTINGS",
+    "action_verified": true,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 13,
+    "domain": "camera",
+    "issue": "camera_blur",
+    "title": "Blurry Photos",
+    "keywords": ["blurry pictures", "camera not focusing", "fuzzy photos", "out of focus", "photos blurry"],
+    "query_variations": [
+      "My photos are coming out blurry",
+      "Camera won't focus",
+      "Pictures look fuzzy and out of focus",
+      "My camera photos are blurry",
+      "Pictures from my rear camera look fuzzy",
+      "All my photos are blurred"
+    ],
+    "symptoms": ["photos appear blurry or out of focus", "camera fails to autofocus"],
+    "contexts": ["general"],
+    "steps": [
+      "Clean the camera lens with a microfiber cloth.",
+      "Tap the screen on the object you want to focus on before shooting.",
+      "Ensure your hands are steady or use a tripod."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 14,
+    "domain": "camera",
+    "issue": "camera_app_crash",
+    "title": "Camera App Crashing",
+    "keywords": ["camera app closes", "camera error", "camera failed", "camera crash"],
+    "query_variations": [
+      "Camera app keeps crashing",
+      "Camera force closes when I open it",
+      "I get a 'Camera failed' error"
+    ],
+    "symptoms": ["camera app force closes", "camera failed error message"],
+    "contexts": ["general"],
+    "steps": [
+      "Go to Settings > Apps > Camera > Storage and clear Cache and Data.",
+      "Restart your phone.",
+      "Check for software updates."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Android Documentation",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 15,
+    "domain": "camera",
+    "issue": "blurry_night_photos",
+    "title": "Blurry Night Photos",
+    "keywords": ["bad night mode", "blurry dark photos", "night mode blur"],
+    "query_variations": [
+      "Night mode photos are blurry",
+      "Pictures in the dark look bad",
+      "Low light photos are very noisy"
+    ],
+    "symptoms": ["photos in low light are blurry or noisy"],
+    "contexts": ["night", "low_light"],
+    "steps": [
+      "Use Night Mode explicitly in the camera app.",
+      "Hold the phone extremely still, as night mode takes a few seconds to capture.",
+      "Clean the camera lens."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 16,
+    "domain": "camera",
+    "issue": "camera_lag_shutter",
+    "title": "Camera Shutter Lag",
+    "keywords": ["shutter delay", "slow camera", "camera lag", "shutter lag"],
+    "query_variations": [
+      "Camera takes a second to capture",
+      "Shutter is lagging",
+      "Delay when taking photos"
+    ],
+    "symptoms": ["noticeable delay between pressing shutter and photo capture"],
+    "contexts": ["general"],
+    "steps": [
+      "Turn off 'Scene optimizer' if it's taking too long to process.",
+      "Lower the camera resolution slightly.",
+      "Save photos to internal storage instead of a slow SD card."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 17,
+    "domain": "camera",
+    "issue": "front_camera_issue",
+    "title": "Front Camera Quality Issues",
+    "keywords": ["bad selfie", "front camera blurry", "selfie quality"],
+    "query_variations": [
+      "Selfies look washed out",
+      "Front camera quality is bad",
+      "Selfie camera is blurry"
+    ],
+    "symptoms": ["front camera produces poor quality photos"],
+    "contexts": ["selfie", "front_camera"],
+    "steps": [
+      "Wipe the screen over the front camera lens.",
+      "Turn off beauty filters in the camera app.",
+      "Make sure there is adequate lighting."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 18,
+    "domain": "camera",
+    "issue": "camera_black_screen",
+    "title": "Camera Shows Black Screen",
+    "keywords": ["black camera", "no viewfinder", "camera black"],
+    "query_variations": [
+      "Camera is just a black screen",
+      "I can't see anything in the camera app",
+      "Viewfinder is totally black"
+    ],
+    "symptoms": ["camera viewfinder shows black screen"],
+    "contexts": ["general"],
+    "steps": [
+      "Restart the device immediately.",
+      "Clear cache for the Camera app in Settings.",
+      "Check if another app (like a barcode scanner) is currently using the camera in the background."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Android Documentation",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 19,
+    "domain": "performance",
+    "issue": "app_lag",
+    "title": "Phone Feels Slow or Laggy",
+    "keywords": ["phone lagging", "slow phone", "laggy phone", "phone slow", "everything slow", "device slow"],
+    "query_variations": [
+      "My phone is lagging a lot",
+      "Everything is slow",
+      "Phone stutters when scrolling",
+      "My phone has become very slow",
+      "Everything feels laggy",
+      "My phone became extremely slow",
+      "Phone is sluggish and unresponsive"
+    ],
+    "symptoms": ["general sluggishness", "UI stuttering", "slow response to input"],
+    "contexts": ["general", "after_update", "after_app_install"],
+    "steps": [
+      "Restart your phone.",
+      "Close background apps that you aren't using.",
+      "Check if your device storage is almost full, and free up space if needed.",
+      "Run device care / optimizer."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 20,
+    "domain": "performance",
+    "issue": "phone_freezing",
+    "title": "Phone Keeps Freezing",
+    "keywords": ["screen frozen", "unresponsive phone", "phone freezing", "device freeze"],
+    "query_variations": [
+      "My phone keeps freezing",
+      "Device locks up randomly",
+      "Screen is totally frozen"
+    ],
+    "symptoms": ["phone becomes unresponsive", "screen freezes and won't respond"],
+    "contexts": ["general"],
+    "steps": [
+      "Perform a forced restart (hold Power and Volume Down for 10 seconds).",
+      "Check for and install software updates.",
+      "Boot into Safe Mode to see if a third-party app is causing the freezing."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 21,
+    "domain": "performance",
+    "issue": "storage_full_slowdown",
+    "title": "Slowdown Due to Low Storage",
+    "keywords": ["storage full", "out of space", "low storage", "memory full"],
+    "query_variations": [
+      "Phone is slow and storage is full",
+      "Getting low space warning and lagging",
+      "No memory left"
+    ],
+    "symptoms": ["phone slow due to low storage", "low storage warnings"],
+    "contexts": ["low_storage"],
+    "steps": [
+      "Delete old photos, videos, or unused apps.",
+      "Clear cache data for frequently used apps like social media.",
+      "Move large files to an SD card or cloud storage."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Android Documentation",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 22,
+    "domain": "performance",
+    "issue": "overheating_gaming",
+    "title": "Phone Overheats During Gaming",
+    "keywords": ["hot when gaming", "pubg overheating", "gaming heat", "overheating while gaming"],
+    "query_variations": [
+      "Phone gets super hot playing games",
+      "Overheating while playing heavy games",
+      "Device burns my hand during gaming"
+    ],
+    "symptoms": ["excessive heat during gaming", "performance throttling while playing games"],
+    "contexts": ["gaming"],
+    "steps": [
+      "Lower the graphics settings in the game.",
+      "Remove the phone case while playing.",
+      "Close other background apps before starting a heavy game.",
+      "Play in a cooler environment."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 23,
+    "domain": "performance",
+    "issue": "apps_crashing",
+    "title": "Apps Keep Crashing",
+    "keywords": ["app force close", "apps closing randomly", "apps crashing"],
+    "query_variations": [
+      "Apps keep force closing",
+      "My games crash to home screen",
+      "Apps are crashing constantly"
+    ],
+    "symptoms": ["apps force close unexpectedly", "frequent app crashes"],
+    "contexts": ["general"],
+    "steps": [
+      "Update the crashing apps from the Google Play Store.",
+      "Clear the cache and data for the specific app causing issues.",
+      "Ensure Android System WebView is updated.",
+      "Restart your phone."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Android Documentation",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 24,
+    "domain": "performance",
+    "issue": "slow_boot",
+    "title": "Phone Takes Long to Start",
+    "keywords": ["slow startup", "takes forever to turn on", "slow boot", "long boot time"],
+    "query_variations": [
+      "Phone takes too long to start",
+      "Stuck on Samsung logo for a while",
+      "Boot up time is very slow"
+    ],
+    "symptoms": ["long boot time", "stuck on Samsung logo during startup"],
+    "contexts": ["boot"],
+    "steps": [
+      "Ensure your storage isn't almost full.",
+      "Wipe the cache partition from the Android recovery menu.",
+      "If the issue persists, a factory reset might be needed (backup data first)."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": 25,
+    "domain": "performance",
+    "issue": "slow_apps",
+    "title": "Apps Taking Long to Open",
+    "keywords": ["apps slow", "slow app launch", "apps take forever", "slow to open", "app loading slow"],
+    "query_variations": [
+      "Apps are taking forever to open",
+      "Apps load very slowly",
+      "It takes ages for apps to start",
+      "My apps are opening really slow",
+      "Every app takes forever to load",
+      "Apps won't open quickly"
+    ],
+    "symptoms": ["individual apps take a long time to launch", "slow app startup"],
+    "contexts": ["general", "after_update", "after_app_install"],
+    "steps": [
+      "Restart your phone to clear temporary memory.",
+      "Go to Settings > Apps and clear cache for slow apps.",
+      "Check if your device storage is almost full and free up space.",
+      "Update all apps from the Google Play Store.",
+      "Run Device Care to optimize performance."
+    ],
+    "action_label": null,
+    "deep_link": null,
+    "action_verified": false,
+    "source": "Samsung Support",
+    "source_type": "official",
+    "active": true,
+    "notes": "Added to cover app-specific slowness vs general lag"
+  }
+]

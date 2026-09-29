@@ -1,0 +1,344 @@
+[
+  {
+    "id": "spec-001",
+    "domain": "display",
+    "issue": "screen_flickering",
+    "source_type": "competition_spec",
+    "source": "Theme 2 specification",
+    "raw_complaint": "Screen flickers and the battery dies fast",
+    "notes": "Example complaint from the supplied Theme 2 brief; treat as a multi-symptom query requiring issue decomposition."
+  },
+  {
+    "id": "spec-002",
+    "domain": "performance",
+    "issue": "slow_after_update",
+    "source_type": "competition_spec",
+    "source": "Theme 2 specification",
+    "raw_complaint": "My phone got slow after the update",
+    "notes": "Example complaint from the supplied Theme 2 brief."
+  },
+  {
+    "id": "spec-003",
+    "domain": "navigation",
+    "issue": "gesture_direction",
+    "source_type": "competition_spec",
+    "source": "Theme 2 specification",
+    "raw_complaint": "Swipe gestures go the wrong way after installing an app",
+    "notes": "Example complaint from the supplied Theme 2 brief."
+  },
+  {
+    "id": "sam-001",
+    "domain": "battery",
+    "issue": "fast_drain",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "My Galaxy battery is draining much faster than usual",
+    "notes": "Check background apps/features, battery usage, device optimization, power saving, and software/app updates."
+  },
+  {
+    "id": "sam-002",
+    "domain": "battery",
+    "issue": "5g_battery_drain",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "My battery drops very quickly when I use 5G",
+    "notes": "5G can increase battery consumption; review battery usage and consider display/connection optimization."
+  },
+  {
+    "id": "sam-003",
+    "domain": "battery",
+    "issue": "new_phone_drain",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "My new phone battery is bad during the first few days",
+    "notes": "Initial setup, syncing and optimization can temporarily increase battery usage."
+  },
+  {
+    "id": "sam-004",
+    "domain": "battery",
+    "issue": "battery_health",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "My phone shuts down unexpectedly and the battery drains quickly",
+    "notes": "Check battery condition/diagnostics; persistent degradation may require professional inspection."
+  },
+  {
+    "id": "sam-005",
+    "domain": "display",
+    "issue": "screen_flickering",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "My Galaxy screen keeps flickering",
+    "notes": "Check physical damage, display settings, software/app updates and Safe Mode; persistent issues may require service."
+  },
+  {
+    "id": "sam-006",
+    "domain": "display",
+    "issue": "adaptive_brightness_flicker",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "Screen flickers when brightness changes",
+    "notes": "Try disabling Adaptive brightness and test again."
+  },
+  {
+    "id": "sam-007",
+    "domain": "display",
+    "issue": "motion_smoothness_flicker",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "Screen glitches or flickers during use",
+    "notes": "Try changing Motion smoothness and other display settings; behavior can vary by model/software."
+  },
+  {
+    "id": "sam-008",
+    "domain": "camera",
+    "issue": "blurry_photos",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "My Galaxy camera photos are blurry",
+    "notes": "Clean the lens, improve lighting, hold the device steady and check shooting distance/focus."
+  },
+  {
+    "id": "sam-009",
+    "domain": "camera",
+    "issue": "closeup_blur",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "Close-up photos are blurry around the subject",
+    "notes": "Increase shooting distance and consider using the appropriate lens/zoom for close subjects."
+  },
+  {
+    "id": "sam-010",
+    "domain": "camera",
+    "issue": "lens_protector_blur",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "Camera is blurry after I installed a lens protector",
+    "notes": "A camera protector can affect focus or cause distortion; test without it."
+  },
+  {
+    "id": "sam-011",
+    "domain": "camera",
+    "issue": "camera_haze",
+    "source_type": "official_support",
+    "source": "Samsung Support",
+    "raw_complaint": "Camera looks foggy or hazy",
+    "notes": "Condensation can cause temporary haze; allow condensation to clear naturally."
+  },
+  {
+    "id": "syn-001",
+    "domain": "battery",
+    "issue": "fast_drain",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Battery percentage is falling way too quickly",
+    "notes": "Variation of battery fast-drain intent."
+  },
+  {
+    "id": "syn-002",
+    "domain": "battery",
+    "issue": "fast_drain",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Phone barely lasts half a day now",
+    "notes": "Variation of battery fast-drain intent."
+  },
+  {
+    "id": "syn-003",
+    "domain": "battery",
+    "issue": "fast_drain",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Why is my battery backup suddenly terrible",
+    "notes": "Variation of battery fast-drain intent."
+  },
+  {
+    "id": "syn-004",
+    "domain": "battery",
+    "issue": "fast_drain",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Battery goes from full to empty too fast",
+    "notes": "Variation of battery fast-drain intent."
+  },
+  {
+    "id": "syn-005",
+    "domain": "battery",
+    "issue": "fast_drain",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "My phone loses charge even when I am not using it",
+    "notes": "Variation of battery fast-drain intent."
+  },
+  {
+    "id": "syn-006",
+    "domain": "display",
+    "issue": "screen_flickering",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Display keeps flashing randomly",
+    "notes": "Variation of screen flicker intent."
+  },
+  {
+    "id": "syn-007",
+    "domain": "display",
+    "issue": "screen_flickering",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Screen brightness keeps pulsing",
+    "notes": "Variation of screen flicker intent."
+  },
+  {
+    "id": "syn-008",
+    "domain": "display",
+    "issue": "screen_flickering",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "There are intermittent flashes on my screen",
+    "notes": "Variation of screen flicker intent."
+  },
+  {
+    "id": "syn-009",
+    "domain": "performance",
+    "issue": "slow_after_update",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Phone became laggy after the latest software update",
+    "notes": "Variation of post-update performance intent."
+  },
+  {
+    "id": "syn-010",
+    "domain": "performance",
+    "issue": "slow_after_update",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Everything feels slower since I updated my phone",
+    "notes": "Variation of post-update performance intent."
+  },
+  {
+    "id": "syn-011",
+    "domain": "performance",
+    "issue": "slow_after_update",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Apps started lagging after the update",
+    "notes": "Variation of post-update performance intent."
+  },
+  {
+    "id": "syn-012",
+    "domain": "performance",
+    "issue": "slow_device",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "My phone is very slow lately",
+    "notes": "General performance complaint; may require clarification."
+  },
+  {
+    "id": "syn-013",
+    "domain": "performance",
+    "issue": "slow_device",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Apps take forever to open",
+    "notes": "General performance complaint."
+  },
+  {
+    "id": "syn-014",
+    "domain": "camera",
+    "issue": "blurry_photos",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Pictures look fuzzy even in good light",
+    "notes": "Variation of blurry-photo intent."
+  },
+  {
+    "id": "syn-015",
+    "domain": "camera",
+    "issue": "blurry_photos",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Photos are not focusing properly",
+    "notes": "Variation of focus/blurry-photo intent."
+  },
+  {
+    "id": "syn-016",
+    "domain": "camera",
+    "issue": "blurry_photos",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Everything from my rear camera looks soft",
+    "notes": "Variation of blurry-photo intent."
+  },
+  {
+    "id": "syn-017",
+    "domain": "navigation",
+    "issue": "gesture_problem",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Swipe navigation feels wrong after installing an app",
+    "notes": "Variation of gesture/navigation issue."
+  },
+  {
+    "id": "syn-018",
+    "domain": "navigation",
+    "issue": "gesture_problem",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "My back swipe is not behaving normally",
+    "notes": "Variation of gesture/navigation issue."
+  },
+  {
+    "id": "syn-019",
+    "domain": "charging",
+    "issue": "slow_charging",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "My phone is charging much slower than before",
+    "notes": "Potential domain for future expansion; verify exact device-specific guidance before publishing actions."
+  },
+  {
+    "id": "syn-020",
+    "domain": "charging",
+    "issue": "not_charging",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Phone is plugged in but the battery is not charging",
+    "notes": "Potential domain for future expansion; verify exact device-specific guidance before publishing actions."
+  },
+  {
+    "id": "syn-021",
+    "domain": "storage",
+    "issue": "storage_full",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "My phone says storage is almost full",
+    "notes": "Potential domain for future expansion; verify exact device-specific guidance before publishing actions."
+  },
+  {
+    "id": "syn-022",
+    "domain": "apps",
+    "issue": "app_crashing",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "One of my apps keeps crashing",
+    "notes": "Potential domain for future expansion; verify exact device-specific guidance before publishing actions."
+  },
+  {
+    "id": "syn-023",
+    "domain": "connectivity",
+    "issue": "wifi_disconnects",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "Wi-Fi keeps disconnecting from my phone",
+    "notes": "Potential domain for future expansion; verify exact device-specific guidance before publishing actions."
+  },
+  {
+    "id": "syn-024",
+    "domain": "audio",
+    "issue": "speaker_low_volume",
+    "source_type": "synthetic",
+    "source": "Generated variation for testing",
+    "raw_complaint": "My phone speaker suddenly sounds very quiet",
+    "notes": "Potential domain for future expansion; verify exact device-specific guidance before publishing actions."
+  }
+]

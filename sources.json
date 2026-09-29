@@ -1,0 +1,516 @@
+[
+  {
+    "id": "S001",
+    "title": "Battery draining fast on Galaxy phones and tablets",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10001538/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S002",
+    "title": "What to do when your Samsung Galaxy device battery drains faster",
+    "url": "https://www.samsung.com/hk_en/support/mobile-devices/what-to-do-when-your-samsung-galaxy-device-battery-drains-faster/",
+    "publisher": "Samsung Support (Hong Kong)",
+    "source_type": "official_support",
+    "region": "HK",
+    "verified": true
+  },
+  {
+    "id": "S003",
+    "title": "What to do if the battery of my new phone seems to be draining faster?",
+    "url": "https://www.samsung.com/uk/support/mobile-devices/what-to-do-if-the-battery-of-my-new-phone-seems-to-be-draining-faster/",
+    "publisher": "Samsung Support (UK)",
+    "source_type": "official_support",
+    "region": "UK",
+    "verified": true
+  },
+  {
+    "id": "S004",
+    "title": "Galaxy Battery - Charging Tip",
+    "url": "https://www.samsung.com/us/support/galaxy-battery/charging-tip/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S005",
+    "title": "Samsung phone or tablet will not charge",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10001462/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S006",
+    "title": "What to do if your Samsung Phone is not charging / charging slowly",
+    "url": "https://www.samsung.com/uk/support/mobile-devices/what-to-do-if-your-phone-is-not-charging/",
+    "publisher": "Samsung Support (UK)",
+    "source_type": "official_support",
+    "region": "UK",
+    "verified": true
+  },
+  {
+    "id": "S007",
+    "title": "Why your Samsung Galaxy device may appear to be charging slowly or not charging at all",
+    "url": "https://www.samsung.com/hk_en/support/mobile-devices/galaxy-device-not-charging-or-charging-slowly/",
+    "publisher": "Samsung Support (Hong Kong)",
+    "source_type": "official_support",
+    "region": "HK",
+    "verified": true
+  },
+  {
+    "id": "S008",
+    "title": "Screen flickers when using the Camera on a Galaxy phone",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10004631/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S009",
+    "title": "How to fix a flickering or flashing Galaxy Android phone screen",
+    "url": "https://www.samsung.com/ae/support/mobile-devices/how-to-fix-a-flickering-or-flashing-galaxy-android-phone-screen/",
+    "publisher": "Samsung Support (Gulf/UAE)",
+    "source_type": "official_support",
+    "region": "AE",
+    "verified": true
+  },
+  {
+    "id": "S010",
+    "title": "Galaxy S26 or S26+ screen flickering",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10010467/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true,
+    "device_specific": "Galaxy S26 / S26+"
+  },
+  {
+    "id": "S011",
+    "title": "Screen flickering or glitching on Galaxy phone or tablet",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10004671/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S012",
+    "title": "What to do if the screen on your device is flickering",
+    "url": "https://www.samsung.com/uk/support/mobile-devices/what-to-do-if-the-screen-on-your-device-is-flickering",
+    "publisher": "Samsung Support (UK)",
+    "source_type": "official_support",
+    "region": "UK",
+    "verified": true
+  },
+  {
+    "id": "S013",
+    "title": "Fix blurry or poor photo and video quality on your Samsung Galaxy device",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10004888/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S014",
+    "title": "How to fix blurry or poor photo and video quality on your Samsung Galaxy device (SG, Ultra-model detail)",
+    "url": "https://www.samsung.com/sg/support/mobile-devices/fix-samsung-galaxy-blurry-poor-photo-and-video-quality/",
+    "publisher": "Samsung Support (Singapore)",
+    "source_type": "official_support",
+    "region": "SG",
+    "verified": true
+  },
+  {
+    "id": "S015",
+    "title": "Galaxy phone or tablet photos and videos are blurry or dark",
+    "url": "https://www.samsung.com/us/support/troubleshooting/TSG01001424",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S016",
+    "title": "Optimised Navigation bar functions on Galaxy devices",
+    "url": "https://www.samsung.com/sg/support/mobile-devices/optimised-navigation-bar-functions-on-galaxy-devices/",
+    "publisher": "Samsung Support (Singapore)",
+    "source_type": "official_support",
+    "region": "SG",
+    "verified": true
+  },
+  {
+    "id": "S017",
+    "title": "Navigation Bar Settings on Galaxy device",
+    "url": "https://ushl.samsung.com/ae/support/mobile-devices/navigation-bar-settings-on-galaxy-device",
+    "publisher": "Samsung Support (Gulf/UAE)",
+    "source_type": "official_support",
+    "region": "AE",
+    "verified": true
+  },
+  {
+    "id": "S018",
+    "title": "Slow mobile data speed on your Samsung phone",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10004924/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S019",
+    "title": "Problems after software update",
+    "url": "https://www.samsung.com/sa_en/support/mobile-devices/problems-after-software-update/",
+    "publisher": "Samsung Support (Saudi Arabia)",
+    "source_type": "official_support",
+    "region": "SA",
+    "verified": true
+  },
+  {
+    "id": "S020",
+    "title": "Why is my phone slowing down and how can I speed it up?",
+    "url": "https://www.samsung.com/ca/support/mobile-devices/why-is-my-phone-slowing-down-and-how-can-i-speed-it-up/",
+    "publisher": "Samsung Support (Canada)",
+    "source_type": "official_support",
+    "region": "CA",
+    "verified": true
+  },
+  {
+    "id": "S021",
+    "title": "Basic steps to improve your Samsung Galaxy device performance",
+    "url": "https://www.samsung.com/ca/support/mobile-devices/samsung-galaxy-device-appears-to-be-slow-or-unresponsive/",
+    "publisher": "Samsung Support (Canada)",
+    "source_type": "official_support",
+    "region": "CA",
+    "verified": true
+  },
+  {
+    "id": "S022",
+    "title": "My phone is lagging. What should I do?",
+    "url": "https://www.samsung.com/nz/support/mobile-devices/my-phone-is-lagging-what-should-i-do/",
+    "publisher": "Samsung Support (New Zealand)",
+    "source_type": "official_support",
+    "region": "NZ",
+    "verified": true
+  },
+  {
+    "id": "S023",
+    "title": "Low storage space error appears on Samsung phone or tablet",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10001534/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S024",
+    "title": "Free up storage space on your Samsung phone or tablet",
+    "url": "https://www.samsung.com/us/support/answer/ANS10002029/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S025",
+    "title": "Clear the app cache and data on your Galaxy phone or tablet",
+    "url": "https://www.samsung.com/us/support/answer/ANS10001372/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S026",
+    "title": "Keep your Galaxy phone or tablet from slowing down with Device Care",
+    "url": "https://www.samsung.com/us/support/answer/ANS10001953/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S027",
+    "title": "How to free up space on Samsung mobile phone when it is full",
+    "url": "https://www.samsung.com/sg/support/mobile-devices/how-to-free-up-space-on-samsung-mobile-phone-when-it-is-full",
+    "publisher": "Samsung Support (Singapore)",
+    "source_type": "official_support",
+    "region": "SG",
+    "verified": true
+  },
+  {
+    "id": "S028",
+    "title": "Solutions for apps crashing and freezing on your Galaxy device",
+    "url": "https://www.samsung.com/ae/support/mobile-devices/solutions-for-apps-crashing-and-freezing-on-your-galaxy-device/",
+    "publisher": "Samsung Support (Gulf/UAE)",
+    "source_type": "official_support",
+    "region": "AE",
+    "verified": true
+  },
+  {
+    "id": "S029",
+    "title": "Why does my Samsung Galaxy device keep crashing/freezing and how can I fix it?",
+    "url": "https://www.samsung.com/hk_en/support/mobile-devices/why-does-my-samsung-galaxy-device-keep-crashing-freezing-and-how-can-i-fix-it/",
+    "publisher": "Samsung Support (Hong Kong)",
+    "source_type": "official_support",
+    "region": "HK",
+    "verified": true
+  },
+  {
+    "id": "S030",
+    "title": "App is crashing or not working on Samsung phone or tablet",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10000736/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S031",
+    "title": "Wi-Fi connection issues on a Samsung Galaxy device",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002018/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S032",
+    "title": "Troubleshoot no sound issues on a Samsung Galaxy device",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10013264/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S033",
+    "title": "Troubleshooting speaker and sound issues on a Samsung Galaxy device",
+    "url": "https://www.samsung.com/sa_en/support/mobile-devices/troubleshooting-speaker-and-sound-issues-on-a-samsung-galaxy-device/",
+    "publisher": "Samsung Support (Saudi Arabia)",
+    "source_type": "official_support",
+    "region": "SA",
+    "verified": true
+  },
+  {
+    "id": "S034",
+    "title": "Troubleshooting speaker and sound issues on a Samsung Galaxy device (UK)",
+    "url": "https://www.samsung.com/uk/support/mobile-devices/troubleshooting-speaker-and-sound-issues-on-a-samsung-galaxy-device/",
+    "publisher": "Samsung Support (UK)",
+    "source_type": "official_support",
+    "region": "UK",
+    "verified": true
+  },
+  {
+    "id": "S035",
+    "title": "Speaker does not work properly on Samsung phone",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10001510/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S036",
+    "title": "What to do if the sound on your Galaxy smartphone is not working properly",
+    "url": "https://www.samsung.com/uk/support/mobile-devices/what-to-do-if-the-sound-on-your-galaxy-smartphone-is-not-working-properly/",
+    "publisher": "Samsung Support (UK)",
+    "source_type": "official_support",
+    "region": "UK",
+    "verified": true
+  },
+  {
+    "id": "S037",
+    "title": "How to prevent overheating when using your Samsung Galaxy device",
+    "url": "https://www.samsung.com/latin_en/support/mobile-devices/prevent-overheating-galaxy-device/",
+    "publisher": "Samsung Support (Caribbean/Latin)",
+    "source_type": "official_support",
+    "region": "Caribbean",
+    "verified": true
+  },
+  {
+    "id": "S038",
+    "title": "Keep your Galaxy device at its normal operating temperature",
+    "url": "https://www.samsung.com/us/support/answer/ANS10002887/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S039",
+    "title": "What to do when your phone heats up?",
+    "url": "https://www.samsung.com/ae/support/mobile-devices/what-to-do-when-your-phone-heats-up/",
+    "publisher": "Samsung Support (Gulf/UAE)",
+    "source_type": "official_support",
+    "region": "AE",
+    "verified": true
+  },
+  {
+    "id": "S040",
+    "title": "How to solve the touchscreen issue on your Samsung Galaxy device",
+    "url": "https://www.samsung.com/sa_en/support/mobile-devices/galaxy-device-touchscreen-issue/",
+    "publisher": "Samsung Support (Saudi Arabia)",
+    "source_type": "official_support",
+    "region": "SA",
+    "verified": true
+  },
+  {
+    "id": "S041",
+    "title": "Touchscreen issues on a Galaxy phone or tablet",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10001974/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": true
+  },
+  {
+    "id": "S042",
+    "title": "What to do if your Touch Screen is not working properly",
+    "url": "https://www.samsung.com/levant/support/mobile-devices/what-to-do-if-your-touch-screen-is-not-working-properly/",
+    "publisher": "Samsung Support (Levant)",
+    "source_type": "official_support",
+    "region": "Levant",
+    "verified": true
+  },
+  {
+    "id": "S043",
+    "title": "How to remove unnecessary files and close background apps on your Samsung Galaxy phone",
+    "url": "https://www.samsung.com/latin_en/support/mobile-devices/how-to-remove-unnecessary-files-and-close-background-apps-on-your-samsung-galaxy-phone/",
+    "publisher": "Samsung Support (Caribbean/Latin)",
+    "source_type": "official_support",
+    "region": "Caribbean",
+    "verified": true
+  },
+  {
+    "id": "S044",
+    "title": "Keep your Samsung Galaxy running smoothly with Device care",
+    "url": "https://www.samsung.com/ca/support/mobile-devices/use-device-care-on-your-samsung-galaxy/",
+    "publisher": "Samsung Support (Canada)",
+    "source_type": "official_support",
+    "region": "CA",
+    "verified": true
+  },
+  {
+    "id": "S045",
+    "title": "Pink lines or dead pixels on Galaxy phone or tablet's display",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10001447/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": false,
+    "note": "Referenced as a related article link; not fetched in full."
+  },
+  {
+    "id": "S046",
+    "title": "Samsung phone's display is not clear or has poor resolution",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10004073/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": false,
+    "note": "Referenced as a related article link; not fetched in full."
+  },
+  {
+    "id": "S047",
+    "title": "Samsung phone or tablet unexpectedly powers off",
+    "url": "https://www.samsung.com/us/support/troubleshoot/TSG10001531/",
+    "publisher": "Samsung Support (US)",
+    "source_type": "official_support",
+    "region": "US",
+    "verified": false,
+    "note": "Referenced as a related article link; not fetched in full."
+  },
+  {
+    "id": "S048",
+    "title": "Samsung Community: S25 Plus screen flickering (user thread)",
+    "url": "https://us.community.samsung.com/t5/Galaxy-S25/S25-plus-screen-flickering/td-p/3247066",
+    "publisher": "Samsung Community (user-generated)",
+    "source_type": "community_forum",
+    "region": "US",
+    "verified": true,
+    "note": "Community/user-contributed troubleshooting, not an official Samsung support article; steps are plausible but not officially verified."
+  },
+  {
+    "id": "S049",
+    "title": "Samsung Galaxy Phone Battery Draining Fast - Troubleshooting",
+    "url": "https://www.ifixit.com/Troubleshooting/Samsung_Android_Phone/Samsung+Galaxy+Battery+Draining+Fast/481151",
+    "publisher": "iFixit",
+    "source_type": "third_party_guide",
+    "region": "Global",
+    "verified": true
+  },
+  {
+    "id": "S050",
+    "title": "Samsung Galaxy Camera Blurry - Troubleshooting",
+    "url": "https://www.ifixit.com/Troubleshooting/Samsung_Android_Phone/Blurry+Camera/617014",
+    "publisher": "iFixit",
+    "source_type": "third_party_guide",
+    "region": "Global",
+    "verified": true
+  },
+  {
+    "id": "S051",
+    "title": "Samsung Galaxy Overheating - Troubleshooting",
+    "url": "https://www.ifixit.com/Troubleshooting/Samsung_Android_Phone/Overheating/624252",
+    "publisher": "iFixit",
+    "source_type": "third_party_guide",
+    "region": "Global",
+    "verified": true
+  },
+  {
+    "id": "S052",
+    "title": "Samsung Community: Wi-Fi keeps disconnecting and not showing any available Wi-Fi (user thread)",
+    "url": "https://eu.community.samsung.com/t5/other-galaxy-s-series/wifi-keeps-disconnecting-and-not-showing-any-available-wifi/td-p/7745812",
+    "publisher": "Samsung Community (user-generated)",
+    "source_type": "community_forum",
+    "region": "EU",
+    "verified": true,
+    "note": "Community/user-contributed troubleshooting, not an official Samsung support article."
+  },
+  {
+    "id": "S053",
+    "title": "Samsung Community: Why is the phone slow (S22 Ultra) (user thread)",
+    "url": "https://us.community.samsung.com/t5/Galaxy-S22/Why-is-the-phone-slow/td-p/3540428",
+    "publisher": "Samsung Community (user-generated)",
+    "source_type": "community_forum",
+    "region": "US",
+    "verified": true,
+    "note": "Community/user-contributed troubleshooting; includes Developer Options steps not part of standard official guidance."
+  },
+  {
+    "id": "S054",
+    "title": "Theme 2 specification (competition brief examples)",
+    "url": null,
+    "publisher": "Competition brief (Theme 2)",
+    "source_type": "competition_spec",
+    "region": null,
+    "verified": true,
+    "note": "Provided by the task; example complaints, no URL."
+  },
+  {
+    "id": "S055",
+    "title": "Theme2_Knowledge_Brain_Raw_Data.json (provided seed dataset)",
+    "url": null,
+    "publisher": "Provided seed dataset",
+    "source_type": "provided_dataset",
+    "region": null,
+    "verified": true,
+    "note": "Original seed file supplied with the task; includes official_support, competition_spec and synthetic-labelled entries."
+  },
+  {
+    "id": "S056",
+    "title": "Samsung Community: Touch screen response not working after software update (user thread)",
+    "url": "https://us.community.samsung.com/t5/Galaxy-S23/Touch-screen-response-not-working-after-software-update/td-p/3222175",
+    "publisher": "Samsung Community (user-generated)",
+    "source_type": "community_forum",
+    "region": "US",
+    "verified": true,
+    "note": "Community/user-contributed troubleshooting describing a touch-unresponsive issue starting right after a software update on a Galaxy S23 Ultra; the poster reported wipe-cache did not fully resolve the issue and it ultimately required a screen replacement."
+  }
+]

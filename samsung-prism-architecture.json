@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Samsung PRISM - Laya-First Question-First Architecture",
+    "subtitle": "Deterministic Signal Preprocessor, Laya Primary Decision Engine, Sufficiency Guard & Dynamic Slot Clarification",
+    "output": "samsung-prism-architecture.html",
+    "quality_profile": "showcase",
+    "viewBox": [1400, 720],
+    "views": [
+      {
+        "id": "laya-first-flow",
+        "label": "Laya-First Normal Flow",
+        "focus": ["client-ui", "api-gateway", "fast-gate", "laya-engine", "sufficiency-gate", "knowledge-brain"],
+        "note": "Normal request path: Fast Gate preprocesses signals -> Laya acts as primary decision-maker -> Decision Guard validates invariants -> KB retrieves verified procedure in <12ms without LLM overhead."
+      },
+      {
+        "id": "question-first-loop",
+        "label": "Question-First Clarification Loop",
+        "focus": ["client-ui", "api-gateway", "fast-gate", "laya-engine", "sufficiency-gate", "followup-card", "diagnostic-trees", "session-store"],
+        "note": "Missing required diagnostic slots block KB retrieval and trigger targeted clarifying follow-up questions to eliminate diagnostic ambiguity."
+      },
+      {
+        "id": "gemini-late-fallback",
+        "label": "Gemini Late-Stage Fallback",
+        "focus": ["fast-gate", "laya-engine", "sufficiency-gate", "gemini-classifier"],
+        "note": "Gemini is excluded from the critical path and invoked strictly as an exceptional fallback when Laya cannot determine the troubleshooting category."
+      },
+      {
+        "id": "evidence-validation",
+        "label": "Post-Retrieval Evidence Validation",
+        "focus": ["sufficiency-gate", "knowledge-brain", "serp-fallback"],
+        "note": "After KB retrieval, match confidence is validated. Strong matches resolve immediately, while weak matches trigger clarification or official Samsung search."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "client-ui",
+      "type": "frontend",
+      "label": "React 18 Web UI",
+      "sublabel": "Vite Client",
+      "pos": [40, 240],
+      "size": [140, 64],
+      "tag": "frontend/src/App.jsx"
+    },
+    {
+      "id": "followup-card",
+      "type": "frontend",
+      "label": "Clarification View",
+      "sublabel": "FollowUpCard.jsx",
+      "pos": [40, 480],
+      "size": [140, 60],
+      "tag": "Question-First UI"
+    },
+    {
+      "id": "api-gateway",
+      "type": "backend",
+      "label": "FastAPI Orchestrator",
+      "sublabel": "main.py Router",
+      "pos": [260, 240],
+      "size": [150, 64],
+      "tag": "backend/main.py"
+    },
+    {
+      "id": "session-store",
+      "type": "backend",
+      "label": "Session & Slot State",
+      "sublabel": "diagnostic_state.py",
+      "pos": [260, 480],
+      "size": [150, 60],
+      "tag": "In-Memory Store"
+    },
+    {
+      "id": "fast-gate",
+      "type": "backend",
+      "label": "Fast Local Gate",
+      "sublabel": "Signal Preprocessor",
+      "pos": [490, 240],
+      "size": [150, 64],
+      "tag": "backend/fast_gate.py"
+    },
+    {
+      "id": "diagnostic-trees",
+      "type": "backend",
+      "label": "Diagnostic Trees",
+      "sublabel": "Clarification Branches",
+      "pos": [490, 480],
+      "size": [150, 60],
+      "tag": "backend/diagnostic_flow.py"
+    },
+    {
+      "id": "gemini-classifier",
+      "type": "cloud",
+      "label": "Gemini 2.5 Flash",
+      "sublabel": "Late-Stage Fallback",
+      "pos": [720, 70],
+      "size": [160, 60],
+      "tag": "backend/classifier.py"
+    },
+    {
+      "id": "laya-engine",
+      "type": "backend",
+      "label": "Laya Decision Engine",
+      "sublabel": "Primary System-1",
+      "pos": [720, 240],
+      "size": [160, 64],
+      "tag": "backend/decision_engine.py"
+    },
+    {
+      "id": "sufficiency-gate",
+      "type": "security",
+      "label": "Sufficiency Guard",
+      "sublabel": "Decision Validation",
+      "pos": [960, 240],
+      "size": [160, 64],
+      "tag": "backend/sufficiency_gate.py"
+    },
+    {
+      "id": "knowledge-brain",
+      "type": "database",
+      "label": "Knowledge Brain",
+      "sublabel": "Supabase + Evidence Validator",
+      "pos": [1200, 240],
+      "size": [150, 64],
+      "tag": "backend/knowledge_base.py"
+    },
+    {
+      "id": "serp-fallback",
+      "type": "external",
+      "label": "Support Search",
+      "sublabel": "Official Support Fallback",
+      "pos": [1200, 480],
+      "size": [150, 60],
+      "tag": "backend/serp_fallback.py"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Client Presentation Tier",
+      "wraps": ["client-ui", "followup-card"]
+    },
+    {
+      "kind": "region",
+      "label": "Ingestion & Triage Tier",
+      "wraps": ["api-gateway", "session-store", "fast-gate", "diagnostic-trees"]
+    },
+    {
+      "kind": "security-group",
+      "label": "Laya Decision & Guard Core",
+      "wraps": ["gemini-classifier", "laya-engine", "sufficiency-gate"]
+    },
+    {
+      "kind": "region",
+      "label": "Knowledge & Fallback Sinks",
+      "wraps": ["knowledge-brain", "serp-fallback"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "ui-to-api",
+      "from": "client-ui",
+      "to": "api-gateway",
+      "variant": "emphasis"
+    },
+    {
+      "id": "api-to-session",
+      "from": "api-gateway",
+      "to": "session-store",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "api-to-gate",
+      "from": "api-gateway",
+      "to": "fast-gate",
+      "variant": "emphasis"
+    },
+    {
+      "id": "gate-to-laya",
+      "from": "fast-gate",
+      "to": "laya-engine",
+      "variant": "emphasis"
+    },
+    {
+      "id": "laya-to-guard",
+      "from": "laya-engine",
+      "to": "sufficiency-gate",
+      "variant": "emphasis"
+    },
+    {
+      "id": "guard-to-kb",
+      "from": "sufficiency-gate",
+      "to": "knowledge-brain",
+      "variant": "emphasis"
+    },
+    {
+      "id": "guard-to-followup",
+      "from": "sufficiency-gate",
+      "to": "followup-card",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [[1040, 580], [110, 580]],
+      "variant": "dashed"
+    },
+    {
+      "id": "guard-to-trees",
+      "from": "sufficiency-gate",
+      "to": "diagnostic-trees",
+      "fromSide": "bottom",
+      "toSide": "right",
+      "via": [[990, 510]],
+      "variant": "dashed"
+    },
+    {
+      "id": "guard-to-gemini",
+      "from": "sufficiency-gate",
+      "to": "gemini-classifier",
+      "fromSide": "top",
+      "toSide": "right",
+      "via": [[990, 100]],
+      "variant": "dashed"
+    },
+    {
+      "id": "gemini-to-laya",
+      "from": "gemini-classifier",
+      "to": "laya-engine",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "trees-to-api",
+      "from": "diagnostic-trees",
+      "to": "api-gateway",
+      "fromSide": "left",
+      "toSide": "right",
+      "via": [[440, 510], [440, 272]]
+    },
+    {
+      "id": "followup-to-api",
+      "from": "followup-card",
+      "to": "api-gateway",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [[220, 510], [220, 272]]
+    },
+    {
+      "id": "kb-to-serp",
+      "from": "knowledge-brain",
+      "to": "serp-fallback",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "variant": "dashed"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Laya-First Primary Decision Engine",
+      "items": [
+        "Laya acts as primary decision-maker (<12ms) directly on the normal path",
+        "Deterministic signal preprocessor extracts symptoms and slots without LLM overhead",
+        "Full decision contract with typed primitives (choice, score, noul)"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Mandatory Backend Sufficiency Guard",
+      "items": [
+        "Decision validation guard strictly validates invariants before action execution",
+        "Missing required slots automatically block KB retrieval and force clarification",
+        "Gemini is demoted to late-stage fallback only when Laya signals classify"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Post-Retrieval Evidence Validation",
+      "items": [
+        "Validates KB match confidence against threshold (0.70) to prevent false positives",
+        "Weak matches trigger targeted clarification or official Samsung support fallback",
+        "Pydantic DiagnosticDecision enforces zero bypass across all request routes"
+      ]
+    }
+  ]
+}

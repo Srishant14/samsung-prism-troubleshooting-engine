@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+google-genai
+supabase
+requests
+python-dotenv
+pytest
+httpx
+laya
