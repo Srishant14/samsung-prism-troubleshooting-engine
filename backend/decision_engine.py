@@ -116,7 +116,7 @@ def decide_domain(symptoms: List[str], query: str) -> Dict[str, Any]:
     router = _get_router()
     if router:
         res = _run_with_timeout(_raw_predict_domain, router, symptoms, query)
-        if res:
+        if res and res.get("domain") != "unknown" and res.get("confidence", 0.0) >= 0.35:
             return res
     return _fallback_decide_domain(symptoms, query)
 
@@ -156,7 +156,7 @@ def decide_issue(
     router = _get_router()
     if router and supported_issues:
         res = _run_with_timeout(_raw_predict_issue, router, domain, symptoms, query, supported_issues)
-        if res:
+        if res and res.get("issue") != "unknown" and res.get("confidence", 0.0) >= 0.35:
             return res
     return _fallback_decide_issue(domain, symptoms, query, supported_issues)
 

@@ -55,6 +55,10 @@ web-request-cache-miss.sequence.json
 *.pdf
 *.docx
 !presentation/*.pdf
+input.txt
+sample_output.json
+deeplinks.json
+siis_responses.json
 
 # IDE & OS files
 .vscode/

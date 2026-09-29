@@ -781,16 +781,22 @@ def troubleshoot(request: TroubleshootRequest):
                     return resp
                 # else: fall through to single-issue sufficiency below
 
-            # ── LAYA PRIMARY DECISION ENGINE + BACKEND VALIDATION GUARD ──
-            metrics.increment("laya_calls")
-            with metrics.measure("laya_decision"):
-                decision = decide_diagnostic_step(signal)
-
+            # ── DETERMINISTIC SUFFICIENCY CHECK (ZERO LLM, ZERO LAYA) ──
+            # For CLEAR queries, Fast Gate has already determined domain and issue.
+            # We evaluate sufficiency deterministically without neural models (< 1ms).
             with metrics.measure("sufficiency_check"):
+                decision = evaluate_sufficiency(
+                    domain=gate_result.domain,
+                    issue=gate_result.issue,
+                    context=gate_result.context,
+                    query=query,
+                    filled_slots=signal.apparent_slots or {},
+                    gate_confidence=gate_result.confidence or 0.85,
+                )
                 decision = validate_decision(decision)
 
             if decision.kb_retrieval_allowed:
-                # Sufficient — fast path KB retrieval
+                # Sufficient — fast path KB retrieval (< 1ms, 0 LLM, 0 Laya)
                 metrics.set_path("fast_path")
                 resp = _resolve_issue(
                     domain=decision.category,
@@ -823,7 +829,7 @@ def troubleshoot(request: TroubleshootRequest):
                 session.current_issue = decision.issue
                 session.filled_slots = decision.filled_slots
                 session.actions_taken.append(
-                    f"laya→insufficient (missing={decision.missing_slots})"
+                    f"fast_gate→insufficient (missing={decision.missing_slots})"
                 )
 
                 log_request(
@@ -871,22 +877,86 @@ def troubleshoot(request: TroubleshootRequest):
                 return resp
 
         # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        # PATH C: VAGUE — LLM fallback + sufficiency gate
+        # PATH C: VAGUE / AMBIGUOUS — LAYA PRIMARY DECISION ENGINE FIRST
         # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        metrics.set_path("llm_fallback")
+        # Step 3a: Laya evaluates the preprocessed signal first (<12ms)
+        metrics.increment("laya_calls")
+        with metrics.measure("laya_decision"):
+            laya_decision = decide_diagnostic_step(signal)
 
-        # Step 3a: LLM classifies the complaint (this is the expensive path)
+        with metrics.measure("sufficiency_check"):
+            laya_decision = validate_decision(laya_decision)
+
+        # Case C1: Laya resolves domain and specific issue
+        if laya_decision.category and laya_decision.issue:
+            if laya_decision.kb_retrieval_allowed:
+                metrics.set_path("laya_resolved")
+                resp = _resolve_issue(
+                    domain=laya_decision.category,
+                    issue=laya_decision.issue,
+                    query=query,
+                    context=laya_decision.context,
+                    confidence=laya_decision.category_confidence,
+                    metrics=metrics,
+                )
+                if resp.status == "success":
+                    log_request(
+                        query=query, classification=None,
+                        final_status="success",
+                    )
+                    aggregate_stats.record(metrics)
+                    return resp
+            elif laya_decision.missing_slots:
+                metrics.set_path("laya_sufficiency_question")
+                session = create_session(
+                    original_query=query,
+                    domain=laya_decision.category,
+                    tree=laya_decision.category,
+                )
+                session.current_domain = laya_decision.category
+                session.current_issue = laya_decision.issue
+                session.filled_slots = laya_decision.filled_slots
+                session.actions_taken.append(
+                    f"laya→insufficient (missing={laya_decision.missing_slots})"
+                )
+                log_request(
+                    query=query, classification=None,
+                    final_status="follow_up",
+                    no_match_reason=f"Laya sufficiency check: missing {laya_decision.missing_slots}",
+                )
+                resp = _build_slot_followup_response(session, laya_decision)
+                aggregate_stats.record(metrics)
+                return resp
+
+        # Case C2: Laya identifies domain, but issue needs diagnostic tree narrowing
+        elif laya_decision.category and not laya_decision.issue:
+            tree_name = get_entry_tree_for_domain(laya_decision.category) or laya_decision.category
+            metrics.set_path("laya_diagnostic_tree")
+            session = create_session(query, domain=laya_decision.category, tree=tree_name)
+            session.current_domain = laya_decision.category
+            session.actions_taken.append(f"laya→domain_tree={tree_name}")
+            log_request(
+                query=query, classification=None,
+                final_status="follow_up",
+                no_match_reason=f"Laya domain identified ({laya_decision.category}), issue ambiguous",
+            )
+            resp = _build_followup_response(session, tree_name, "entry_question")
+            aggregate_stats.record(metrics)
+            return resp
+
+        # Step 3b: Exceptional Fallback — Laya cannot categorize; invoke Gemini LLM
+        metrics.set_path("llm_fallback")
         metrics.increment("llm_calls")
         with metrics.measure("llm_classify"):
             classification = classify_complaint(query)
 
-        # Step 3b: Filter valid issues
+        # Step 3c: Filter valid issues from LLM
         valid_issues = [
             issue for issue in classification.issues
             if issue.confidence >= CONFIDENCE_THRESHOLD and issue.domain != "unknown"
         ]
 
-        # Step 3c: Try LLM classification → sufficiency check → KB lookup
+        # Step 3d: Try LLM classification → sufficiency check → KB lookup
         if valid_issues:
             results = []
             kb_candidates = []
@@ -997,18 +1067,7 @@ def troubleshoot(request: TroubleshootRequest):
                 aggregate_stats.record(metrics)
                 return resp
 
-            # LLM classification worked but KB didn't match → try Laya
-            laya_response = _run_laya_diagnosis(query, classification, metrics)
-            if laya_response:
-                log_request(
-                    query=query, classification=classification,
-                    final_status=laya_response.status,
-                    no_match_reason="; ".join(no_match_reasons),
-                )
-                aggregate_stats.record(metrics)
-                return laya_response
-
-            # Laya also couldn't resolve → offer diagnostic flow
+            # LLM classified domain, but KB didn't match → offer domain diagnostic flow
             domain = valid_issues[0].domain
             tree_name = get_entry_tree_for_domain(domain)
             if tree_name:
@@ -1024,17 +1083,6 @@ def troubleshoot(request: TroubleshootRequest):
                 resp = _build_followup_response(session, tree_name, "entry_question")
                 aggregate_stats.record(metrics)
                 return resp
-
-        # Step 3d: No valid LLM classification → try Laya directly
-        if not valid_issues:
-            laya_response = _run_laya_diagnosis(query, classification, metrics)
-            if laya_response:
-                log_request(
-                    query=query, classification=classification,
-                    final_status=laya_response.status,
-                )
-                aggregate_stats.record(metrics)
-                return laya_response
 
         # Step 3e: Nothing worked → check if fast gate had a tree suggestion
         if gate_result.tree and gate_result.tree != "general":

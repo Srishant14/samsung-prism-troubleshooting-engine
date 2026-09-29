@@ -37,7 +37,7 @@ The **Smart Guided Troubleshooting Engine** combines deterministic fast routing,
 - **Library & Model:** `google-genai` / `gemini-1.5-flash` (or `gemini-2.0-flash`)
 - **Developer / Provider:** Google Cloud / Google AI
 - **Role in Application:**
-  - Functions strictly as a **late-stage, exceptional fallback classifier** in [`backend/classifier.py`](file:///e:/samsung_hack/backend/classifier.py).
+  - Functions strictly as a **late-stage, exceptional fallback classifier** in [`backend/classifier.py`](../backend/classifier.py).
   - Invoked **only** when both the Fast Local Gate and the Laya Decision Engine fail to categorize a highly vague query.
   - Returns structured JSON containing domain and issue classification candidates.
   - **Exclusion from the Critical Path:** Gemini is never invoked for clear queries, ensuring 0 LLM calls for over 80% of common troubleshooting interactions.
@@ -47,7 +47,7 @@ The **Smart Guided Troubleshooting Engine** combines deterministic fast routing,
 ---
 
 ### C. Knowledge Brain (Strict Zero-Hallucination Source of Truth)
-- **Implementation:** In-memory indexed store with Supabase / JSON backup ([`seed_data.json`](file:///e:/samsung_hack/backend/seed_data.json)).
+- **Implementation:** In-memory indexed store with Supabase / JSON backup ([`backend/seed_data.json`](../backend/seed_data.json)).
 - **Role:** Every single troubleshooting procedure, step-by-step resolution, and action link returned to the user originates from human-verified, canonical technical documentation. No generative model drafts procedural advice.
 
 ---

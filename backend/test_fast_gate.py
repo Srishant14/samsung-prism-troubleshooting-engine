@@ -285,9 +285,9 @@ class TestGatePerformance:
             "My phone smells strange",
         ]
         for q in queries:
-            start = time.monotonic()
+            start = time.perf_counter()
             fast_gate(q)
-            elapsed_ms = (time.monotonic() - start) * 1000
+            elapsed_ms = (time.perf_counter() - start) * 1000
             assert elapsed_ms < 5, f"Gate took {elapsed_ms:.1f}ms for '{q}'"
 
 
