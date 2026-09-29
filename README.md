@@ -311,6 +311,7 @@ For complete details, see [**docs/AI_DISCLOSURE.md**](file:///e:/samsung_hack/do
 
 ## Submission Artifacts
 
+- **GitHub Repository:** [https://github.com/Srishant14/samsung-prism-troubleshooting-engine](https://github.com/Srishant14/samsung-prism-troubleshooting-engine)
 - **Presentation:** [presentation/PRISM_Theme2_Troubleshooting_Engine_Submission.pdf](file:///e:/samsung_hack/presentation/PRISM_Theme2_Troubleshooting_Engine_Submission.pdf)
 - **Demo Video:** [Watch Demo on YouTube / Google Drive](https://youtu.be/placeholder-demo-link) *(replace with your public demo URL)*
 - **Git Submission Tag:** `PRISM_GENAI_HACKATHON_2026` *(Note: Verify against form rendering `PRISM_GENAI_HACKATHON_Y026`)*
