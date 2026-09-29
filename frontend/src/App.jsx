@@ -1,9 +1,13 @@
 import React, { useState, useCallback, useRef } from 'react';
-import { Wrench } from 'lucide-react';
 import SearchBar from './components/SearchBar';
 import TroubleshootResult from './components/TroubleshootResult';
 import NoMatchCard from './components/NoMatchCard';
 import FollowUpCard from './components/FollowUpCard';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import HeroSection from './components/HeroSection';
+import PipelineSection from './components/PipelineSection';
+import FeatureCards from './components/FeatureCards';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -14,6 +18,15 @@ function App() {
 
   // AbortController ref — cancels in-flight requests when a new one starts
   const abortRef = useRef(null);
+
+  // Determine which "stage" we're at for the nav tabs
+  const getActiveStage = () => {
+    if (!result && !isLoading) return 'initial-input';
+    if (isLoading) return 'diagnostic-analysis';
+    if (result?.status === 'follow_up') return 'clarification-laya-ai';
+    if (result?.status === 'success') return 'verified-results';
+    return 'initial-input';
+  };
 
   const handleDiagnose = useCallback(async (queryText) => {
     // Cancel any in-flight request
@@ -92,95 +105,109 @@ function App() {
     }
   }, [query, sessionId]);
 
+  const handleReset = useCallback(() => {
+    setQuery('');
+    setSessionId(null);
+    setResult(null);
+    setError(null);
+  }, []);
+
   const issueCount = result?.results?.length || 0;
+  const activeStage = getActiveStage();
+  const showInitialPage = !result && !isLoading && !error;
 
   return (
-    <div className="app-container">
-      <header className="app-header">
-        <Wrench className="header-icon" />
-        <h1 className="gradient-text">Smart Troubleshooting Engine</h1>
-        <p className="subtitle">
-          AI-powered device troubleshooting — describe your problem, get verified fixes.
-        </p>
-        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '12px', flexWrap: 'wrap' }}>
-          <span className="prism-badge">Samsung PRISM v5.1</span>
-          <a
-            href="/api/3d"
-            target="_blank"
-            rel="noreferrer"
-            className="prism-badge"
-            style={{ textDecoration: 'none', background: 'rgba(0, 117, 255, 0.2)', borderColor: 'rgba(0, 117, 255, 0.5)', color: '#00f0ff', cursor: 'pointer' }}
-          >
-            🌐 3D Architecture Visualizer
-          </a>
-          <a
-            href="/api/2d"
-            target="_blank"
-            rel="noreferrer"
-            className="prism-badge"
-            style={{ textDecoration: 'none', background: 'rgba(192, 132, 252, 0.2)', borderColor: 'rgba(192, 132, 252, 0.5)', color: '#c084fc', cursor: 'pointer' }}
-          >
-            📐 2D Archify Blueprint
-          </a>
-        </div>
-      </header>
+    <div className="app-shell">
+      <Header activeStage={activeStage} />
 
-      <main>
-        <SearchBar onSubmit={handleDiagnose} isLoading={isLoading} />
+      <main className="app-main">
+        {/* Initial Input Page */}
+        {showInitialPage && (
+          <div className="initial-input-page">
+            <div className="glow-primary" />
+            <div className="glow-tertiary" />
 
-        {isLoading && (
-          <div className="loading-state" style={{ marginTop: '24px' }}>
-            <div className="loading-spinner"></div>
-            <p className="loading-text">Diagnosing your issue...</p>
+            <HeroSection />
+            <SearchBar onSubmit={handleDiagnose} isLoading={isLoading} />
+            <PipelineSection />
+            <FeatureCards />
           </div>
         )}
 
+        {/* Loading State */}
+        {isLoading && (
+          <div className="initial-input-page">
+            <div style={{ marginTop: '24px' }}>
+              <div className="loading-state">
+                <div className="loading-spinner" />
+                <p className="loading-text">Diagnosing your issue…</p>
+                <span style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '11px',
+                  color: 'var(--on-surface-variant)'
+                }}>
+                  Routing through Local Decision Engine → Laya AI Clarifier → Verified Corpus
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Follow-up / Clarification */}
         {!isLoading && result && result.status === 'follow_up' && (
-          <div style={{ marginTop: '24px' }}>
+          <div className="initial-input-page" style={{ maxWidth: '1200px' }}>
             <FollowUpCard
               followUp={result.follow_up}
+              query={query}
               onSelectOption={handleSelectOption}
+              onBack={handleReset}
               isLoading={isLoading}
             />
           </div>
         )}
 
+        {/* Success / Verified Results */}
         {!isLoading && result && result.status === 'success' && (
-          <div style={{ marginTop: '24px' }}>
+          <div className="initial-input-page" style={{ maxWidth: '1000px' }}>
             {issueCount > 1 && (
               <div className="multi-issue-header">
-                <span className="issue-count-badge">{issueCount} issues detected</span>
+                <span className="issue-count-badge">
+                  <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>warning</span>
+                  {issueCount} issues detected
+                </span>
               </div>
             )}
             {result.results && result.results.length > 0 ? (
               result.results.map((issueResult, idx) => (
                 <div key={`${issueResult.domain}-${issueResult.issue}-${idx}`} style={{ marginBottom: idx < issueCount - 1 ? '16px' : '0' }}>
-                  <TroubleshootResult result={issueResult} />
+                  <TroubleshootResult result={issueResult} query={query} sessionId={sessionId} onReset={handleReset} />
                 </div>
               ))
             ) : (
               /* Backward compat: use legacy single-result fields */
-              <TroubleshootResult result={result} />
+              <TroubleshootResult result={result} query={query} sessionId={sessionId} onReset={handleReset} />
             )}
           </div>
         )}
 
+        {/* No Match */}
         {!isLoading && result && result.status === 'no_match' && (
-          <div style={{ marginTop: '24px' }}>
-            <NoMatchCard message={result.message} />
+          <div className="initial-input-page">
+            <NoMatchCard message={result.message} onReset={handleReset} />
           </div>
         )}
 
+        {/* Error */}
         {!isLoading && error && (
-          <div className="error-card" style={{ marginTop: '24px' }}>
-            <p>{error}</p>
+          <div className="initial-input-page">
+            <div className="error-card">
+              <p>{error}</p>
+            </div>
           </div>
         )}
       </main>
 
-      <footer className="app-footer">
-        Built for Samsung PRISM Gen AI Hackathon 2026-27
-      </footer>
+      <Footer />
     </div>
   );
 }
