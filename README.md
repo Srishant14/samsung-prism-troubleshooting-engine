@@ -293,15 +293,27 @@ pytest -v
 
 ## AI Disclosure & Safety Guarantees
 
-In accordance with responsible AI standards and hackathon submission criteria:
+In accordance with responsible AI standards and hackathon submission criteria, a comprehensive disclosure is provided in [`docs/AI_DISCLOSURE.md`](file:///e:/samsung_hack/docs/AI_DISCLOSURE.md):
 
 1. **System-1 Decision Making vs. Generation:**
-   - AI is used for **classification, categorical routing, and relevance scoring** (`Laya AI` and optional `Gemini`).
+   - AI is used for **classification, categorical routing, and relevance scoring** (`Laya AI` with checkpoint `convaiinnovations/laya`, and optional `Gemini`).
    - AI is **strictly prohibited** from synthesizing procedural repair steps. All instructions are drawn from curated, verified technical documentation.
-2. **Deterministic Invariant Enforcement:**
+2. **Verification Regarding "Jev":**
+   - The production codebase and `laya` package (v0.3.20) do **not** use, load, or integrate any model named "Jev". Laya AI operates as a discrete System-1 router using `convaiinnovations/laya`.
+3. **Deterministic Invariant Enforcement:**
    - Before any solution is shown to a user, the request must pass the [`SufficiencyGate`](file:///e:/samsung_hack/backend/sufficiency_gate.py). If vital parameters (e.g. error codes, physical damage signs) are absent, the engine pauses and asks clarifying questions.
-3. **Fail-Safe Operation:**
+4. **Fail-Safe Operation:**
    - If AI services (Laya or Gemini) encounter latency spikes or network timeouts, the system automatically degrades to deterministic decision trees without crashing or giving unverified advice.
+
+For complete details, see [**docs/AI_DISCLOSURE.md**](file:///e:/samsung_hack/docs/AI_DISCLOSURE.md).
+
+---
+
+## Submission Artifacts
+
+- **Presentation:** [presentation/PRISM_Theme2_Troubleshooting_Engine_Submission.pdf](file:///e:/samsung_hack/presentation/PRISM_Theme2_Troubleshooting_Engine_Submission.pdf)
+- **Demo Video:** [Watch Demo on YouTube / Google Drive](https://youtu.be/placeholder-demo-link) *(replace with your public demo URL)*
+- **Git Submission Tag:** `PRISM_GENAI_HACKATHON_2026` *(Note: Verify against form rendering `PRISM_GENAI_HACKATHON_Y026`)*
 
 ---
 
