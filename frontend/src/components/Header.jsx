@@ -14,15 +14,9 @@ export default function Header({ activeStage = 'initial-input' }) {
       {/* Brand */}
       <div className="header-brand">
         <div className="header-logo">
-          {/* Samsung PRISM Logo - Triangle SVG */}
+          {/* Samsung PRISM Glowing Cyan Triangle Logo */}
           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 4L36 34H4L20 4Z" fill="url(#prism-grad)" stroke="rgba(255,255,255,0.15)" strokeWidth="1"/>
-            <defs>
-              <linearGradient id="prism-grad" x1="20" y1="4" x2="20" y2="34" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#d2bbff"/>
-                <stop offset="1" stopColor="#7c3aed"/>
-              </linearGradient>
-            </defs>
+            <path d="M20 6L36 34H4L20 6Z" fill="#00F0FF" />
           </svg>
         </div>
         <span className="header-title">PRISM Troubleshooting Engine</span>
@@ -41,31 +35,14 @@ export default function Header({ activeStage = 'initial-input' }) {
             </span>
           ))}
         </div>
-
-        <div style={{ width: '1px', height: '16px', background: 'rgba(74,68,85,0.4)' }} />
-
-        <div className="header-nav-links">
-          <a href="/api/2d" target="_blank" rel="noreferrer" className="header-nav-link">
-            2D Architecture
-          </a>
-          <a href="/api/3d" target="_blank" rel="noreferrer" className="header-nav-link">
-            3D Architecture
-          </a>
-        </div>
       </div>
 
-      {/* Right Side */}
+      {/* Right Side Links */}
       <div className="header-right">
-        <div className="header-status">
-          <span className="status-dot-container">
-            <span className="status-dot-ping" />
-            <span className="status-dot" />
-          </span>
-          <span className="status-text">
-            <span className="status-text-highlight">System: Optimal</span>
-            {' · Laya AI Online · Local Decision Engine Ready'}
-          </span>
-        </div>
+        <a href="/2d" target="_blank" rel="noreferrer" className="header-arch-link">
+          <span>2D</span>
+          <span>Architecture</span>
+        </a>
       </div>
     </header>
   );

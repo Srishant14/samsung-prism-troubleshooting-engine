@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const PRESETS = [
-  { emoji: '⚡', label: 'Battery draining fast', fill: 'Battery draining quickly and phone feels warm after One UI 6.1 update' },
-  { emoji: '📱', label: 'Screen flickering', fill: 'Screen flickers intermittently specifically when running at 120Hz adaptive refresh rate' },
-  { emoji: '📷', label: 'Camera photos blurry', fill: 'Camera photos appear blurry and 3x telephoto struggles to lock focus in low light' },
-  { emoji: '🔥', label: 'Phone overheating', fill: 'Device thermal throttling and overheating near camera module during regular charging' },
-  { emoji: '⏱️', label: 'Phone running slowly', fill: 'System UI lag, frame drops during gesture navigation, and slow app launch times' },
+  { icon: 'bolt', label: 'Battery draining fast', fill: 'Battery draining quickly and phone feels warm after One UI 6.1 update' },
+  { icon: 'smartphone', label: 'Screen flickering', fill: 'Screen flickers intermittently specifically when running at 120Hz adaptive refresh rate' },
+  { icon: 'photo_camera', label: 'Camera photos blurry', fill: 'Camera photos appear blurry and 3x telephoto struggles to lock focus in low light' },
+  { icon: 'local_fire_department', label: 'Phone overheating', fill: 'Device thermal throttling and overheating near camera module during regular charging' },
+  { icon: 'settings', label: 'Phone running slowly', fill: 'System UI lag, frame drops during gesture navigation, and slow app launch times' },
 ];
 
 export default function SearchBar({ onSubmit, isLoading }) {
@@ -50,7 +50,9 @@ export default function SearchBar({ onSubmit, isLoading }) {
         {/* Console Header Bar */}
         <div className="console-header">
           <div className="console-header-left">
-            <span className="material-symbols-outlined">terminal</span>
+            <span className="console-terminal-badge">
+              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>terminal</span>
+            </span>
             <span className="console-label">SYS.DIAG_PROMPT</span>
             <span className="console-ready-badge">READY</span>
           </div>
@@ -78,7 +80,7 @@ export default function SearchBar({ onSubmit, isLoading }) {
 
         {/* Quick Presets */}
         <div className="presets-row">
-          <span className="presets-label">Quick Presets:</span>
+          <span className="presets-label">QUICK PRESETS:</span>
           {PRESETS.map((preset, idx) => (
             <button
               key={idx}
@@ -87,7 +89,7 @@ export default function SearchBar({ onSubmit, isLoading }) {
               onClick={() => handlePresetClick(preset.fill)}
               disabled={isLoading}
             >
-              <span>{preset.emoji}</span>
+              <span className="material-symbols-outlined preset-icon">{preset.icon}</span>
               <span>{preset.label}</span>
             </button>
           ))}
@@ -97,7 +99,7 @@ export default function SearchBar({ onSubmit, isLoading }) {
         <div className="console-footer">
           <div className="console-footer-left">
             <button type="button" className="clear-btn" onClick={handleClear}>
-              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>backspace</span>
+              <span className="material-symbols-outlined" style={{ fontSize: '15px' }}>backspace</span>
               <span>Clear Input</span>
               <span className="kbd">Esc</span>
             </button>
@@ -110,7 +112,7 @@ export default function SearchBar({ onSubmit, isLoading }) {
             onClick={handleSubmit}
             disabled={!query.trim() || isLoading}
           >
-            <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>auto_awesome</span>
+            <span className="material-symbols-outlined diagnose-icon">auto_awesome</span>
             <span>{isLoading ? 'Parsing Issue...' : 'Diagnose Issue'}</span>
             <span className="kbd-hint">⌘ + ↵</span>
           </button>

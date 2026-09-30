@@ -7,9 +7,7 @@ export default function HeroSection() {
       <div className="hero-pill">
         <span className="hero-pill-dot" />
         <span className="hero-pill-text">
-          AI-Powered <span className="separator">·</span>{' '}
-          <span className="highlight">Verification-First</span>{' '}
-          <span className="separator">·</span> Low-Latency &lt;42ms
+          AI-POWERED · VERIFICATION-FIRST · LOW-LATENCY &lt;42MS
         </span>
       </div>
 
