@@ -379,7 +379,8 @@ samsung-prism-troubleshooting-engine/
 ├── demo/
 │   └── README.md                       # Interactive demo walkthrough
 └── presentation/
-    └── PRISM_Theme2_Troubleshooting_Engine_Submission.pdf
+    ├── MSRIT_SyntaxError_Submission.pptx
+    └── MSRIT_SyntaxError_Submission.pdf
 ```
 
 ---
@@ -550,7 +551,7 @@ For full details, see [**docs/AI_DISCLOSURE.md**](docs/AI_DISCLOSURE.md).
 ## Submission Artifacts
 
 - **GitHub Repository:** [https://github.com/Srishant14/samsung-prism-troubleshooting-engine](https://github.com/Srishant14/samsung-prism-troubleshooting-engine)
-- **Presentation Deck:** [presentation/PRISM_Theme2_Troubleshooting_Engine_Submission.pdf](presentation/PRISM_Theme2_Troubleshooting_Engine_Submission.pdf)
+- **Presentation Deck:** [presentation/MSRIT_SyntaxError_Submission.pdf](presentation/MSRIT_SyntaxError_Submission.pdf)
 - **Interactive Demo Walkthrough:** [demo/README.md](demo/README.md)
 - **Git Submission Tag:** `PRISM_GENAI_HACKATHON_2026`
 
