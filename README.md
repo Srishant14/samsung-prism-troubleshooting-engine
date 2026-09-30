@@ -205,35 +205,59 @@ App.jsx
 
 ## Unresolved Issue Escalation System
 
-When a user clicks **"Still experiencing the issue"** in the Resolution Verification panel, a full escalation workflow activates:
+When a user clicks **"Still experiencing the issue"** in the Resolution Verification panel, a comprehensive multi-channel escalation system activates, ensuring every user has a clear path to resolution:
 
-### A. Contact Samsung Support
-- Displays a session info preview (issue, diagnosis, steps tried, outcome)
-- Opens **country-aware** Samsung support pages (India, US, UK, or Global)
-- Live Chat link (where available)
-- Pre-filled `mailto:` draft (user reviews before sending — **no email auto-sent**)
-- **No IMEI, serial numbers, or auth tokens** included by default
+### A. Contact Samsung Support & In-App Email Composer
+- **Interactive In-App Email Composer:**
+  - Displays an editable email draft with pre-filled fields:
+    - **To (Official Support):** Defaults to official regional support email (`support.india@samsung.com` for India, `uk.customercare@samsung.com` for UK, `support@samsung.com` for US).
+    - **Subject:** Pre-structured identifier: `[Samsung Support Request] <Issue Title> - Issue Persists`.
+    - **Message Content:** Pre-formatted diagnostic summary including reported symptoms, One UI 6.1 specs, diagnosis confidence, all attempted troubleshooting stages, and persisting outcome.
+- **Multi-Platform Dispatch Options:**
+  - **Send via Gmail:** One-click launch into Gmail Web (`https://mail.google.com/mail/...`) with To, Subject, and Body fully pre-populated (no desktop email client required).
+  - **Send via Outlook:** Launches Outlook Webmail (`https://outlook.live.com/owa/...`) pre-filled.
+  - **Open System Mail:** Triggers default OS email client (`mailto:`) with URI-encoded parameters.
+  - **Copy Full Draft:** Copies the entire structured draft to clipboard with instant visual feedback.
+- **Regional Support Selector:**
+  - Auto-detects region prioritizing **India (`🇮🇳`)** via Indian Standard Time (IST UTC+5:30) / timezone.
+  - Interactive pill toggles for **India (`🇮🇳`)**, **United States (`🇺🇸`)**, **United Kingdom (`🇬🇧`)**, and **Global (`🌐`)**.
+  - Direct links to official country support portals and live chat services.
+- **Privacy & Safety Rules:**
+  - **Zero automated sending:** Emails are never dispatched without explicit user review and action.
+  - **No sensitive PII:** Strictly omits IMEI numbers, serial numbers, passwords, and tokens.
 
-### B. Find a Nearby Service Centre
-1. Explains why location access is needed
-2. Requests browser geolocation only after user clicks "Use My Location"
-3. On permission granted → opens Google Maps search for "Samsung Service Centre" near coordinates + Samsung's official locator
-4. On permission denied → allows manual city/locality/PIN code entry
-5. **Never fabricates service centre data** — always redirects to verified sources
-6. Location data is transient (not stored or transmitted to any server)
+### B. Nearby Samsung Authorized Service Centre Locator
+1. **Transparent Permission Request:** Explains why location is needed before requesting browser geolocation.
+2. **GPS-Assisted Discovery:** On user consent, queries Google Maps for official Samsung Service Centres centered on the user's coordinates, alongside Samsung's official locator portal.
+3. **Manual Search Fallback:** If GPS access is denied or unavailable, users can enter any city, locality, or 6-digit PIN code (e.g. `Hyderabad`, `560001`, `Koramangala Bangalore`).
+4. **Anti-Hallucination Invariant:** The engine **never fabricates fictitious service centre names, addresses, or phone numbers**. It always directs users to verified Google Maps and Samsung official locator databases.
+5. **Transient Privacy:** Geolocation coordinates are transient and held strictly in browser memory—never stored in databases or transmitted to backend servers.
 
-### C. Generate Troubleshooting Report
-- Structured plain-text report from actual session data:
-  - Issue description, diagnosis summary, domain, confidence
-  - Recommended steps, user outcome ("Issue persists")
-  - Source references, session ID, timestamp
-- **Copy to clipboard** and **Download as .txt** actions
-- Missing fields are omitted rather than fabricated
+### C. Structured Troubleshooting Report Generator
+- Generates a human-readable, plain-text diagnostic dossier:
+  - Technical summary: Issue description, domain category, title, confidence score.
+  - Chronological runbook: All troubleshooting steps attempted by the user.
+  - Session verification: Unique session reference ID, UTC timestamp, and engine version (PRISM v5.1).
+  - Outcome attestation: Clearly marks outcome as `"Status: Issue persists after attempting recommended steps."`
+- **Actions:** One-click **Copy to Clipboard** and **Download as .txt** file (`samsung-prism-report-<timestamp>.txt`).
 
-### Implementation Details
-- **Zero backend changes** — entire escalation system is frontend-only
-- Samsung support URLs are configurable per country in `EscalationPanel.jsx`
-- Closing the escalation panel returns to diagnosis results without data loss
+---
+
+## Interactive Stepper Runbook vs. Diagnostic Triage Gate
+
+To provide an optimal UX, the interface strictly differentiates between **asking questions** (gathering evidence) and **executing steps** (taking physical hardware/software actions):
+
+| Dimension | Question Asking UI (`FollowUpCard.jsx`) | Steps Execution Runbook (`TroubleshootResult.jsx`) |
+| :--- | :--- | :--- |
+| **Purpose** | Diagnostic Triage Inquiry Gate | Tactical Action Execution Runbook |
+| **Interaction** | Radio selection (choose 1 condition to narrow scope) | Interactive checkboxes (mark stages completed as executed) |
+| **Visual Track** | Inquiry hero card + selectable option cards | Connected vertical timeline stepper with glowing node rails |
+| **Feedback** | "Suggested Match" chips, skip/back flow | Dynamic execution progress bar (`X of Y stages executed - Z%`) |
+| **Procedural Guidance** | Query quote & symptom categorization | Breadcrumb navigation paths (`Settings > Battery > ...`) |
+| **Hardware Sequences** | N/A (Categorical evaluation) | Android Recovery Hardware Terminal with numbered sequence |
+| **Architecture Insights**| Local NPU & Laya AI evaluation status | Collapsible "Why this works (Kernel & OS Architecture)" drawers |
+| **Toolbar Actions** | Back to query / Skip question | Copy All Steps to clipboard / Print technical runbook |
+
 
 ---
 

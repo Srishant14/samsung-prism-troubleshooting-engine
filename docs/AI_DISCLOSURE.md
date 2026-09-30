@@ -81,3 +81,13 @@ The **Smart Guided Troubleshooting Engine** combines deterministic fast routing,
 1. **User Safety First:** Mobile troubleshooting can involve dangerous situations (e.g. swollen lithium batteries, charging port moisture). Generative hallucination in this domain presents physical risks. By delegating all procedures to verified knowledge files and utilizing AI strictly for categorical routing, the system guarantees 100% verified advice.
 2. **Transparent Follow-Up:** Rather than guessing when information is vague, the engine prompts the user with targeted questions, respecting user agency and accuracy.
 3. **Data Privacy:** Queries are pre-processed locally; no Personally Identifiable Information (PII) is transmitted to external models.
+
+---
+
+## 6. Escalation, Service Centre Locator & Draft Mail Transparency Guarantees
+
+1. **Zero Automated Email Dispatch:** The escalation system never automatically sends an email on the user's behalf. It prepares an editable draft and provides explicit webmail (Gmail / Outlook) and mailto dispatch buttons so the user has 100% agency over what information is transmitted.
+2. **No Sensitive PII by Default:** Draft emails and diagnostic reports strictly omit IMEI numbers, device serial numbers, passwords, and authentication tokens. Only reported symptoms, diagnostic session ID, and attempted technical steps are included.
+3. **Verified Service Centre Data:** The engine never fabricates fictitious service centre names, addresses, or telephone numbers. If local GPS is permitted, it queries Google Maps and Samsung's official locator; if denied, it allows manual city/PIN entry without storing location coordinates.
+4. **Transient Geolocation:** Browser coordinates requested for the service centre finder are strictly transient, held in browser memory for the immediate search action, and never transmitted to or logged on any server.
+
