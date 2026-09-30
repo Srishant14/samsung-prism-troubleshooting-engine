@@ -93,12 +93,14 @@ def health_check():
 
 
 @app.get("/v1/perf")
+@app.get("/api/v1/perf")
 def perf_stats():
     """Lightweight performance stats endpoint for benchmarking."""
     return aggregate_stats.summary()
 
 
 @app.get("/3d")
+@app.get("/api/3d")
 @app.get("/architecture")
 def get_3d_architecture():
     """Serve the interactive 3D WebGL topology visualizer."""
@@ -109,6 +111,7 @@ def get_3d_architecture():
 
 
 @app.get("/2d")
+@app.get("/api/2d")
 def get_2d_architecture():
     """Serve the Archify 2D blueprint diagram."""
     path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "samsung-prism-architecture.html"))
@@ -512,6 +515,7 @@ def _run_laya_diagnosis(query: str, classification, metrics: RequestMetrics = No
 # ============================================================
 
 @app.post("/v1/troubleshoot", response_model=TroubleshootResponse)
+@app.post("/api/v1/troubleshoot", response_model=TroubleshootResponse)
 def troubleshoot(request: TroubleshootRequest):
     """
     Main troubleshooting endpoint — v5.0 Question-First Diagnostic Engine.
@@ -1125,4 +1129,14 @@ def troubleshoot(request: TroubleshootRequest):
         import traceback
         traceback.print_exc()
         raise HTTPException(status_code=500, detail="Internal server error occurred.")
+
+
+# ============================================================
+# Mount Frontend Static Assets (Production / Docker build)
+# ============================================================
+frontend_dist = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend", "dist"))
+if os.path.exists(frontend_dist):
+    from fastapi.staticfiles import StaticFiles
+    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")
+
 

@@ -5,10 +5,21 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: prism-troubleshooting-engine:v5.1
+    container_name: prism-engine
     ports:
       - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
     environment:
       - FAST_PATH_CONFIDENCE=0.85
       - LLM_TIMEOUT=10.0
       - SUPABASE_TIMEOUT=5.0
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3

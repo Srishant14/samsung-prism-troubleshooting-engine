@@ -63,6 +63,7 @@ siis_responses.json
 # IDE & OS files
 .vscode/
 .idea/
+.freebuff/
 *.swp
 *.swo
 .DS_Store

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Samsung PRISM Troubleshooting Engine V5.1</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-fixed":"#001f26","surface-bright":"#353944","background":"#0f131d","primary-fixed-dim":"#d2bbff","on-primary-fixed":"#25005a","error":"#ffb4ab","surface-tint":"#d2bbff","surface-container-lowest":"#0a0e18","on-background":"#dfe2f1","surface-container-low":"#171b26","primary-container":"#7c3aed","surface-variant":"#313540","on-secondary-fixed":"#001a43","on-tertiary-fixed-variant":"#004e5c","on-primary-container":"#ede0ff","on-secondary-fixed-variant":"#004397","on-tertiary-container":"#b7efff","secondary-fixed":"#d8e2ff","surface-container-highest":"#313540","tertiary":"#4cd7f6","on-error-container":"#ffdad6","surface":"#0f131d","surface-dim":"#0f131d","inverse-primary":"#732ee4","on-secondary":"#002e6b","on-tertiary":"#003640","on-primary-fixed-variant":"#5a00c6","tertiary-fixed":"#acedff","on-surface":"#dfe2f1","on-error":"#690005","inverse-on-surface":"#2c303b","tertiary-fixed-dim":"#4cd7f6","surface-container":"#1c1f2a","surface-container-high":"#262a35","error-container":"#93000a","on-secondary-container":"#00275e","primary":"#d2bbff","outline-variant":"#4a4455","secondary-fixed-dim":"#aec6ff","on-primary":"#3f008e","on-surface-variant":"#ccc3d8","outline":"#958da1","secondary-container":"#508eff","secondary":"#aec6ff","inverse-surface":"#dfe2f1","tertiary-container":"#007184","primary-fixed":"#eaddff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter-sm":"0.75rem","gutter":"1.25rem","space-lg":"1.5rem","space-xl":"2.5rem","space-md":"1rem","space-xs":"0.25rem","margin":"1.5rem","margin-sm":"1rem","space-sm":"0.5rem","gutter-lg":"2rem","margin-lg":"3rem"},fontFamily:{"body-sm":["Inter"],"label-code-sm":["JetBrains Mono"],"display-lg":["Inter"],"display-lg-mobile":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"label-code-md":["JetBrains Mono"],"headline-lg":["Inter"],"headline-md":["Inter"]},fontSize:{"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.005em","fontWeight":"400"}],"label-code-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.03em","fontWeight":"700"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-code-md":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-[#0B0F19]/90 backdrop-blur-xl border-b border-[#1E293B] shadow-[inset_0_1px_0_0_rgba(124,58,237,0.35),0_4px_20px_-4px_rgba(0,0,0,0.5)]"><div class="h-16 w-full px-gutter-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md shrink-0"><img alt="Samsung PRISM Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V7EkFugzLZInJOGQZJadYPPOCbL9et0NqbAFqhb6t8AQ4B3dYMW04PbNxvDNUbz6_HLsKQBvLW4G8XmzFgRoGg9AP8diesZqrKm9j9T9TuEjLVPi7Z1sRAB58H_k18jOTXfjfmwqxC_BCkIajeaDMZ50oBgkg4sP0TTdTPVxGh2UBf2O_84YZmmW_sv59IMcW-KAzPQ0Lf-dnZOW2FbTCu42eRkdjVoNBVfbGJQD8QDbXH-LNMAVZZhK8"/><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface whitespace-nowrap">PRISM Troubleshooting Engine</span><span class="font-label-code-sm text-label-code-sm px-space-sm py-space-xs rounded-full bg-surface-container-high text-primary border border-outline-variant/30 font-medium tracking-wide shadow-inner">V5.1</span></div></div><div class="hidden xl:flex items-center gap-space-md"><div class="flex items-center p-space-xs rounded-xl bg-[#0F172A]/80 border border-[#1E293B] shadow-inner"><nav class="flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><a class="px-space-sm py-space-xs rounded-lg font-label-code-md text-label-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="initial-input" href="#">1. Initial Input</a><a class="px-space-sm py-space-xs rounded-lg font-label-code-md text-label-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="clarification-laya-ai" href="#">2. Clarification (Laya AI)</a><a class="px-space-sm py-space-xs rounded-lg font-label-code-md text-label-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="diagnostic-analysis" href="#">3. Diagnostic Analysis</a><a class="px-space-sm py-space-xs rounded-lg font-label-code-md text-label-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="verified-results" href="#">4. Verified Results</a><a class="px-space-sm py-space-xs rounded-lg font-label-code-md text-label-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="architecture-spec" href="#">5. Architecture Spec</a></nav></div><div class="h-4 w-px bg-outline-variant/40"></div><nav class="flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-tertiary font-medium"><a class="px-space-sm py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="2d-architecture" href="#">2D Architecture</a><a class="px-space-sm py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="3d-architecture" href="#">3D Architecture</a></nav></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-surface-container-lowest/80 border border-[#1E293B] shadow-inner"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-code-sm text-label-code-sm text-on-surface-variant"><span class="text-tertiary font-semibold">System: Optimal</span> · Laya AI Online · Local Decision Engine Ready</span></div><button aria-label="Toggle System Theme" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors border border-outline-variant/20" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-2 ring-primary/20"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full bg-surface-container-low px-gutter-lg py-space-sm flex flex-wrap items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-code-sm text-label-code-sm uppercase tracking-wider font-semibold">Diagnostic Gate Active</span>
+</div>
+<div class="h-4 w-px bg-surface-variant"></div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-tertiary">quick_reference_all</span>
+<span class="font-body-md text-body-md font-medium">Clarification Protocol: <span class="text-tertiary font-label-code-sm">LAYA-RULE-ENG-0824</span></span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span>GATE LATENCY:</span>
+<span class="text-on-surface font-semibold">18.4ms</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span>LOCAL VECTOR DISPATCH:</span>
+<span class="text-secondary font-semibold">BYPASSED LLM</span>
+</div>
+</div>
+</div>
+<div class="w-full px-gutter-lg py-space-lg">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-lg items-start">
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<div class="p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-code-sm text-label-code-sm uppercase tracking-wide px-space-sm py-space-xs rounded-md bg-surface-container-highest text-primary font-semibold">Step 1 of 2</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Branch ID: <span class="font-mono text-on-surface">PWR-DRAIN-STDBY</span></span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-code-sm text-label-code-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">memory</span>
+<span>Local Decision Forest Evaluation</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Let's narrow down the issue</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">A few details will help us isolate the anomalous discharge vector and bypass generic recommendations for your Galaxy handset.</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">format_quote</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant uppercase tracking-wider font-semibold">Original User Query</span>
+<span class="font-body-lg text-body-lg text-on-surface font-medium">“My battery runs out way too quickly”</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-start sm:self-auto px-space-sm py-space-xs rounded-md bg-surface-container-high text-on-surface font-label-code-sm text-label-code-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">smartphone</span>
+<span>Galaxy S24 Ultra · One UI 6.1</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-md pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-1.5 h-4 rounded-full bg-primary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">When does your battery drain unusually fast?</h2>
+</div>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Select Primary Condition</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm" id="drain-options-group">
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-high cursor-pointer transition-all duration-150 ring-2 ring-primary bg-primary/5">
+<input checked="" class="mt-1 text-primary focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest rounded-full" name="drain_trigger" type="radio" value="idle_standby"/>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Even when the phone is idle</span>
+<span class="font-label-code-sm text-label-code-sm px-space-sm py-space-xs rounded bg-primary-container text-on-primary-container font-semibold">Suggested Match</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">High background standby consumption, potential kernel wakelocks, rogue push listeners, or excessive sync loops.</span>
+</div>
+</label>
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-all duration-150">
+<input class="mt-1 text-primary focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest rounded-full" name="drain_trigger" type="radio" value="apps_active"/>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">While using specific apps</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Forefront App Workload</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">High drain triggered during active sessions on Camera ISP, 120Hz gaming shaders, GPS geo-tracking, or 5G streaming.</span>
+</div>
+</label>
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-all duration-150">
+<input class="mt-1 text-primary focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest rounded-full" name="drain_trigger" type="radio" value="charging_thermal"/>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">During or immediately after charging</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Thermal &amp; Power IC</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Super Fast Charging 2.0 thermal throttling, unregulated charging brick voltage, or PMIC thermal protection cycling.</span>
+</div>
+</label>
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-all duration-150">
+<input class="mt-1 text-primary focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest rounded-full" name="drain_trigger" type="radio" value="post_update"/>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">After a recent software update</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">OS Level Routine</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Post-OTA background Dalvik/ART runtime compilation, Gallery photo semantic indexing, or KnOx integrity recalculations.</span>
+</div>
+</label>
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-all duration-150">
+<input class="mt-1 text-primary focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest rounded-full" name="drain_trigger" type="radio" value="unknown_erratic"/>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Not sure / Inconsistent behavior</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Full Diagnostic</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Requires automated Samsung Members comprehensive sensor, battery cell health, and power-audit trace collection.</span>
+</div>
+</label>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">device_thermostat</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">Have you noticed the phone getting noticeably warm to the touch?</span>
+</div>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Secondary Telemetry Correlator</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs" id="thermal-toggle-group">
+<button class="thermal-btn px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-code-md text-label-code-md flex items-center justify-center gap-space-xs transition-colors" data-val="yes" type="button">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Yes, frequently</span>
+</button>
+<button class="thermal-btn px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container font-label-code-md text-label-code-md flex items-center justify-center gap-space-xs shadow-sm font-semibold transition-colors" data-val="gaming_only" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Only when gaming / camera</span>
+</button>
+<button class="thermal-btn px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-code-md text-label-code-md flex items-center justify-center gap-space-xs transition-colors" data-val="no" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>No, device remains cool</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md pt-space-md">
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-code-md text-label-code-md flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to query</span>
+</button>
+<div class="flex items-center justify-end gap-space-md">
+<button class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button">
+                Skip question (general diagnosis)
+              </button>
+<button class="px-space-lg py-space-sm rounded-lg bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-headline-sm text-headline-sm flex items-center justify-center gap-space-xs shadow-lg transition-transform active:scale-95" type="button">
+<span>Continue to Diagnosis</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[20px]">format_image_left</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Zero Data Sent Off-Device</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">PRISM Local Gate executes directly on the Qualcomm NPU. Your device logs remain sandboxed in secure hardware memory.</p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Deterministic Branching</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Laya AI chooses from 47 pre-verified Samsung hardware/firmware trees rather than hallucinating unstructured steps.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<div class="p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-tertiary">analytics</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Laya AI Telemetry</h3>
+</div>
+<span class="font-label-code-sm text-label-code-sm px-space-sm py-space-xs rounded bg-surface-container-high text-tertiary font-mono">GATE ACTIVE</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-code-sm text-label-code-sm">
+<span class="text-on-surface-variant">Ambiguity Reduction</span>
+<span class="text-on-surface font-semibold">78% → 14%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-lowest overflow-hidden flex">
+<div class="h-full bg-primary transition-all duration-500" style="width: 86%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Query now qualifies for deterministic pathing without cloud LLM invocation.</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-lowest flex flex-col gap-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase tracking-wider font-semibold">Target Classification Category</span>
+<div class="flex items-center gap-space-xs text-on-surface font-headline-sm text-headline-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Power Management &amp; Standby Services</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Subsystem: <span class="font-mono text-on-surface">Qualcomm PM8550 &amp; One UI Sleep State</span></span>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase tracking-wider font-semibold">Gate Confidence Matrix</span>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Target Hardware Model</span>
+</div>
+<span class="font-label-code-sm text-label-code-sm text-tertiary font-mono">99.8% (SM-S928B)</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">OS Kernel Version</span>
+</div>
+<span class="font-label-code-sm text-label-code-sm text-tertiary font-mono">6.1.43-android14</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">pending</span>
+<span class="font-body-sm text-body-sm text-on-surface">Discharge Vector</span>
+</div>
+<span class="font-label-code-sm text-label-code-sm text-primary font-mono">RESOLVING (91%)</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-primary/10 flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">bolt</span>
+<div class="flex flex-col">
+<span class="font-label-code-sm text-label-code-sm text-primary font-semibold">Zero-Token Optimization</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Avoiding unnecessary cloud LLM calls via local pathing saves 1,420 tokens &amp; reduces resolution latency by 840ms.</p>
+</div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase tracking-wider font-semibold">Diagnostic Flow Preview</span>
+<span class="font-label-code-sm text-label-code-sm text-tertiary font-mono">STEP 1 / 4</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm p-space-xs rounded bg-surface-container-high text-on-surface">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-code-sm text-label-code-sm flex items-center justify-center font-bold shrink-0">1</span>
+<span class="font-body-sm text-body-sm font-semibold truncate">Clarification Gate (Standby Anomaly)</span>
+</div>
+<div class="flex items-center gap-space-sm p-space-xs text-on-surface-variant">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface font-label-code-sm text-label-code-sm flex items-center justify-center shrink-0">2</span>
+<span class="font-body-sm text-body-sm truncate">Kernel Wakelock &amp; Battery Stats Trace</span>
+</div>
+<div class="flex items-center gap-space-sm p-space-xs text-on-surface-variant">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface font-label-code-sm text-label-code-sm flex items-center justify-center shrink-0">3</span>
+<span class="font-body-sm text-body-sm truncate">Corpus Solution Matching (KB-SEC-2481)</span>
+</div>
+<div class="flex items-center gap-space-sm p-space-xs text-on-surface-variant">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface font-label-code-sm text-label-code-sm flex items-center justify-center shrink-0">4</span>
+<span class="font-body-sm text-body-sm truncate">Automated Action Execution &amp; Verify</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const radioLabels = document.querySelectorAll('#drain-options-group label');
+    radioLabels.forEach(label => {
+      label.addEventListener('click', () => {
+        radioLabels.forEach(l => {
+          l.classList.remove('ring-2', 'ring-primary', 'bg-primary/5');
+          l.classList.add('bg-surface-container-low');
+          const chip = l.querySelector('.font-semibold.px-space-sm');
+          if (chip && chip.textContent.trim() === 'Suggested Match') {
+            chip.remove();
+          }
+        });
+        label.classList.add('ring-2', 'ring-primary', 'bg-primary/5');
+        label.classList.remove('bg-surface-container-low');
+        const radio = label.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+      });
+    });
+
+    const thermalButtons = document.querySelectorAll('#thermal-toggle-group .thermal-btn');
+    thermalButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        thermalButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary-container', 'shadow-sm', 'font-semibold');
+          b.classList.add('bg-surface-container-high', 'text-on-surface');
+        });
+        btn.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-sm', 'font-semibold');
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface');
+      });
+    });
+  })();
+</script></main><footer class="w-full bg-[#0a0e18]/95 border-t border-[#1E293B] backdrop-blur-md"><div class="w-full px-gutter-lg py-space-sm flex flex-col md:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-md font-label-code-sm text-label-code-sm text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#10B981]"></span><span>LATENCY: <span class="text-on-surface font-semibold">&lt;42ms</span></span></div><span class="text-outline-variant">|</span><div>CORPUS BUILD: <span class="text-on-surface font-mono">v5.1.2024.11-SEC</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-tertiary">verified</span><span>LOCAL ENGINE VERIFIED</span></div></div><div class="flex items-center gap-space-lg font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Diagnostic Logs</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Telemetry Stream</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Enterprise Support</a><span class="text-on-surface-variant/60 font-label-code-sm text-label-code-sm">© 2024 Samsung PRISM Engineering</span></div></div></footer></body></html>

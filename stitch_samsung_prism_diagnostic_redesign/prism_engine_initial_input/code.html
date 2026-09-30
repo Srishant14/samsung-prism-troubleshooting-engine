@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Samsung PRISM Troubleshooting Engine V5.1</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-fixed":"#001f26","surface-bright":"#353944","background":"#0f131d","primary-fixed-dim":"#d2bbff","on-primary-fixed":"#25005a","error":"#ffb4ab","surface-tint":"#d2bbff","surface-container-lowest":"#0a0e18","on-background":"#dfe2f1","surface-container-low":"#171b26","primary-container":"#7c3aed","surface-variant":"#313540","on-secondary-fixed":"#001a43","on-tertiary-fixed-variant":"#004e5c","on-primary-container":"#ede0ff","on-secondary-fixed-variant":"#004397","on-tertiary-container":"#b7efff","secondary-fixed":"#d8e2ff","surface-container-highest":"#313540","tertiary":"#4cd7f6","on-error-container":"#ffdad6","surface":"#0f131d","surface-dim":"#0f131d","inverse-primary":"#732ee4","on-secondary":"#002e6b","on-tertiary":"#003640","on-primary-fixed-variant":"#5a00c6","tertiary-fixed":"#acedff","on-surface":"#dfe2f1","on-error":"#690005","inverse-on-surface":"#2c303b","tertiary-fixed-dim":"#4cd7f6","surface-container":"#1c1f2a","surface-container-high":"#262a35","error-container":"#93000a","on-secondary-container":"#00275e","primary":"#d2bbff","outline-variant":"#4a4455","secondary-fixed-dim":"#aec6ff","on-primary":"#3f008e","on-surface-variant":"#ccc3d8","outline":"#958da1","secondary-container":"#508eff","secondary":"#aec6ff","inverse-surface":"#dfe2f1","tertiary-container":"#007184","primary-fixed":"#eaddff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter-sm":"0.75rem","gutter":"1.25rem","space-lg":"1.5rem","space-xl":"2.5rem","space-md":"1rem","space-xs":"0.25rem","margin":"1.5rem","margin-sm":"1rem","space-sm":"0.5rem","gutter-lg":"2rem","margin-lg":"3rem"},fontFamily:{"body-sm":["Inter"],"label-code-sm":["JetBrains Mono"],"display-lg":["Inter"],"display-lg-mobile":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"label-code-md":["JetBrains Mono"],"headline-lg":["Inter"],"headline-md":["Inter"]},fontSize:{"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.005em","fontWeight":"400"}],"label-code-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.03em","fontWeight":"700"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-code-md":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-[#0B0F19]/90 backdrop-blur-xl border-b border-[#1E293B] shadow-[inset_0_1px_0_0_rgba(124,58,237,0.35),0_4px_20px_-4px_rgba(0,0,0,0.5)]"><div class="h-16 w-full px-gutter-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md shrink-0"><img alt="Samsung PRISM Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V7EkFugzLZInJOGQZJadYPPOCbL9et0NqbAFqhb6t8AQ4B3dYMW04PbNxvDNUbz6_HLsKQBvLW4G8XmzFgRoGg9AP8diesZqrKm9j9T9TuEjLVPi7Z1sRAB58H_k18jOTXfjfmwqxC_BCkIajeaDMZ50oBgkg4sP0TTdTPVxGh2UBf2O_84YZmmW_sv59IMcW-KAzPQ0Lf-dnZOW2FbTCu42eRkdjVoNBVfbGJQD8QDbXH-LNMAVZZhK8"/><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface whitespace-nowrap">PRISM Troubleshooting Engine</span><span class="font-label-code-sm text-label-code-sm px-space-sm py-space-xs rounded-full bg-surface-container-high text-primary border border-outline-variant/30 font-medium tracking-wide shadow-inner">V5.1</span></div></div><div class="hidden xl:flex items-center gap-space-md"><div class="flex items-center p-space-xs rounded-xl bg-[#0F172A]/80 border border-[#1E293B] shadow-inner"><nav class="flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><a aria-current="page" class="px-space-sm py-space-xs rounded-lg transition-colors whitespace-nowrap bg-primary-container text-on-primary-container font-semibold shadow-sm" data-path="initial-input" href="#">1. Initial Input</a><a class="px-space-sm py-space-xs rounded-lg font-label-code-md text-label-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="clarification-laya-ai" href="#">2. Clarification (Laya AI)</a><a class="px-space-sm py-space-xs rounded-lg font-label-code-md text-label-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="diagnostic-analysis" href="#">3. Diagnostic Analysis</a><a class="px-space-sm py-space-xs rounded-lg font-label-code-md text-label-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="verified-results" href="#">4. Verified Results</a><a class="px-space-sm py-space-xs rounded-lg font-label-code-md text-label-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="architecture-spec" href="#">5. Architecture Spec</a></nav></div><div class="h-4 w-px bg-outline-variant/40"></div><nav class="flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-tertiary font-medium"><a class="px-space-sm py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="2d-architecture" href="#">2D Architecture</a><a class="px-space-sm py-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="3d-architecture" href="#">3D Architecture</a></nav></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-surface-container-lowest/80 border border-[#1E293B] shadow-inner"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-code-sm text-label-code-sm text-on-surface-variant"><span class="text-tertiary font-semibold">System: Optimal</span> · Laya AI Online · Local Decision Engine Ready</span></div><button aria-label="Toggle System Theme" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors border border-outline-variant/20" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-2 ring-primary/20"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="relative w-full max-w-7xl mx-auto px-margin-sm md:px-margin lg:px-margin-lg py-space-xl overflow-hidden">
+<!-- Ambient Engineering Glows -->
+<div class="pointer-events-none absolute top-12 left-1/2 -translate-x-1/2 w-[640px] h-[360px] bg-primary-container/15 rounded-full blur-[120px] -z-10"></div>
+<div class="pointer-events-none absolute top-48 left-1/3 w-[380px] h-[220px] bg-tertiary-container/15 rounded-full blur-[100px] -z-10"></div>
+<!-- Center Stage Hero Narrative -->
+<section class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-xl">
+<!-- Micro Telemetry Pill -->
+<div class="inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-surface-container-low shadow-sm mb-space-md hover:bg-surface-container transition-colors cursor-default">
+<span class="flex h-2 w-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-code-sm text-label-code-sm tracking-wider uppercase text-on-surface-variant">
+          AI-Powered <span class="text-outline">·</span> <span class="text-primary font-semibold">Verification-First</span> <span class="text-outline">·</span> Low-Latency &lt;42ms
+        </span>
+</div>
+<!-- Core Headline -->
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight mb-space-sm">
+        Troubleshoot Smarter. <span class="bg-gradient-to-r from-primary via-tertiary to-secondary bg-clip-text text-transparent">Fix Faster.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl text-balance">
+        Describe your Samsung device issue. Get instant deterministic triage, adaptive clarification via Laya AI, and verified hardware/firmware resolutions.
+      </p>
+</section>
+<!-- Main Diagnostic Input Console Card -->
+<section class="max-w-4xl mx-auto mb-space-xl">
+<div class="group relative rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+<div class="p-space-lg">
+<!-- Console Header Bar -->
+<div class="flex items-center justify-between pb-space-md mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+<span class="font-label-code-md text-label-code-md text-on-surface">SYS.DIAG_PROMPT</span>
+<span class="font-label-code-sm text-label-code-sm px-space-sm py-space-xs rounded bg-surface-container-high text-tertiary">READY</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-code-sm text-label-code-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>ENGINE V5.1 ACTIVE</span>
+</div>
+</div>
+<!-- Main Input Field -->
+<div class="relative rounded-lg bg-surface-container-lowest p-space-md shadow-inner focus-within:ring-2 focus-within:ring-tertiary/40 transition-all">
+<div class="flex items-start gap-space-sm">
+<span class="font-label-code-md text-label-code-md text-primary mt-1 select-none">&gt;</span>
+<textarea class="w-full bg-transparent resize-none border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:ring-0 leading-relaxed" id="diagnostic-input" placeholder="Describe the problem with your Samsung device (e.g., Battery draining quickly after One UI 6.1 update, screen flickering on 120Hz Adaptive mode, camera lens rattle during stabilization)..." rows="4"></textarea>
+</div>
+</div>
+<!-- Fast Suggestion Chips -->
+<div class="mt-space-md flex flex-wrap items-center gap-space-sm">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant mr-space-xs uppercase tracking-wider">Quick Presets:</span>
+<button class="preset-chip group/chip inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-all shadow-sm" data-fill="Battery draining quickly and phone feels warm after One UI 6.1 update" type="button">
+<span class="text-tertiary text-xs">⚡</span>
+<span>Battery draining fast</span>
+</button>
+<button class="preset-chip group/chip inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-all shadow-sm" data-fill="Screen flickers intermittently specifically when running at 120Hz adaptive refresh rate" type="button">
+<span class="text-secondary text-xs">📱</span>
+<span>Screen flickering</span>
+</button>
+<button class="preset-chip group/chip inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-all shadow-sm" data-fill="Camera photos appear blurry and 3x telephoto struggles to lock focus in low light" type="button">
+<span class="text-primary text-xs">📷</span>
+<span>Camera photos blurry</span>
+</button>
+<button class="preset-chip group/chip inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-all shadow-sm" data-fill="Device thermal throttling and overheating near camera module during regular charging" type="button">
+<span class="text-error text-xs">🔥</span>
+<span>Phone overheating</span>
+</button>
+<button class="preset-chip group/chip inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-all shadow-sm" data-fill="System UI lag, frame drops during gesture navigation, and slow app launch times" type="button">
+<span class="text-tertiary-fixed-dim text-xs">⏱️</span>
+<span>Phone running slowly</span>
+</button>
+</div>
+<!-- Console Footer & Action Bar -->
+<div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<button class="inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-code-sm text-label-code-sm transition-colors" id="clear-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">backspace</span>
+<span>Clear Input</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface text-[10px]">Esc</span>
+</button>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant/70 pl-space-xs" id="char-count">0 chars</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="group/btn relative inline-flex items-center justify-center gap-space-md px-space-lg py-space-sm rounded-xl bg-primary-container text-on-primary-container hover:bg-primary font-headline-sm text-headline-sm shadow-lg transition-all active:scale-[0.98]" id="diagnose-trigger" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover/btn:rotate-12">auto_awesome</span>
+<span>Diagnose Issue</span>
+<span class="hidden sm:inline-flex items-center px-space-xs py-0.5 rounded bg-on-primary-container/20 text-on-primary-container font-label-code-sm text-[11px] font-normal tracking-wider">⌘ + ↵</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Optional Context Accordion Panel -->
+<section class="max-w-4xl mx-auto mb-space-xl">
+<div class="rounded-xl bg-surface-container/60 shadow-md backdrop-blur-md overflow-hidden">
+<button class="w-full px-space-lg py-space-md flex items-center justify-between text-left hover:bg-surface-container-high/50 transition-colors" id="toggle-context-btn" type="button">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-tertiary text-[22px]">tune</span>
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Target Device Telemetry</span>
+<span class="font-label-code-sm text-label-code-sm px-space-sm py-0.5 rounded-full bg-surface-container-highest text-primary">Optional · Enhances Precision</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Narrow down root causes by specifying model series, OS build, and timeline cadence.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="context-chevron">expand_more</span>
+</button>
+<!-- Collapsible Content -->
+<div class="px-space-lg pb-space-lg pt-space-xs space-y-space-md hidden" id="context-drawer">
+<!-- Category Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase">Device Category</label>
+<div class="flex flex-wrap gap-space-sm" id="category-pills">
+<button class="cat-pill active px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-body-sm text-body-sm font-medium transition-colors" data-cat="smartphones" type="button">Smartphones</button>
+<button class="cat-pill px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" data-cat="tablets" type="button">Tablets</button>
+<button class="cat-pill px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" data-cat="wearables" type="button">Wearables</button>
+<button class="cat-pill px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" data-cat="laptops" type="button">Galaxy Book &amp; Laptops</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Model Dropdown -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase" for="device-model">Device Model</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg bg-surface-container-lowest px-space-md py-space-sm font-body-md text-body-md text-on-surface outline-none focus:ring-1 focus:ring-tertiary" id="device-model">
+<option value="s24u">Galaxy S24 Ultra (SM-S928B)</option>
+<option value="s24p">Galaxy S24+ (SM-S926B)</option>
+<option value="s24">Galaxy S24 (SM-S921B)</option>
+<option value="fold5">Galaxy Z Fold5 (SM-F946B)</option>
+<option value="flip5">Galaxy Z Flip5 (SM-F731B)</option>
+<option value="s23u">Galaxy S23 Ultra (SM-S918B)</option>
+<option value="a54">Galaxy A54 5G (SM-A546B)</option>
+<option value="tabs9">Galaxy Tab S9 Ultra</option>
+<option value="other">Other Samsung Device</option>
+</select>
+<span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span>
+</div>
+</div>
+<!-- One UI Version -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase" for="os-version">Firmware / One UI</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg bg-surface-container-lowest px-space-md py-space-sm font-body-md text-body-md text-on-surface outline-none focus:ring-1 focus:ring-tertiary" id="os-version">
+<option value="oneui61">One UI 6.1 (Android 14)</option>
+<option value="oneui60">One UI 6.0 (Android 14)</option>
+<option value="oneui51">One UI 5.1 (Android 13)</option>
+<option value="oneui50">One UI 5.0 (Android 13)</option>
+<option value="beta">One UI Beta Program</option>
+<option value="unknown">Not Sure / Default Stock</option>
+</select>
+<span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span>
+</div>
+</div>
+<!-- Time Since Incident -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase" for="time-onset">Onset Timeline</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg bg-surface-container-lowest px-space-md py-space-sm font-body-md text-body-md text-on-surface outline-none focus:ring-1 focus:ring-tertiary" id="time-onset">
+<option value="24h">Past 24 hours</option>
+<option value="update">Directly after software update</option>
+<option value="few_days">Few days ago</option>
+<option value="drop">After physical impact / drop</option>
+<option value="weeks">Several weeks / Ongoing</option>
+</select>
+<span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Architecture Context Strip: Visual Richness Element -->
+<section class="max-w-4xl mx-auto mb-space-xl">
+<div class="relative rounded-2xl bg-surface-container-low p-space-lg overflow-hidden shadow-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="max-w-md">
+<span class="font-label-code-sm text-label-code-sm text-tertiary uppercase tracking-wider">Multi-Tier Resolution Framework</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Autonomous Triaging Pipeline</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Every query routes through low-latency static pattern sets, escalates to the conversational Laya AI neural clarifier when ambiguous, and pins directly to validated Samsung OEM manuals.
+            </p>
+</div>
+<!-- Inline Technical Progress Diagram / Sparkline Indicator -->
+<div class="w-full md:w-auto shrink-0 flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-lowest/80">
+<div class="flex flex-col items-center">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-tertiary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="94, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-code-sm text-label-code-sm font-semibold text-tertiary">94.2%</span>
+</div>
+<span class="font-label-code-sm text-[10px] text-on-surface-variant uppercase mt-1">First-Pass Match</span>
+</div>
+<div class="h-10 w-px bg-surface-variant"></div>
+<div class="space-y-1 font-label-code-sm text-label-code-sm">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+<span>OEM Spec Sync: Active</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Rule Engine: 1,840 nodes</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Corpus: One UI 6.1.1 Rev4</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Low-Profile System Telemetry Cards Grid -->
+<section class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-lg">
+<!-- Card 1: Local Decision Pipeline -->
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-sm transition-all duration-200 hover:bg-surface-container">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<span class="font-label-code-sm text-label-code-sm px-space-xs py-0.5 rounded bg-surface-container-lowest text-tertiary">~8ms</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Local Decision Engine</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Instant client-side evaluation against known hardware fault signatures, hardware sensor codes, and Knox policies.
+        </p>
+<div class="mt-space-md flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-tertiary">
+<span>ZERO CLOUD OVERHEAD</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</div>
+</div>
+<!-- Card 2: Laya AI Clarifier -->
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-sm transition-all duration-200 hover:bg-surface-container">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<span class="font-label-code-sm text-label-code-sm px-space-xs py-0.5 rounded bg-surface-container-lowest text-primary">LAYER 2</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Laya AI Clarifier</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          When symptoms overlap, intelligent probing asks targeted questions to distinguish software defects from hardware failures.
+        </p>
+<div class="mt-space-md flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-primary">
+<span>ADAPTIVE QUESTIONING</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</div>
+</div>
+<!-- Card 3: Verified Corpus -->
+<div class="rounded-xl bg-surface-container-low p-space-md shadow-sm transition-all duration-200 hover:bg-surface-container">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<span class="font-label-code-sm text-label-code-sm px-space-xs py-0.5 rounded bg-surface-container-lowest text-[#10B981]">CERTIFIED</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Verified Samsung Corpus</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Direct citations to certified Samsung Care service bulletins, factory schematics, and field diagnostic runbooks.
+        </p>
+<div class="mt-space-md flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-secondary">
+<span>AUTHORITATIVE REPAIR PATHS</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Recent Incident Stream Quick Access -->
+<section class="max-w-4xl mx-auto">
+<div class="rounded-xl bg-surface-container-lowest/60 p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">history</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Previous Session: <span class="text-on-surface font-label-code-sm font-medium">S24 Ultra · Camera Stabilization Lockup</span> (Diagnosed 4m ago)
+          </span>
+</div>
+<a class="font-label-code-sm text-label-code-sm text-tertiary hover:underline flex items-center gap-space-xs" href="#">
+<span>Resume Diagnostic Run #8921</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</section>
+</div>
+<script>
+    (function initDiagnosticEngineWorkspace() {
+      const input = document.getElementById('diagnostic-input');
+      const charCount = document.getElementById('char-count');
+      const clearBtn = document.getElementById('clear-btn');
+      const diagnoseBtn = document.getElementById('diagnose-trigger');
+      const toggleContextBtn = document.getElementById('toggle-context-btn');
+      const contextDrawer = document.getElementById('context-drawer');
+      const contextChevron = document.getElementById('context-chevron');
+      const presetChips = document.querySelectorAll('.preset-chip');
+      const categoryPills = document.querySelectorAll('.cat-pill');
+
+      // Update character counter
+      if (input && charCount) {
+        input.addEventListener('input', () => {
+          const len = input.value.length;
+          charCount.textContent = `${len} char${len === 1 ? '' : 's'}`;
+        });
+      }
+
+      // Keyboard Esc clear & Cmd/Ctrl + Enter submit
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.activeElement === input) {
+          input.value = '';
+          input.dispatchEvent(new Event('input'));
+        }
+        if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+          e.preventDefault();
+          diagnoseBtn?.click();
+        }
+      });
+
+      // Clear button
+      if (clearBtn && input) {
+        clearBtn.addEventListener('click', () => {
+          input.value = '';
+          input.focus();
+          input.dispatchEvent(new Event('input'));
+        });
+      }
+
+      // Preset chips fill
+      presetChips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const text = chip.getAttribute('data-fill');
+          if (input && text) {
+            input.value = text;
+            input.focus();
+            input.dispatchEvent(new Event('input'));
+          }
+        });
+      });
+
+      // Category selection toggle
+      categoryPills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          categoryPills.forEach((p) => {
+            p.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-medium');
+            p.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+          });
+          pill.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          pill.classList.add('bg-primary-container', 'text-on-primary-container', 'font-medium');
+        });
+      });
+
+      // Toggle optional context accordion
+      if (toggleContextBtn && contextDrawer && contextChevron) {
+        toggleContextBtn.addEventListener('click', () => {
+          const isHidden = contextDrawer.classList.contains('hidden');
+          if (isHidden) {
+            contextDrawer.classList.remove('hidden');
+            contextChevron.classList.add('rotate-180');
+          } else {
+            contextDrawer.classList.add('hidden');
+            contextChevron.classList.remove('rotate-180');
+          }
+        });
+      }
+
+      // Diagnostic submit transition
+      if (diagnoseBtn && input) {
+        diagnoseBtn.addEventListener('click', () => {
+          if (!input.value.trim()) {
+            input.focus();
+            input.classList.add('ring-2', 'ring-error');
+            setTimeout(() => input.classList.remove('ring-2', 'ring-error'), 800);
+            return;
+          }
+          // Micro interaction loading state
+          diagnoseBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[18px] animate-spin">refresh</span>
+            <span>Parsing Issue...</span>
+          `;
+          setTimeout(() => {
+            const nextTab = document.querySelector('nav a[data-path="clarification-laya-ai"]');
+            if (nextTab) nextTab.click();
+          }, 450);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-[#0a0e18]/95 border-t border-[#1E293B] backdrop-blur-md"><div class="w-full px-gutter-lg py-space-sm flex flex-col md:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-md font-label-code-sm text-label-code-sm text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#10B981]"></span><span>LATENCY: <span class="text-on-surface font-semibold">&lt;42ms</span></span></div><span class="text-outline-variant">|</span><div>CORPUS BUILD: <span class="text-on-surface font-mono">v5.1.2024.11-SEC</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-tertiary">verified</span><span>LOCAL ENGINE VERIFIED</span></div></div><div class="flex items-center gap-space-lg font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Diagnostic Logs</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Telemetry Stream</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Enterprise Support</a><span class="text-on-surface-variant/60 font-label-code-sm text-label-code-sm">© 2024 Samsung PRISM Engineering</span></div></div></footer></body></html>

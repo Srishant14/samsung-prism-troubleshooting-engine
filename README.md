@@ -1,20 +1,24 @@
-# Smart Guided Troubleshooting Engine (Samsung PRISM - Theme 2)
+# Samsung PRISM Troubleshooting Engine V5.1
 
 [![Tests](https://img.shields.io/badge/pytest-107%20passed-brightgreen.svg)](backend/)
 [![Backend](https://img.shields.io/badge/FastAPI-0.100+-blue.svg)](backend/)
 [![Frontend](https://img.shields.io/badge/React%2018-Vite-61dafb.svg)](frontend/)
 [![Decision Engine](https://img.shields.io/badge/Laya%20AI-System--1%20Router-orange.svg)](backend/decision_engine.py)
 [![Safety Protocol](https://img.shields.io/badge/Safety-Curated%20KB%20Retrieval-success.svg)](backend/knowledge_base.py)
+[![UI](https://img.shields.io/badge/UI-Diagnostic%20Precision%20Dark-7c3aed.svg)](frontend/src/index.css)
 
-> A high-throughput, question-first diagnostic troubleshooting engine for mobile devices. Engineered with a **sub-millisecond Fast Local Gate**, **Laya AI System-1 discrete decision routing**, and a **deterministic Sufficiency Gate**, ensuring instant solutions for clear queries and dynamic, guided clarification when information is ambiguous.
+> A high-throughput, question-first diagnostic troubleshooting engine for Samsung devices. Engineered with a **sub-millisecond Fast Local Gate**, **Laya AI System-1 discrete decision routing**, a **deterministic Sufficiency Gate**, and a premium **Diagnostic Precision Dark** interface — delivering instant verified solutions for clear queries and dynamic guided clarification when information is ambiguous.
 
 ---
 
 ## Table of Contents
 
 - [Overview](#overview)
+- [Screenshots](#screenshots)
 - [System Architecture](#system-architecture)
 - [AI Routing Order & Decision Flow](#ai-routing-order--decision-flow)
+- [Frontend — Diagnostic Precision Dark UI](#frontend--diagnostic-precision-dark-ui)
+- [Unresolved Issue Escalation System](#unresolved-issue-escalation-system)
 - [Laya AI Model Integration & Verification](#laya-ai-model-integration--verification)
 - [Empirical Benchmarks & Performance](#empirical-benchmarks--performance)
 - [Project Directory Structure](#project-directory-structure)
@@ -38,11 +42,28 @@ Traditional mobile troubleshooting assistants often rely on open-ended Large Lan
 2. **Hallucination Risk:** Generative models can invent non-existent settings, invalid recovery menus, or dangerous battery handling steps.
 3. **Premature Diagnoses:** Chatbots attempt to guess solutions without verifying whether essential diagnostic variables (e.g., error codes, device state, charging conditions) are known.
 
-The **Smart Guided Troubleshooting Engine** resolves these issues through a tiered, question-first diagnostic pipeline:
-- **Zero-Neural Fast Path (< 8ms end-to-end, < 1ms gate):** Resolves unambiguous queries directly from verified knowledge without invoking any neural models (0 LLMs, 0 Laya calls).
-- **Laya Primary Decision Engine (< 12ms):** Uses discrete System-1 typed decision primitives (`choice`, `score`, `action`) to arbitrate ambiguous domains, symptoms, and actions without open-ended text generation.
+The **Samsung PRISM Troubleshooting Engine V5.1** resolves these issues through a tiered, question-first diagnostic pipeline:
+- **Zero-Neural Fast Path (<8ms end-to-end, <1ms gate):** Resolves unambiguous queries directly from verified knowledge without invoking any neural models (0 LLMs, 0 Laya calls).
+- **Laya Primary Decision Engine (<12ms):** Uses discrete System-1 typed decision primitives (`choice`, `score`, `action`) to arbitrate ambiguous domains, symptoms, and actions without open-ended text generation.
 - **Sufficiency Gate & Invariant Guard:** Automatically identifies missing diagnostic slots and prompts the user with targeted clarification questions before database retrieval is allowed.
 - **Curated Knowledge Base Retrieval:** Troubleshooting steps are retrieved strictly from human-verified canonical procedures—unsupported queries return a graceful no-match response.
+- **Diagnostic Precision Dark UI:** Premium dark-themed interface with PRISM branding, console-style diagnostic input, staged resolution sequences, and a full escalation system.
+
+---
+
+## Screenshots
+
+### 1. Initial Input — Console Diagnostic Prompt
+The home screen features a console-style `SYS.DIAG_PROMPT` input with quick preset chips, pipeline telemetry cards, and feature cards describing the 3-tier architecture.
+
+### 2. Clarification Flow — Laya AI Diagnostic Gate
+When the engine needs more information, it presents radio-button options with a status bar showing gate latency and protocol details. The original query is displayed for context.
+
+### 3. Verified Results — Curated Resolution Sequence
+Results display domain badges, a confidence anomaly box, numbered resolution stages, deep-link paths, and Samsung Source Attestation with verification stamps.
+
+### 4. Escalation System — Unresolved Issue Panel
+If the issue persists, a modal offers Contact Samsung Support (country-aware), Find a Nearby Service Centre (geolocation + manual entry), and Generate Troubleshooting Report (copy/download).
 
 ---
 
@@ -90,6 +111,15 @@ The following diagram illustrates the verified execution order implemented in `b
                      └────────────────┬──────────────────┘
                                       ▼
                            Verified Solution Output
+                                      │
+                           ┌──────────┴──────────┐
+                           ▼                     ▼
+                    [Issue Resolved]     [Issue Persists]
+                           │                     │
+                           ▼                     ▼
+                  Positive Telemetry     Escalation System
+                     Confirmation       (Support / Service
+                                         Centre / Report)
 ```
 
 ---
@@ -120,6 +150,90 @@ The engine enforces a strict routing hierarchy to maximize speed and eliminate h
    - Invoked **strictly as an exceptional fallback** when both the Fast Gate and Laya cannot categorize the query.
    - Categorizes raw text into candidate categories. It does **not** generate troubleshooting advice.
    - If all classification attempts fail, the system outputs an official support link.
+
+---
+
+## Frontend — Diagnostic Precision Dark UI
+
+The frontend implements the **PRISM Diagnostic Precision Dark** design system, a premium dark-themed UI built with React 18 and Vite.
+
+### Design System
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| Background | `#0f131d` | App canvas |
+| Surface Lowest | `#0a0e18` | Deepest card backgrounds |
+| Surface Container | `#1c1f2a` | Card panels |
+| Primary | `#d2bbff` | Text accents, headings |
+| Primary Container | `#7c3aed` | Buttons, active states |
+| Tertiary | `#4cd7f6` | Status indicators, cyan accents |
+| Secondary | `#aec6ff` | Complementary accents |
+| Success | `#10B981` | Verified badges, positive states |
+| Error | `#ffb4ab` | Error states, warnings |
+| Font Sans | Inter | Body text, headings |
+| Font Mono | JetBrains Mono | Code labels, badges, technical text |
+| Icons | Material Symbols Outlined | All iconography |
+
+### Component Architecture
+
+```
+App.jsx
+├── Header.jsx .................. Fixed header (PRISM logo, stage tabs, system status)
+├── HeroSection.jsx ............. "Troubleshoot Smarter. Fix Faster." hero
+├── SearchBar.jsx ............... Console SYS.DIAG_PROMPT input + preset chips
+├── PipelineSection.jsx ......... 94.2% first-pass match ring + pipeline metrics
+├── FeatureCards.jsx ............ 3 feature cards (Local Engine, Laya AI, Verified Corpus)
+├── FollowUpCard.jsx ............ Clarification flow with radio options + gate status
+├── TroubleshootResult.jsx ...... Verified results (badges, steps, anomaly box)
+│   └── EscalationPanel.jsx ..... Modal: Contact Support / Service Centre / Report
+│       └── ServiceCentreFinder.jsx .. Geolocation + manual location search
+├── NoMatchCard.jsx ............. No-match fallback card
+└── Footer.jsx .................. Latency, corpus build, verification footer
+```
+
+### Key Features
+
+- **Console-style diagnostic input** with `>` prompt, `Esc` to clear, `⌘+↵` to submit
+- **Quick preset chips** with emojis for common Samsung device issues
+- **Stage-aware navigation tabs** (Initial Input → Clarification → Analysis → Results → Architecture)
+- **Animated loading state** with pipeline routing description
+- **Radio-button clarification options** with "Suggested Match" tags
+- **Numbered resolution stages** with domain badges and verified solution stamps
+- **Glass-morphism cards** with ambient glow effects and backdrop blur
+
+---
+
+## Unresolved Issue Escalation System
+
+When a user clicks **"Still experiencing the issue"** in the Resolution Verification panel, a full escalation workflow activates:
+
+### A. Contact Samsung Support
+- Displays a session info preview (issue, diagnosis, steps tried, outcome)
+- Opens **country-aware** Samsung support pages (India, US, UK, or Global)
+- Live Chat link (where available)
+- Pre-filled `mailto:` draft (user reviews before sending — **no email auto-sent**)
+- **No IMEI, serial numbers, or auth tokens** included by default
+
+### B. Find a Nearby Service Centre
+1. Explains why location access is needed
+2. Requests browser geolocation only after user clicks "Use My Location"
+3. On permission granted → opens Google Maps search for "Samsung Service Centre" near coordinates + Samsung's official locator
+4. On permission denied → allows manual city/locality/PIN code entry
+5. **Never fabricates service centre data** — always redirects to verified sources
+6. Location data is transient (not stored or transmitted to any server)
+
+### C. Generate Troubleshooting Report
+- Structured plain-text report from actual session data:
+  - Issue description, diagnosis summary, domain, confidence
+  - Recommended steps, user outcome ("Issue persists")
+  - Source references, session ID, timestamp
+- **Copy to clipboard** and **Download as .txt** actions
+- Missing fields are omitted rather than fabricated
+
+### Implementation Details
+- **Zero backend changes** — entire escalation system is frontend-only
+- Samsung support URLs are configurable per country in `EscalationPanel.jsx`
+- Closing the escalation panel returns to diagnosis results without data loss
 
 ---
 
@@ -183,47 +297,65 @@ Performance was benchmarked across 200 requests (20 iterations per scenario acro
 
 ```
 samsung-prism-troubleshooting-engine/
-├── .env.example                                      # Environment template
-├── .gitignore                                        # Secret & artifact exclusion rules
-├── Dockerfile                                        # Container build specification
-├── docker-compose.yml                                # Multi-service orchestration
-├── README.md                                         # Project documentation
-├── requirements.txt                                  # Root Python dependencies
+├── .env.example                        # Environment template
+├── .gitignore                          # Secret & artifact exclusion rules
+├── Dockerfile                          # Multi-stage container build (Node → Python)
+├── docker-compose.yml                  # Service orchestration with health checks
+├── README.md                           # Project documentation (this file)
+├── requirements.txt                    # Root Python dependencies
+│
 ├── backend/
-│   ├── benchmark.py                                  # Latency benchmark suite
-│   ├── benchmark_refactor.py                         # Scenario regression benchmarks
-│   ├── classifier.py                                 # Exceptional Gemini LLM fallback
-│   ├── config.py                                     # Configuration & timeouts
-│   ├── decision_engine.py                            # Laya AI System-1 Router & typed decisions
-│   ├── diagnostic_flow.py                            # Interactive diagnostic trees
-│   ├── diagnostic_state.py                           # Multi-turn diagnostic state machine
-│   ├── fast_gate.py                                  # Deterministic local gate preprocessor
-│   ├── knowledge_base.py                             # Knowledge base retrieval
-│   ├── logger.py                                     # Request tracing & logging
-│   ├── main.py                                       # FastAPI service & request routing
-│   ├── perf.py                                       # Performance timers & metrics
-│   ├── requirements.txt                              # Backend dependencies
-│   ├── schemas.py                                    # Pydantic data contracts
-│   ├── seed_data.json                                # Canonical troubleshooting procedures
-│   ├── serp_fallback.py                              # External web search fallback
-│   ├── session.py                                    # Diagnostic session manager
-│   ├── sufficiency_gate.py                           # Slot evaluation & diagnostic guards
-│   ├── test_engine.py                                # Pipeline integration tests
-│   ├── test_fast_gate.py                             # Sub-millisecond gate unit tests
-│   ├── test_perf_optimizations.py                    # Singleton, caching & timeout tests
-│   └── test_question_first_architecture.py           # Dynamic clarification tests
+│   ├── main.py                         # FastAPI service & request routing
+│   ├── fast_gate.py                    # Deterministic local gate preprocessor (<1ms)
+│   ├── decision_engine.py              # Laya AI System-1 Router & typed decisions
+│   ├── sufficiency_gate.py             # Slot evaluation & diagnostic guards
+│   ├── classifier.py                   # Exceptional Gemini LLM fallback
+│   ├── diagnostic_flow.py              # Interactive diagnostic trees
+│   ├── diagnostic_state.py             # Multi-turn diagnostic state machine
+│   ├── knowledge_base.py              # Knowledge base retrieval
+│   ├── schemas.py                      # Pydantic data contracts (API models)
+│   ├── session.py                      # Diagnostic session manager
+│   ├── config.py                       # Configuration & timeouts
+│   ├── logger.py                       # Request tracing & logging
+│   ├── perf.py                         # Performance timers & metrics
+│   ├── serp_fallback.py                # External web search fallback
+│   ├── seed_data.json                  # Canonical troubleshooting procedures
+│   ├── requirements.txt                # Backend Python dependencies
+│   ├── benchmark.py                    # Latency benchmark suite
+│   ├── benchmark_refactor.py           # Scenario regression benchmarks
+│   ├── test_engine.py                  # Pipeline integration tests (25)
+│   ├── test_fast_gate.py               # Sub-millisecond gate unit tests (29)
+│   ├── test_perf_optimizations.py      # Singleton, caching & timeout tests (34)
+│   └── test_question_first_architecture.py  # Dynamic clarification tests (19)
+│
 ├── frontend/
-│   ├── src/                                          # React 18 application source
-│   ├── index.html                                    # Application entrypoint
-│   ├── package.json                                  # NPM dependencies
-│   └── vite.config.js                                # Vite configuration
+│   ├── index.html                      # HTML shell (Inter, JetBrains Mono, Material Symbols)
+│   ├── package.json                    # NPM dependencies (React 18, Vite)
+│   ├── vite.config.js                  # Vite config with /api proxy → localhost:8000
+│   └── src/
+│       ├── main.jsx                    # React entry point
+│       ├── App.jsx                     # Root app — state, API calls, routing
+│       ├── index.css                   # Complete Diagnostic Precision Dark CSS (2400+ lines)
+│       └── components/
+│           ├── Header.jsx              # Fixed header (logo, stage tabs, system status)
+│           ├── Footer.jsx              # Latency, corpus build, verification footer
+│           ├── HeroSection.jsx         # Hero headline with gradient text
+│           ├── SearchBar.jsx           # Console SYS.DIAG_PROMPT with presets
+│           ├── PipelineSection.jsx     # Pipeline ring chart + metrics
+│           ├── FeatureCards.jsx        # 3 architecture feature cards
+│           ├── FollowUpCard.jsx        # Clarification flow (radio options, gate status)
+│           ├── TroubleshootResult.jsx  # Verified results (stages, badges, feedback)
+│           ├── NoMatchCard.jsx         # No-match fallback card
+│           ├── EscalationPanel.jsx     # Escalation modal (Support / Centre / Report)
+│           └── ServiceCentreFinder.jsx # Geolocation + manual service centre search
+│
 ├── docs/
-│   ├── AI_DISCLOSURE.md                              # AI transparency document
-│   └── architecture.png                              # System architecture diagram
+│   ├── AI_DISCLOSURE.md                # AI transparency document
+│   └── architecture.png               # System architecture diagram
 ├── demo/
-│   └── README.md                                     # Interactive demo walkthrough
+│   └── README.md                       # Interactive demo walkthrough
 └── presentation/
-    └── PRISM_Theme2_Troubleshooting_Engine_Submission.pdf # Submission presentation PDF
+    └── PRISM_Theme2_Troubleshooting_Engine_Submission.pdf
 ```
 
 ---
@@ -234,6 +366,7 @@ samsung-prism-troubleshooting-engine/
 - **Python:** 3.10 or higher
 - **Node.js:** 18.x or higher
 - **npm:** 9.x or higher
+- **Docker** (optional): 20.x or higher for containerized deployment
 
 ### Backend Setup
 
@@ -288,23 +421,36 @@ samsung-prism-troubleshooting-engine/
    ```bash
    npm run dev
    ```
-   The UI will launch at `http://localhost:5173`.
+   The UI will launch at `http://localhost:3000` (Vite proxies `/api/*` to the backend at `localhost:8000`).
 
 4. **Production Build:**
    ```bash
    npm run build
    ```
+   Built assets are output to `frontend/dist/`.
 
 ---
 
 ### Docker Setup
 
-To launch the entire stack using Docker:
+To launch the entire stack (frontend + backend) in a single container:
 
 ```bash
+# Build and start
 docker-compose up --build
+
+# Or build the image directly
+docker build -t prism-engine .
+docker run -p 8000:8000 --env-file .env prism-engine
 ```
-The unified container will build the React frontend and serve both the FastAPI API and frontend assets at `http://localhost:8000`.
+
+The unified container:
+1. Builds the React frontend via Node 20 Alpine
+2. Serves the FastAPI backend on port 8000
+3. Includes a health check (`/health` endpoint)
+4. Architecture visualizations available at `/2d` and `/3d`
+
+Access the application at `http://localhost:8000`.
 
 ---
 
@@ -369,6 +515,9 @@ In accordance with responsible AI standards and hackathon submission criteria, a
    - Before any solution is shown to a user, the request must pass the [`SufficiencyGate`](backend/sufficiency_gate.py). If vital parameters (e.g. error codes, physical damage signs) are absent, the engine pauses and asks clarifying questions.
 4. **Fail-Safe Operation:**
    - If AI services encounter network latency or timeouts, the system automatically degrades to deterministic decision trees without crashing or giving unverified advice.
+5. **Escalation System Transparency:**
+   - The Escalation System never fabricates service centre data, Samsung email addresses, or support ticket confirmations.
+   - Location data is transient and not stored. No sensitive identifiers (IMEI, serial numbers) are included in reports by default.
 
 For full details, see [**docs/AI_DISCLOSURE.md**](docs/AI_DISCLOSURE.md).
 
