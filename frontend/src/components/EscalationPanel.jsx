@@ -1,51 +1,78 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import ServiceCentreFinder from './ServiceCentreFinder';
 
-// ─── Configurable Samsung Support URLs by country code ───
+// ─── Configurable Samsung Support Resources by country code ───
 const SAMSUNG_SUPPORT_URLS = {
   IN: {
+    code: 'IN',
     label: 'Samsung India Support',
+    countryName: 'India',
+    flag: '🇮🇳',
+    email: 'support.india@samsung.com',
     contact: 'https://www.samsung.com/in/support/',
     serviceCentre: 'https://www.samsung.com/in/support/service-center/',
     chat: 'https://www.samsung.com/in/support/livechat/',
+    tollFree: '1800 40 7267864 (1800 40 SAMSUNG)',
   },
   US: {
+    code: 'US',
     label: 'Samsung US Support',
+    countryName: 'United States',
+    flag: '🇺🇸',
+    email: 'support@samsung.com',
     contact: 'https://www.samsung.com/us/support/',
     serviceCentre: 'https://www.samsung.com/us/support/service-center/',
     chat: 'https://www.samsung.com/us/support/livechat/',
+    tollFree: '1-800-SAMSUNG (726-7864)',
   },
   GB: {
+    code: 'GB',
     label: 'Samsung UK Support',
+    countryName: 'United Kingdom',
+    flag: '🇬🇧',
+    email: 'uk.customercare@samsung.com',
     contact: 'https://www.samsung.com/uk/support/',
     serviceCentre: 'https://www.samsung.com/uk/support/service-center/',
+    chat: 'https://www.samsung.com/uk/support/livechat/',
+    tollFree: '0333 000 0333',
   },
-  // Fallback / global
   GLOBAL: {
+    code: 'GLOBAL',
     label: 'Samsung Global Support',
+    countryName: 'Global',
+    flag: '🌐',
+    email: 'support@samsung.com',
     contact: 'https://www.samsung.com/support/',
     serviceCentre: 'https://www.samsung.com/support/service-center/',
+    chat: null,
+    tollFree: null,
   },
 };
 
-function getSupportConfig() {
-  // Attempt to detect country from browser locale
+function detectCountryCode() {
   try {
+    // 1. Timezone detection (most reliable for India & specific regions)
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (tz.includes('Kolkata') || tz.includes('Calcutta') || tz.includes('Asia/Colombo')) {
+      return 'IN';
+    }
+    const offset = new Date().getTimezoneOffset();
+    if (offset === -330) {
+      // UTC+5:30 -> India
+      return 'IN';
+    }
+
+    // 2. Locale detection
     const locale = navigator.language || navigator.userLanguage || '';
     const parts = locale.split('-');
-    const countryCode = (parts[1] || parts[0] || '').toUpperCase();
-    if (SAMSUNG_SUPPORT_URLS[countryCode]) {
-      return SAMSUNG_SUPPORT_URLS[countryCode];
-    }
-    // Check timezone as fallback for India
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-    if (tz.startsWith('Asia/Kolkata') || tz.startsWith('Asia/Calcutta')) {
-      return SAMSUNG_SUPPORT_URLS.IN;
+    const country = (parts[1] || '').toUpperCase();
+    if (SAMSUNG_SUPPORT_URLS[country]) {
+      return country;
     }
   } catch {
     // ignore
   }
-  return SAMSUNG_SUPPORT_URLS.GLOBAL;
+  return 'IN'; // Default to India for Samsung PRISM Hackathon context
 }
 
 function formatTimestamp() {
@@ -80,7 +107,7 @@ function buildReportText(result, query, sessionId) {
   }
 
   if (result.steps && result.steps.length > 0) {
-    lines.push('─── RECOMMENDED STEPS ───');
+    lines.push('─── RECOMMENDED STEPS ATTEMPTED ───');
     result.steps.forEach((step, idx) => {
       lines.push(`  ${idx + 1}. ${step}`);
     });
@@ -88,7 +115,7 @@ function buildReportText(result, query, sessionId) {
   }
 
   lines.push('─── USER OUTCOME ───');
-  lines.push('Status: Issue persists after attempting recommended steps.');
+  lines.push('Status: Issue persists after applying all recommended steps.');
   lines.push('');
 
   if (result.source) {
@@ -107,68 +134,102 @@ function buildReportText(result, query, sessionId) {
   return lines.join('\n');
 }
 
-
 export default function EscalationPanel({ result, query, sessionId, onClose }) {
-  const [activeView, setActiveView] = useState('menu'); // menu | contact | centres | report
+  const [activeView, setActiveView] = useState('menu'); // menu | contact | compose | centres | report
+  const [selectedCountry, setSelectedCountry] = useState(detectCountryCode);
   const [reportCopied, setReportCopied] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
 
-  const supportConfig = useMemo(() => getSupportConfig(), []);
+  const supportConfig = useMemo(() => {
+    return SAMSUNG_SUPPORT_URLS[selectedCountry] || SAMSUNG_SUPPORT_URLS.IN;
+  }, [selectedCountry]);
+
+  // Initial Email fields
+  const [emailTo, setEmailTo] = useState('');
+  const [emailSubject, setEmailSubject] = useState('');
+  const [emailBody, setEmailBody] = useState('');
+
+  // Synchronize email draft when supportConfig or result changes
+  useEffect(() => {
+    const to = supportConfig.email || 'support.india@samsung.com';
+    const sub = `[Samsung Support Request] ${result.title || query || 'Device Issue'} - Issue Persists`;
+
+    const bodyLines = [
+      `Dear ${supportConfig.label} Team,`,
+      '',
+      'I am reaching out regarding a persistent technical issue on my Samsung device that was not resolved by following the verified troubleshooting protocol from the Samsung PRISM Troubleshooting Engine.',
+      '',
+      '─── ISSUE SUMMARY ───',
+      `Reported Symptom: ${query || 'Not specified'}`,
+      `Engine Diagnosis: ${result.title || 'General Anomaly'}`,
+      `Category: ${result.domain || 'Device'}`,
+      `Diagnostic Confidence: ${((result.final_confidence || result.confidence || 0.85) * 100).toFixed(1)}%`,
+      `Session Reference: #${sessionId || 'PRISM-SEC-88219'}`,
+      `Timestamp: ${formatTimestamp()}`,
+      '',
+      '─── TROUBLESHOOTING STEPS ALREADY ATTEMPTED ───',
+      ...(result.steps && result.steps.length > 0
+        ? result.steps.map((s, i) => `${i + 1}. ${s}`)
+        : ['1. Standard device reboot and diagnostic check']),
+      '',
+      '─── CURRENT STATUS ───',
+      'User Confirmation: The issue still persists on the device.',
+      '',
+      'Please advise on official service options, escalation to Samsung technical engineers, or warranty repair guidance.',
+      '',
+      'Sincerely,',
+      'Samsung Galaxy User'
+    ];
+
+    setEmailTo(to);
+    setEmailSubject(sub);
+    setEmailBody(bodyLines.join('\n'));
+  }, [supportConfig, result, query, sessionId]);
 
   const reportText = useMemo(
     () => buildReportText(result, query, sessionId),
     [result, query, sessionId]
   );
 
-  // ─── Contact Support: build mailto body ───
-  const mailtoBody = useMemo(() => {
-    const lines = [];
-    lines.push('Dear Samsung Support,');
-    lines.push('');
-    lines.push('I am experiencing an issue with my Samsung device that persists after following the recommended troubleshooting steps from the PRISM Diagnostic Engine.');
-    lines.push('');
-    if (query) {
-      lines.push(`Issue Description: ${query}`);
-      lines.push('');
-    }
-    if (result.title) {
-      lines.push(`Diagnosis: ${result.title}`);
-    }
-    if (result.domain) {
-      lines.push(`Category: ${result.domain}`);
-    }
-    if (result.steps && result.steps.length > 0) {
-      lines.push('');
-      lines.push('Steps already attempted:');
-      result.steps.forEach((step, idx) => {
-        lines.push(`  ${idx + 1}. ${step}`);
-      });
-    }
-    lines.push('');
-    lines.push('The issue still persists. Please advise on next steps or arrange a service appointment.');
-    lines.push('');
-    lines.push('Thank you.');
-    return encodeURIComponent(lines.join('\n'));
-  }, [result, query]);
+  // ─── Actions for Sending ───
+  const openGmail = () => {
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailTo)}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
-  const mailtoSubject = useMemo(() => {
-    const title = result.title || query || 'Device Issue';
-    return encodeURIComponent(`Samsung Device Issue: ${title}`);
-  }, [result, query]);
+  const openOutlook = () => {
+    const url = `https://outlook.live.com/owa/?path=/mail/action/compose&to=${encodeURIComponent(emailTo)}&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
-  // ─── Copy report ───
+  const openDefaultMail = () => {
+    const url = `mailto:${encodeURIComponent(emailTo)}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = url;
+  };
+
+  const handleCopyEmail = async () => {
+    const fullText = `To: ${emailTo}\nSubject: ${emailSubject}\n\n${emailBody}`;
+    try {
+      await navigator.clipboard.writeText(fullText);
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2500);
+    } catch {
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2500);
+    }
+  };
+
   const handleCopyReport = async () => {
     try {
       await navigator.clipboard.writeText(reportText);
       setReportCopied(true);
       setTimeout(() => setReportCopied(false), 2500);
     } catch {
-      // Fallback: select text
       setReportCopied(true);
       setTimeout(() => setReportCopied(false), 2500);
     }
   };
 
-  // ─── Download report ───
   const handleDownloadReport = () => {
     try {
       const blob = new Blob([reportText], { type: 'text/plain;charset=utf-8' });
@@ -181,7 +242,7 @@ export default function EscalationPanel({ result, query, sessionId, onClose }) {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     } catch {
-      // If download fails, the user can still copy
+      // ignore
     }
   };
 
@@ -195,8 +256,11 @@ export default function EscalationPanel({ result, query, sessionId, onClose }) {
               <button
                 type="button"
                 className="escalation-back-btn"
-                onClick={() => setActiveView('menu')}
-                aria-label="Back to escalation menu"
+                onClick={() => {
+                  if (activeView === 'compose') setActiveView('contact');
+                  else setActiveView('menu');
+                }}
+                aria-label="Back"
               >
                 <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>arrow_back</span>
               </button>
@@ -205,12 +269,14 @@ export default function EscalationPanel({ result, query, sessionId, onClose }) {
               <h2 className="escalation-title">
                 {activeView === 'menu' && "Let's get this resolved"}
                 {activeView === 'contact' && 'Contact Samsung Support'}
+                {activeView === 'compose' && 'Compose & Send Support Email'}
                 {activeView === 'centres' && 'Find a Service Centre'}
                 {activeView === 'report' && 'Troubleshooting Report'}
               </h2>
               <p className="escalation-subtitle">
                 {activeView === 'menu' && "The recommended steps didn't solve your issue. You can contact Samsung Support or find an authorized service centre."}
-                {activeView === 'contact' && "Review the details below, then open Samsung's official support page or compose a support email."}
+                {activeView === 'contact' && "Review the details below, choose your regional support portal, or compose an email."}
+                {activeView === 'compose' && "Review and edit your support email, then send via Gmail, Outlook, or your preferred mail client."}
                 {activeView === 'centres' && "Locate an official Samsung-authorized service centre near you."}
                 {activeView === 'report' && "A summary of your troubleshooting session. Copy or download for reference."}
               </p>
@@ -238,12 +304,12 @@ export default function EscalationPanel({ result, query, sessionId, onClose }) {
                 className="escalation-option-card"
                 onClick={() => setActiveView('contact')}
               >
-                <div className="escalation-option-icon" style={{ background: 'rgba(124, 58, 237, 0.15)', color: 'var(--primary)' }}>
+                <div className="escalation-option-icon" style={{ background: 'rgba(0, 240, 255, 0.12)', color: 'var(--primary)' }}>
                   <span className="material-symbols-outlined">support_agent</span>
                 </div>
                 <div className="escalation-option-content">
                   <h3>Contact Samsung Support</h3>
-                  <p>Get help from Samsung's official support team via their website or email.</p>
+                  <p>Get help from Samsung's official support team via website, chat, or email.</p>
                 </div>
                 <span className="material-symbols-outlined escalation-option-arrow">chevron_right</span>
               </button>
@@ -254,7 +320,7 @@ export default function EscalationPanel({ result, query, sessionId, onClose }) {
                 className="escalation-option-card"
                 onClick={() => setActiveView('centres')}
               >
-                <div className="escalation-option-icon" style={{ background: 'rgba(76, 215, 246, 0.15)', color: 'var(--tertiary)' }}>
+                <div className="escalation-option-icon" style={{ background: 'rgba(56, 189, 248, 0.12)', color: 'var(--secondary)' }}>
                   <span className="material-symbols-outlined">location_on</span>
                 </div>
                 <div className="escalation-option-content">
@@ -270,7 +336,7 @@ export default function EscalationPanel({ result, query, sessionId, onClose }) {
                 className="escalation-option-card"
                 onClick={() => setActiveView('report')}
               >
-                <div className="escalation-option-icon" style={{ background: 'rgba(16, 185, 129, 0.15)', color: 'var(--success)' }}>
+                <div className="escalation-option-icon" style={{ background: 'rgba(16, 185, 129, 0.12)', color: 'var(--success)' }}>
                   <span className="material-symbols-outlined">description</span>
                 </div>
                 <div className="escalation-option-content">
@@ -285,10 +351,35 @@ export default function EscalationPanel({ result, query, sessionId, onClose }) {
           {/* ═══ CONTACT VIEW ═══ */}
           {activeView === 'contact' && (
             <div className="escalation-contact">
+              {/* Region Selector Pills */}
+              <div className="country-selector-box">
+                <span className="country-selector-label">
+                  <span className="material-symbols-outlined" style={{ fontSize: '15px' }}>public</span>
+                  <span>Select Region:</span>
+                </span>
+                <div className="country-pills-row">
+                  {Object.keys(SAMSUNG_SUPPORT_URLS).map((code) => {
+                    const cfg = SAMSUNG_SUPPORT_URLS[code];
+                    const isSelected = selectedCountry === code;
+                    return (
+                      <button
+                        key={code}
+                        type="button"
+                        className={`country-pill ${isSelected ? 'active' : ''}`}
+                        onClick={() => setSelectedCountry(code)}
+                      >
+                        <span>{cfg.flag}</span>
+                        <span>{cfg.countryName}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
               {/* Report Preview */}
               <div className="escalation-report-preview">
                 <div className="escalation-report-label">
-                  <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>info</span>
+                  <span className="material-symbols-outlined" style={{ fontSize: '15px' }}>info</span>
                   <span>Information that will be shared</span>
                 </div>
                 <div className="escalation-report-items">
@@ -328,13 +419,22 @@ export default function EscalationPanel({ result, query, sessionId, onClose }) {
 
               {/* Action Buttons */}
               <div className="escalation-contact-actions">
+                <button
+                  type="button"
+                  className="escalation-action-btn primary"
+                  onClick={() => setActiveView('compose')}
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>mail</span>
+                  <span>Compose & Send Email</span>
+                </button>
+
                 <a
                   href={supportConfig.contact}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="escalation-action-btn primary"
+                  className="escalation-action-btn secondary"
                 >
-                  <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>open_in_new</span>
+                  <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>open_in_new</span>
                   <span>Open {supportConfig.label}</span>
                 </a>
 
@@ -345,23 +445,102 @@ export default function EscalationPanel({ result, query, sessionId, onClose }) {
                     rel="noopener noreferrer"
                     className="escalation-action-btn secondary"
                   >
-                    <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>chat</span>
+                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>chat</span>
                     <span>Live Chat</span>
                   </a>
                 )}
-
-                <a
-                  href={`mailto:?subject=${mailtoSubject}&body=${mailtoBody}`}
-                  className="escalation-action-btn ghost"
-                >
-                  <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>mail</span>
-                  <span>Compose Email Draft</span>
-                </a>
               </div>
 
-              <p style={{ fontSize: '12px', color: 'var(--on-surface-variant)', marginTop: '12px', lineHeight: '16px' }}>
-                Clicking "Open {supportConfig.label}" will take you to Samsung's official support website.
-                "Compose Email Draft" opens your default email app with a pre-filled message — no email is sent automatically.
+              <div className="support-info-footer">
+                <span className="material-symbols-outlined" style={{ fontSize: '15px', color: 'var(--primary)' }}>help</span>
+                <span>
+                  Clicking <strong>Compose & Send Email</strong> lets you preview and send the report via <strong>Gmail</strong>, <strong>Outlook Web</strong>, or your <strong>default mail app</strong>.
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* ═══ COMPOSE & SEND VIEW ═══ */}
+          {activeView === 'compose' && (
+            <div className="escalation-compose-view">
+              <div className="compose-field">
+                <label className="compose-label">To (Official Support Email):</label>
+                <input
+                  type="email"
+                  className="compose-input"
+                  value={emailTo}
+                  onChange={(e) => setEmailTo(e.target.value)}
+                  placeholder="recipient@samsung.com"
+                />
+              </div>
+
+              <div className="compose-field">
+                <label className="compose-label">Subject:</label>
+                <input
+                  type="text"
+                  className="compose-input"
+                  value={emailSubject}
+                  onChange={(e) => setEmailSubject(e.target.value)}
+                  placeholder="Subject line"
+                />
+              </div>
+
+              <div className="compose-field">
+                <label className="compose-label">Message Content (Editable):</label>
+                <textarea
+                  className="compose-textarea"
+                  rows={8}
+                  value={emailBody}
+                  onChange={(e) => setEmailBody(e.target.value)}
+                />
+              </div>
+
+              {/* Action Buttons to Dispatch */}
+              <div className="compose-actions-grid">
+                <button
+                  type="button"
+                  className="escalation-action-btn primary"
+                  onClick={openGmail}
+                  title="Open in Gmail Webmail with pre-filled To, Subject, and Body"
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>outgoing_mail</span>
+                  <span>Send via Gmail</span>
+                </button>
+
+                <button
+                  type="button"
+                  className="escalation-action-btn secondary"
+                  onClick={openOutlook}
+                  title="Open in Outlook Webmail with pre-filled message"
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>mail</span>
+                  <span>Send via Outlook</span>
+                </button>
+
+                <button
+                  type="button"
+                  className="escalation-action-btn ghost"
+                  onClick={openDefaultMail}
+                  title="Trigger mailto: with your system default mail client"
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>mark_email_read</span>
+                  <span>Open System Mail</span>
+                </button>
+
+                <button
+                  type="button"
+                  className="escalation-action-btn ghost"
+                  onClick={handleCopyEmail}
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
+                    {emailCopied ? 'check' : 'content_copy'}
+                  </span>
+                  <span>{emailCopied ? 'Copied Full Draft!' : 'Copy Full Draft'}</span>
+                </button>
+              </div>
+
+              <p style={{ fontSize: '11px', color: 'var(--on-surface-variant)', marginTop: '8px', lineHeight: '16px' }}>
+                💡 Tip: If you don't have a desktop email client configured on Windows, click <strong>"Send via Gmail"</strong> or <strong>"Copy Full Draft"</strong> to paste into your favorite mail app.
               </p>
             </div>
           )}
