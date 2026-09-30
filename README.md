@@ -6,8 +6,11 @@
 [![Decision Engine](https://img.shields.io/badge/Laya%20AI-System--1%20Router-orange.svg)](backend/decision_engine.py)
 [![Safety Protocol](https://img.shields.io/badge/Safety-Curated%20KB%20Retrieval-success.svg)](backend/knowledge_base.py)
 [![UI](https://img.shields.io/badge/UI-Diagnostic%20Precision%20Dark-7c3aed.svg)](frontend/src/index.css)
+[![Primary Demo Video](https://img.shields.io/badge/Primary%20Demo%20Video-Google%20Drive-red.svg)](https://drive.google.com/file/d/1yRhIrKIaWLcY29jd7rWb7kP4la5DJ4gP/view?usp=sharing&t=1.931)
 
 > A high-throughput, question-first diagnostic troubleshooting engine for Samsung devices. Engineered with a **sub-millisecond Fast Local Gate**, **Laya AI System-1 discrete decision routing**, a **deterministic Sufficiency Gate**, and a premium **Diagnostic Precision Dark** interface — delivering instant verified solutions for clear queries and dynamic guided clarification when information is ambiguous.
+>
+> 🎬 **[Watch Primary Demo Video on Google Drive](https://drive.google.com/file/d/1yRhIrKIaWLcY29jd7rWb7kP4la5DJ4gP/view?usp=sharing&t=1.931)**
 
 ---
 
@@ -550,6 +553,7 @@ For full details, see [**docs/AI_DISCLOSURE.md**](docs/AI_DISCLOSURE.md).
 
 ## Submission Artifacts
 
+- **Primary Demo Video:** [Watch on Google Drive](https://drive.google.com/file/d/1yRhIrKIaWLcY29jd7rWb7kP4la5DJ4gP/view?usp=sharing&t=1.931)
 - **GitHub Repository:** [https://github.com/Srishant14/samsung-prism-troubleshooting-engine](https://github.com/Srishant14/samsung-prism-troubleshooting-engine)
 - **Presentation Deck:** [presentation/MSRIT_SyntaxError_Submission.pdf](presentation/MSRIT_SyntaxError_Submission.pdf)
 - **Interactive Demo Walkthrough:** [demo/README.md](demo/README.md)

@@ -55,6 +55,7 @@ web-request-cache-miss.sequence.json
 *.pdf
 *.docx
 !presentation/*.pdf
+*.mp4
 input.txt
 sample_output.json
 deeplinks.json

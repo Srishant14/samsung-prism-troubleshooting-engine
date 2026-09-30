@@ -7,10 +7,10 @@
 
 ## Demo Video Links
 
-- **Primary Demo Video:** [Click to Watch Demo on YouTube / Google Drive](https://youtu.be/placeholder-demo-link) *(replace with your public viewing link)*
-- **Alternative Video Mirror:** *(Optional Google Drive link if YouTube is restricted)*
+- **Primary Demo Video:** [Watch Demo Video on Google Drive](https://drive.google.com/file/d/1yRhIrKIaWLcY29jd7rWb7kP4la5DJ4gP/view?usp=sharing&t=1.931)
+- **Direct Video URL:** `https://drive.google.com/file/d/1yRhIrKIaWLcY29jd7rWb7kP4la5DJ4gP/view?usp=sharing&t=1.931`
 
-> **Judge Notice:** Please ensure public read access is enabled on the shared drive link if uploading to Google Drive.
+> **Judge Notice:** The demo video is publicly accessible on Google Drive.
 
 ---
 
