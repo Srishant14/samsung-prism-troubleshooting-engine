@@ -557,7 +557,7 @@ For full details, see [**docs/AI_DISCLOSURE.md**](docs/AI_DISCLOSURE.md).
 - **GitHub Repository:** [https://github.com/Srishant14/samsung-prism-troubleshooting-engine](https://github.com/Srishant14/samsung-prism-troubleshooting-engine)
 - **Presentation Deck:** [presentation/MSRIT_SyntaxError_Submission.pdf](presentation/MSRIT_SyntaxError_Submission.pdf)
 - **Interactive Demo Walkthrough:** [demo/README.md](demo/README.md)
-- **Git Submission Tag:** `PRISM_GENAI_HACKATHON_2026`
+- **Git Submission Tag:** `PRISM_GENAI_HACKATHON_Y2026`
 
 ---
 
